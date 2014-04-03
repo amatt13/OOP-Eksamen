@@ -8,6 +8,15 @@ namespace AuctionSystem
 {
     class Buyer
     {
-        decimal Balance;
+        public int Id { get; set; }
+        public decimal Balance {get; set;}
+
+        public Buyer() { this.Id = 1; }
+
+        public Buyer(int id, decimal balance)
+        {
+            this.Id = id;
+            this.Balance = balance;
+        }
     }
 }

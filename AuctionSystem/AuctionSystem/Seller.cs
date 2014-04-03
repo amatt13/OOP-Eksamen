@@ -10,6 +10,14 @@ namespace AuctionSystem
     {
         int PostalCode;
 
+        public Seller() { this.Id = 1; }
+
+        public Seller(int id, decimal balance)
+        {
+            this.Id = id;
+            this.Balance = balance;
+        }
+
         public void Notified(){
             Console.WriteLine("Notified");
         }

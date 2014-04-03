@@ -11,7 +11,7 @@ namespace AuctionSystem
         List<Vehicle> ForSale = new List<Vehicle>();
         List<Vehicle> Sold = new List<Vehicle>();
         List<Buyer> Buyers = new List<Buyer>();
-        List<Seller> Sellers = new List<Seller>();
+        public List<Seller> Sellers = new List<Seller>();
 
         public delegate void Notify();
         

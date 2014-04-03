@@ -10,14 +10,18 @@ namespace AuctionSystem
     {
         static void Main(string[] args)
         {
+            //Just a test of Vehicles classes, should be a seller offering Vehicles
             PersonalCar pCar = new PersonalCar();
             Van van = new Van();
             Autocamper aCam = new Autocamper();
             Bus bus = new Bus();
             Truck truck = new Truck();
 
+            AuctionHouse ah = new AuctionHouse();
+            Seller tove = new Seller(1, 2000);
+            ah.Sellers.Add(tove);
 
-
+            Console.ReadKey();
         }
     }
 }
