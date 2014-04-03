@@ -18,8 +18,6 @@ namespace AuctionSystem
             Truck truck = new Truck();
 
             AuctionHouse ah = new AuctionHouse();
-            Seller tove = new Seller(1, 2000);
-            ah.Sellers.Add(tove);
 
             Console.ReadKey();
         }

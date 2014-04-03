@@ -59,7 +59,7 @@ namespace AuctionSystem
         }
         bool Hook { get; set; } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
         int LicenseType { get; set; } //Change to enum
-        double MotorSize { get; set; }
+        abstract double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
         double KmPerLiter { get; set; }
         bool FuelType { get; set; } //Change to enum maybe
         int EnergyClass { get; set; } //Change to enum
@@ -73,7 +73,7 @@ namespace AuctionSystem
             double Depth;
         }
 
-        public Vehicle() : this(0){}
+        public Vehicle() : this(0){} // if not year supplied set to 0
 
         public Vehicle(int year) //Needs better constructor with more vars
         {

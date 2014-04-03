@@ -6,20 +6,38 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    class Seller : Buyer
+    abstract class Seller
     {
         int PostalCode;
 
-        public Seller() { this.Id = 1; }
-
-        public Seller(int id, decimal balance)
-        {
-            this.Id = id;
-            this.Balance = balance;
-        }
+        public Seller() { }
 
         public void Notified(){
             Console.WriteLine("Notified");
         }
     }
+
+    class PrivateSeller : PrivateBuyer, Seller
+    {
+        public PrivateSeller() { this.CPR = 0; }
+
+        public PrivateSeller(int id, decimal balance)
+        {
+            this.CPR = id;
+            this.Balance = balance;
+        }
+    }
+
+    class CompanySeller : CompanyBuyer, Seller
+    {
+        public CompanySeller() { this.CVR = 0; }
+
+        public CompanySeller(int id, decimal balance)
+        {
+            this.CVR = id;
+            this.Balance = balance;
+        }
+    }
+
+
 }

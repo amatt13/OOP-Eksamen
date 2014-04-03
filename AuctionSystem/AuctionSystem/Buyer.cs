@@ -6,16 +6,40 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    class Buyer
+    abstract class Buyer
     {
-        public int Id { get; set; }
         public decimal Balance {get; set;}
 
-        public Buyer() { this.Id = 1; }
+        public Buyer() : this(0) { }
 
-        public Buyer(int id, decimal balance)
+        public Buyer(decimal balance)
         {
-            this.Id = id;
+            this.Balance = balance;
+        }
+    }
+
+    class PrivateBuyer : Buyer
+    {
+        public int CPR { get; set; }
+
+        public PrivateBuyer() { this.CPR = 0; }
+
+        public PrivateBuyer(int id, decimal balance)
+        {
+            this.CPR = id;
+            this.Balance = balance;
+        }
+    }
+
+    class CompanyBuyer : Buyer
+    {
+        public int CVR { get; set; }
+
+        public CompanyBuyer() { this.CVR = 0; }
+
+        public CompanyBuyer(int id, decimal balance)
+        {
+            this.CVR = id;
             this.Balance = balance;
         }
     }
