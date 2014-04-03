@@ -10,6 +10,14 @@ namespace AuctionSystem
     {
         static void Main(string[] args)
         {
-        }
+            PersonalCar pCar = new PersonalCar();
+            Van van = new Van();
+            Autocamper aCam = new Autocamper();
+            Bus bus = new Bus();
+            Truck truck = new Truck();
+
+
+
+        }
     }
 }
