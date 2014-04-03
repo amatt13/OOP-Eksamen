@@ -9,7 +9,7 @@ namespace AuctionSystem
     class Autocamper : Vehicle
     {
         int NumOfSeats;
-        int NumOfSleepSeats;
+        int NumOfBeds;
         bool Toilet;
         int HeatSource; //Change to enum. Mulige værdier er: gas, strøm eller oliefyr.
         /*

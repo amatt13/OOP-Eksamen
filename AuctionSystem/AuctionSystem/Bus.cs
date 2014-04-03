@@ -9,7 +9,7 @@ namespace AuctionSystem
     class Bus : Vehicle
     {
         int NumOfSeats;
-        int NumOfSleepSeats;
+        int NumOfBeds;
         bool Toilet;
         Size SizeOfBus;
         int Weight;
