@@ -41,9 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Classer.cs" />
+    <Compile Include="Bus.cs" />
+    <Compile Include="Camper.cs" />
+    <Compile Include="Enums.cs" />
+    <Compile Include="PersonVehicle.cs" />
+    <Compile Include="PersonVehiclePrivate.cs" />
+    <Compile Include="PersonVehicleWork.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Truck.cs" />
+    <Compile Include="Vehicle.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

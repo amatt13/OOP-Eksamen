@@ -6,31 +6,6 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public enum LicenseType
-    {
-        A,
-        B,
-        C,
-        D,
-        BE,
-        CE,
-        DE
-    }
-
-    public enum Fuel
-    {
-        Diesel,
-        Gasoline
-    }
-
-    public enum EnergyClass
-    {
-        A,
-        B,
-        C,
-        D
-    }
-
     public class Vehicle
     {
         private string _name;
@@ -122,7 +97,8 @@ namespace OOP_Eksamen
             set { _kmL = value; }
         }
 
-        public Vehicle(){
+        public Vehicle()
+        {
 
         }
 
@@ -144,62 +120,4 @@ namespace OOP_Eksamen
         }
         */
     }
-
-    public class PersonVehicle : Vehicle
-    {
-        private int _seat;
-        private double[] _dimensions = new double[3]; // Højde, Lægnde, Bredde
-
-        public int Seat { get; set; }
-
-        public PersonVehicle(string Name, uint Km, int Year, double NewPrice, bool TowHook, double KmL)
-        {
-            this.Name = Name;
-            this.Km = Km;
-            _year = Year;
-            this.NewPrice = NewPrice;
-            this.TowHook = TowHook;
-            this.KmL = KmL;
-        }
-}
-
-    /*
-    public class PersonVehiclePrivate : PersonVehicle
-    {
-        bool IsofixMount { get; set; }
-    }
-
-    public class PersonVehicleWork : PersonVehicle
-    {
-        bool SafetyBar { get; set; }
-        int LoadCapacity { get; set; }
-    }
-
-    public class Truck : Vehicle
-    {
-        int LoadCapacity { get; set; }
-        double Height { get; set; }
-        double Length { get; set; }
-        int Weight { get; set; }
-
-    }
-
-    public class Bus : Vehicle
-    {
-        int Seat { get; set; }
-        int Beds { get; set; }
-        bool Toilet { get; set; }
-        double Height { get; set; }
-        double Length { get; set; }
-        int Weight { get; set; }
-    }
-
-    public class Camper : Vehicle
-    {
-        int Seat { get; set; }
-        int Beds { get; set; }
-        bool Toilet { get; set; }
-        enum Heat { Gas, Electricity, Oil }
-    }
-    */
 }

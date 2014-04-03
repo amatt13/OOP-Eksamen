@@ -23,7 +23,8 @@ namespace AuctionSystem
             beregnes. 
             o Eksempel: En benzin-drevet autocamper fra 2007 der kører 18.5 km/l (klasse A) vil med 
             oliefyr havne i klasse C (18.5 * 0.7 = 12.95), mens en strøm-udgave vil havne i klasse B 
-            (18.5 * 0.8 = 14.8)         */
+            (18.5 * 0.8 = 14.8) 
+        */
 
         public Autocamper()
         {
