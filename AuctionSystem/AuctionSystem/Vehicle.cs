@@ -8,9 +8,35 @@ namespace AuctionSystem
 {
     abstract class Vehicle
     {
-        string Name { get; set; } //Navn må ikke være null. Forsøg på at tildele en null værdi skal udløse en passende exception
-        int Km { get; set; } //Distance already driven. Km må ikke være et negativt tal. Forsøg på at tildele en negativ værdi skal udløse en passende exception. Registreringsnummer (nummerplade)
-        string RegNum { get; set; } //Registration number
+        string Name {
+            get { return this.Name; }
+            set {
+                if (value != null)
+                    this.Name = value;
+                else
+                    throw new ArgumentException("Name cannot be null");
+            } 
+        }
+        int Km{
+            get { return this.Km; }
+            set{
+                if (value >= 0)
+                    this.Km = value;
+                else
+                    throw new ArgumentException("Km cannot be negative");
+            }
+        }
+        string RegNum
+        {
+            get { return this.RegNum; }
+            set
+            {
+                if (value.Length==7 && value.Any(Char.IsLetter)) // EDIT Check only if string contains a letter
+                    this.RegNum = value;
+                else
+                    throw new ArgumentException("RegNum must be 7 char and the 2 first letters");
+            }
+        } //Registration number
         /*
          *   Et registreringsnummer skal bestå af to bogstaver (i denne opgave accepteres alle 
          *   bogstaver, ikke kun bogstaverne A-Z) efterfulgt af fem cifre. Forsøg på at tildele et 
@@ -19,8 +45,18 @@ namespace AuctionSystem
          * Når et registreringsnummer aflæses, skal de to første og de to sidste tegn skjules. 
          *   Registreringsnummer XY12345 skal derfor vises som **123**. 
          */
-        int Year { get; set; } //The year it was registred. Årgang skal være read-only, dvs. efter instantiering må værdien ikke kunne ændres. 
-        decimal NewPrice { get; set; } //NyPris må ikke være et negativt tal. Forsøg på at tildele en negativ værdi skal håndteres ved at NyPris tildeles værdien 0.
+
+        readonly int Year;
+        decimal NewPrice{
+            get { return this.NewPrice; }
+            set
+            {
+                if (value >= 0)
+                    this.NewPrice = value;
+                else
+                    this.NewPrice = 0;
+            }
+        }
         bool Hook { get; set; } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
         int LicenseType { get; set; } //Change to enum
         double MotorSize { get; set; }
@@ -35,6 +71,13 @@ namespace AuctionSystem
             double Height;
             double Width;
             double Depth;
+        }
+
+        public Vehicle() : this(0){}
+
+        public Vehicle(int year) //Needs better constructor with more vars
+        {
+            this.Year = year;
         }
 
         public override abstract string ToString(); // Subject to override
