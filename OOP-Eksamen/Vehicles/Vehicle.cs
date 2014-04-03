@@ -8,22 +8,9 @@ namespace OOP_Eksamen
 {
     public class Vehicle
     {
-        private string _name;
-        private uint _km;
-        private string _registration;
-        protected int _year;
-        private double _newPrice;
-        private bool _towHook;
-        protected LicenseType _licenseType;
-        protected double _engineSize;
-        private double _kmL;
-        private Fuel _fuel;
-        private EnergyClass _energyClass;
-
         public string Name
         {
-            get { return _name; }
-
+            get;
             set
             {
                 if (String.IsNullOrEmpty(value))
@@ -36,11 +23,9 @@ namespace OOP_Eksamen
                 }
             }
         }
-
         public uint Km
         {
-            get { return _km; }
-
+            get;
             set
             {
                 if (value < 0)
@@ -49,38 +34,41 @@ namespace OOP_Eksamen
                 }
                 else
                 {
-                    _km = value;
+                    this.Km = value;
                 }
             }
         }
-
         public string Registration
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
-
-        public int Year
+        protected int Year { get; }
+        private double NewPrice
         {
-            get { return _year; }
-        }
-
-        public double NewPrice
-        {
-            get { return _newPrice; }
+            get;
 
             set
             {
                 if (value < 0)
                 {
-                    _newPrice = 0;
+                    this.NewPrice = 0;
                 }
                 else
                 {
-                    _newPrice = value;
+                    this.NewPrice = value;
                 }
             }
         }
+        private bool
+
+        private bool _towHook;
+        protected LicenseType _licenseType;
+        protected double _engineSize;
+        private double _kmL;
+        private Fuel _fuel;
+        private EnergyClass _energyClass;
+
 
         public bool TowHook
         {
