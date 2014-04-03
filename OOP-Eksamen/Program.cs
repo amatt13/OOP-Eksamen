@@ -10,13 +10,10 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
-            Vehicle bla = new Vehicle();
-            bla.Name = "Test Bil";
-            bla.Km = 0;
+            PersonVehicle bla = new PersonVehicle("Test Bil", 0, 2004, 1500, true, 2);
             //bla.Registration = "AS1234";
-            bla.NewPrice = -1;
 
-            Console.WriteLine("Name: {0}, Kilometer: {1}, Price: {2}", bla.Name, bla.Km, bla.NewPrice);
+            Console.WriteLine("Name: {0}, Year: {1}, Kilometer: {2}, Price: {3}, Tow Hook: {4}, km/l: {5}", bla.Name, bla.Year, bla.Km, bla.NewPrice, bla.TowHook.ToString(), bla.KmL);
 
             Console.ReadLine();
         }
