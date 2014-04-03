@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    class Car : Vehicle
+    abstract class Car : Vehicle
     {
         int NumOfSeats; //
         Size TrunkSize;

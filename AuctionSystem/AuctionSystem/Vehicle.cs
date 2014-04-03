@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    class Vehicle
+    abstract class Vehicle
     {
         string Name { get; set; }; //Navn må ikke være null. Forsøg på at tildele en null værdi skal udløse en passende exception
         int Km; //Distance already driven. Km må ikke være et negativt tal. Forsøg på at tildele en negativ værdi skal udløse en passende exception. Registreringsnummer (nummerplade)
@@ -33,11 +33,6 @@ namespace AuctionSystem
             double Height;
             double Width;
             double Depth;
-        }
-
-        public Vehicle() // Constructor
-        {
-
         }
 
         public override string ToString() // Subject to override
