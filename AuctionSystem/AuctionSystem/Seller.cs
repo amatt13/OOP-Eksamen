@@ -17,7 +17,7 @@ namespace AuctionSystem
         }
     }
 
-    class PrivateSeller : PrivateBuyer, Seller
+    class PrivateSeller : PrivateBuyer, Seller // BUG No multiple base classes
     {
         public PrivateSeller() { this.CPR = 0; }
 
@@ -28,7 +28,7 @@ namespace AuctionSystem
         }
     }
 
-    class CompanySeller : CompanyBuyer, Seller
+    class CompanySeller : CompanyBuyer, Seller // BUG No multiple base classes
     {
         public CompanySeller() { this.CVR = 0; }
 
