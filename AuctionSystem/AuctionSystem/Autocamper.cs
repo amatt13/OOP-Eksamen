@@ -11,7 +11,7 @@ namespace AuctionSystem
         int NumOfSeats;
         int NumOfBeds;
         bool Toilet;
-        int HeatSource; //Change to enum. Mulige værdier er: gas, strøm eller oliefyr.
+        enum HeatSource { Gas, Electricity, Oil }
         /*
          * Energiklasse 
             o Autocamperens varmesystem spiller ind på hvilken energiklasse den bliver placeret i. 
@@ -23,9 +23,12 @@ namespace AuctionSystem
             beregnes. 
             o Eksempel: En benzin-drevet autocamper fra 2007 der kører 18.5 km/l (klasse A) vil med 
             oliefyr havne i klasse C (18.5 * 0.7 = 12.95), mens en strøm-udgave vil havne i klasse B 
-            (18.5 * 0.8 = 14.8) 
-           Kørekorttype 
-            o Er altid B.         */
+            (18.5 * 0.8 = 14.8)         */
+
+        public Autocamper()
+        {
+            this.LicenseType = B; //Always B
+        }
 
         public override string ToString()
         {

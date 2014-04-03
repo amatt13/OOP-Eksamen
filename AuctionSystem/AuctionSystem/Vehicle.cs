@@ -58,11 +58,11 @@ namespace AuctionSystem
             }
         }
         bool Hook { get; set; } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
-        int LicenseType { get; set; } //Change to enum
-        abstract double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
+        public enum LicenseType {A,B,BE,C,CE,D,DE}
+        double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
         double KmPerLiter { get; set; }
-        bool FuelType { get; set; } //Change to enum maybe
-        int EnergyClass { get; set; } //Change to enum
+        enum FuelType { Diesel, Gasoline }
+        enum EnergyClass { A, B, C, D }
         int AuctionNumber { get; set; }
         decimal MinPrice { get; set; }
 
