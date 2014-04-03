@@ -10,10 +10,14 @@ namespace AuctionSystem
     {
         List<Vehicle> ForSale = new List<Vehicle>();
         List<Vehicle> Sold = new List<Vehicle>();
+        List<Buyer> Buyers = new List<Buyer>();
+        List<Seller> Sellers = new List<Seller>();
+
+        public delegate void Notify();
         
-        
-        
-        public int Sell(Vehicle k, Seller s, decimal minPrice);
-        public int Sell(Vehicle k, Seller s, decimal minPrice, NotificationMethod); //Delegate        public bool RecieveOffer(Buyer b, int auktionsNummer, decimal offer);        public bool AcceptOffer(Seller s, int auktionsNummer);
+        public int Sell(Vehicle k, Seller s, decimal minPrice){            return Sell(k, s, minPrice, null);        }        public int Sell(Vehicle k, Seller s, decimal minPrice, Delegate Notify){            return 0;        }        public bool RecieveOffer(Buyer b, int aucNum, decimal offer){            return true;
+        }        public bool AcceptOffer(Seller s, int aucNum){
+            return true;
+        }
     }
 }

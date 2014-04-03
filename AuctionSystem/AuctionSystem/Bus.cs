@@ -14,5 +14,10 @@ namespace AuctionSystem
         Size SizeOfBus;
         int Weight;
         //LicenseType to D or DE
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

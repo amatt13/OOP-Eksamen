@@ -19,7 +19,7 @@ namespace AuctionSystem
          * Når et registreringsnummer aflæses, skal de to første og de to sidste tegn skjules. 
          *   Registreringsnummer XY12345 skal derfor vises som **123**. 
          */
-        readonly int Year { get; set; } //The year it was registred. Årgang skal være read-only, dvs. efter instantiering må værdien ikke kunne ændres. 
+        int Year { get; set; } //The year it was registred. Årgang skal være read-only, dvs. efter instantiering må værdien ikke kunne ændres. 
         decimal NewPrice { get; set; } //NyPris må ikke være et negativt tal. Forsøg på at tildele en negativ værdi skal håndteres ved at NyPris tildeles værdien 0.
         bool Hook { get; set; } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
         int LicenseType { get; set; } //Change to enum

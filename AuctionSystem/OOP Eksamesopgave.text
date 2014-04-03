@@ -16,7 +16,8 @@ Beskrivelse af programmet:
 
     Antagelser:
 
-        AktionsNummer og Minimums pris tilæggelse direkte på opret
+        AktionsNummer og Minimums pris tilæggelse direkte på det oprettet
+        køretøj.
 
     Begrænsninger:
 
@@ -26,6 +27,8 @@ Beskrivelse af programmet:
 
         Autocamper kunne godt nedarve fra Bus men det ville medfører unødvendig
         propeties.
+
+        Sell funktionen kald Sell funktion med null delegate
 
 Kilder:
 

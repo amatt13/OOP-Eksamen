@@ -25,6 +25,11 @@ namespace AuctionSystem
             oliefyr havne i klasse C (18.5 * 0.7 = 12.95), mens en strøm-udgave vil havne i klasse B 
             (18.5 * 0.8 = 14.8) 
            Kørekorttype 
-            o Er altid B.         */ 
+            o Er altid B.         */
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

@@ -8,5 +8,6 @@ namespace AuctionSystem
 {
     class Buyer
     {
+        decimal Balance;
     }
 }

@@ -6,7 +6,12 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    class Seller
+    class Seller : Buyer
     {
+        int PostalCode;
+
+        public void Notified(){
+            Console.WriteLine("Notified");
+        }
     }
 }

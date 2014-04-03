@@ -12,5 +12,10 @@ namespace AuctionSystem
         Size SizeOfTruck;
         double Weight;
         //LicenseType to C or CE
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

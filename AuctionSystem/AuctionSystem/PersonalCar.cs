@@ -9,5 +9,10 @@ namespace AuctionSystem
     class PersonalCar : Car
     {
         bool IsoFix; //Isofix beslag giver en forbedret forankring af autostole ift. selemontering.
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }
