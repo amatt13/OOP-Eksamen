@@ -8,30 +8,23 @@ namespace OOP_Eksamen
 {
     public class PersonVehiclePrivate : PersonVehicle
     {
-        private bool _isofixMount;
+        public bool IsofixMount
+        {
+            get
+            {
+                return this.IsofixMount;
+            }
 
+            set
+            {
+                this.IsofixMount = value;
+            }
+        }
         public LicenseType LicenseType
         {
-            get { return _licenseType; }
+            get { return LicenseType.B; }
         }
 
-        public PersonVehiclePrivate()
-        {
-            _licenseType = LicenseType.B;
-        }
-
-        public PersonVehiclePrivate(string Name, uint Km, int Year, double NewPrice, bool TowHook, double KmL, int Seat, double[] Dimensions, bool IsofixMount)
-        {
-            this.Name = Name;
-            this.Km = Km;
-            _year = Year;
-            this.NewPrice = NewPrice;
-            this.TowHook = TowHook;
-            this.KmL = KmL;
-            this.Seat = Seat;
-            this._dimensions = Dimensions;
-            _licenseType = LicenseType.B;
-            this._isofixMount = IsofixMount;
-        }
+        public PersonVehiclePrivate(){}
     }
 }

@@ -8,9 +8,24 @@ namespace OOP_Eksamen
 {
     public class Vehicle
     {
+        private string _name;
+        private uint _km;
+        private string _registration;
+        protected int _year;
+        private double _newPrice;
+        private bool _towHook;
+        protected LicenseType _licenseType;
+        protected double _engineSize;
+        private double _kmL;
+        private Fuel _fuel;
+        private EnergyClass _energyClass;
+
         public string Name
         {
-            get;
+            get
+            {
+                return _name;
+            }
             set
             {
                 if (String.IsNullOrEmpty(value))
@@ -23,9 +38,13 @@ namespace OOP_Eksamen
                 }
             }
         }
+
         public uint Km
         {
-            get;
+            get
+            {
+                return _km;
+            }
             set
             {
                 if (value < 0)
@@ -34,45 +53,48 @@ namespace OOP_Eksamen
                 }
                 else
                 {
-                    this.Km = value;
+                    _km = value;
                 }
             }
         }
+
         public string Registration
         {
             get { throw new NotImplementedException(); }
             set { throw new NotImplementedException(); }
         }
-        protected int Year { get; }
-        private double NewPrice
+
+        public int Year
         {
-            get;
+            get { return _year; }
+        }
+
+        public double NewPrice
+        {
+            get
+            {
+                return _newPrice;
+            }
 
             set
             {
                 if (value < 0)
                 {
-                    this.NewPrice = 0;
+                    _newPrice = 0;
                 }
                 else
                 {
-                    this.NewPrice = value;
+                    _newPrice = value;
                 }
             }
         }
-        private bool
 
-        private bool _towHook;
-        protected LicenseType _licenseType;
-        protected double _engineSize;
-        private double _kmL;
-        private Fuel _fuel;
-        private EnergyClass _energyClass;
+        public bool TowHook {
+            get
+            {
+                return _towHook;
+            }
 
-
-        public bool TowHook
-        {
-            get { return _towHook; }
             set
             {
                 _towHook = value;
@@ -81,31 +103,37 @@ namespace OOP_Eksamen
 
         public double KmL
         {
-            get { return _kmL; }
-            set { _kmL = value; }
+            get
+            {
+                return _kmL;
+            }
+
+            set
+            {
+                _kmL = value;
+            }
         }
 
-        public Vehicle()
+        public double EngineSize
         {
+            get
+            {
+                return _energyClass;
+            }
 
+            set
+            {
+                _energyClass = value;
+            }
         }
 
-        public Vehicle(string Name, uint Km, int Year, double NewPrice, bool TowHook, double KmL)
-        {
-            this.Name = Name;
-            this.Km = Km;
-            //this.Registration
-            _year = Year;
-            this.NewPrice = NewPrice;
-            this.TowHook = TowHook;
-            this.KmL = KmL;
-        }
 
-        /*
+        public Vehicle(){}
+
         public override string ToString()
         {
-            return String.Format("{0} - {1}", this.ID, this.Title);
+            throw new NotImplementedException();
+            //return ;
         }
-        */
     }
 }
