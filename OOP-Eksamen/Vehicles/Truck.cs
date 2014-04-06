@@ -6,12 +6,17 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class Truck : Vehicle
+    class Truck : Vehicle
     {
         int LoadCapacity { get; set; }
         double Height { get; set; }
         double Length { get; set; }
         int Weight { get; set; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
 
     }
 }

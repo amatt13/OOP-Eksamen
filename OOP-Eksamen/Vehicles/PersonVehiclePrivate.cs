@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class PersonVehiclePrivate : PersonVehicle
+    class PersonVehiclePrivate : PersonVehicle
     {
         public bool IsofixMount
         {
@@ -23,6 +23,11 @@ namespace OOP_Eksamen
         public LicenseType LicenseType
         {
             get { return LicenseType.B; }
+        }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
         }
 
         public PersonVehiclePrivate(){}

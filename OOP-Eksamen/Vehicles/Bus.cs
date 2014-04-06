@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class Bus : Vehicle
+    class Bus : Vehicle
     {
         int Seat { get; set; }
         int Beds { get; set; }
@@ -14,5 +14,10 @@ namespace OOP_Eksamen
         double Height { get; set; }
         double Length { get; set; }
         int Weight { get; set; }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

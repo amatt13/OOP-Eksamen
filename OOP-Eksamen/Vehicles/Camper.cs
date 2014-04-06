@@ -6,11 +6,16 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class Camper : Vehicle
+    class Camper : Vehicle
     {
         int Seat { get; set; }
         int Beds { get; set; }
         bool Toilet { get; set; }
         enum Heat { Gas, Electricity, Oil }
+
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+        }
     }
 }

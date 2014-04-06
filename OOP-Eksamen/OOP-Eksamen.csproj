@@ -41,7 +41,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bus.cs" />
+    <Compile Include="CalculateFees.cs" />
+    <Compile Include="Persons\AuctionsHouse.cs" />
+    <Compile Include="Persons\Buyer.cs" />
+    <Compile Include="Persons\Salesman.cs" />
+    <Compile Include="Vehicles\Bus.cs" />
     <Compile Include="Vehicles\Camper.cs" />
     <Compile Include="Enums.cs" />
     <Compile Include="Vehicles\PersonVehicle.cs" />

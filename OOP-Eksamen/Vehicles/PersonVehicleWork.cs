@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class PersonVehicleWork : PersonVehicle
+    class PersonVehicleWork : PersonVehicle
     {
         bool SafetyBar { get; set; }
         int LoadCapacity { get; set; }
+
+        public PersonVehicleWork() { }
     }
 }

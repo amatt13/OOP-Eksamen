@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    public class Vehicle
+    abstract class Vehicle
     {
         private string _name;
         private uint _km;
@@ -118,22 +118,18 @@ namespace OOP_Eksamen
         {
             get
             {
-                return _energyClass;
+                return _engineSize;
             }
 
             set
             {
-                _energyClass = value;
+                _engineSize = value;
             }
         }
 
 
         public Vehicle(){}
 
-        public override string ToString()
-        {
-            throw new NotImplementedException();
-            //return ;
-        }
+        public override abstract string ToString();
     }
 }

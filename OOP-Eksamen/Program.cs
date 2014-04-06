@@ -10,11 +10,27 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
-            PersonVehiclePrivate bla = new PersonVehiclePrivate();
+            AuctionsHouse AuctionsHouse = new AuctionsHouse();
 
-            Console.WriteLine("Name: {0}, Kilometer: {2}, Price: {3}, Tow Hook: {4}, km/l: {5}, TEST: {6}", bla.Name, bla.Km, bla.NewPrice, bla.TowHook.ToString(), bla.KmL, bla.LicenseType.ToString());
+            PersonVehiclePrivate PrivatCar = new PersonVehiclePrivate();
+            PersonVehicleWork WorkCar = new PersonVehicleWork();
+            Truck Truck = new Truck();
+            Bus Bus = new Bus();
+            Camper Camper = new Camper();
 
-            Console.ReadLine();
+            Buyer Buyer1 = new Buyer(15000);
+            Buyer Buyer2 = new Buyer(30000);
+            Salesman Salesman1 = new Salesman(false);
+            Salesman Salesman2 = new Salesman(true);
+
+            Salesman1.ReceiveBidNotification();
+            Salesman2.ReceiveBidNotification();
+
+            CalculateFees CalculateFees = new CalculateFees();
+
+            Console.WriteLine("{0}", CalculateFees.Fees(599870));
+
+            Console.ReadKey();
         }
     }
 }
