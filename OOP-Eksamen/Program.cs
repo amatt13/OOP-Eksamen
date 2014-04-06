@@ -4,10 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using System.Text.RegularExpressions; //REGEX
+
 namespace OOP_Eksamen
 {
     class Program
     {
+        public static bool getMatches(string strInput)
+        {
+            Regex regex = new Regex(@"([a-zA-Z]{2}\d{5})$"); // <- Det er regex og betyder [a-zA-Z]{2} <- 2 tegn der skal være mellem a-z og kan både være stor og lille bogstav, efterfulgt af 5 tal
+            return (regex.Matches(strInput).Count != 0); // <- hvis der er 0 resultater er den false
+        }
+
         static void Main(string[] args)
         {
             AuctionsHouse AuctionsHouse = new AuctionsHouse();
@@ -29,6 +37,13 @@ namespace OOP_Eksamen
             CalculateFees CalculateFees = new CalculateFees();
 
             Console.WriteLine("{0}", CalculateFees.Fees(599870));
+
+            var Plate = "AB12345";
+            var PlateCheck = getMatches(Plate);
+
+            Console.WriteLine("Does it match?: {0}", PlateCheck.ToString());
+
+
 
             Console.ReadKey();
         }
