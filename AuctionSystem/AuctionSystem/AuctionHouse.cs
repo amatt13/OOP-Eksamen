@@ -8,9 +8,9 @@ namespace AuctionSystem
 {
     class AuctionHouse
     {
-        List<Vehicle> ForSale = new List<Vehicle>();
-        List<Vehicle> Sold = new List<Vehicle>();
-        List<Buyer> Buyers = new List<Buyer>();
+        public List<Vehicle> ForSale = new List<Vehicle>();
+        public List<Vehicle> Sold = new List<Vehicle>();
+        public List<Buyer> Buyers = new List<Buyer>();
         public List<Seller> Sellers = new List<Seller>();
 
         public delegate void Notify();

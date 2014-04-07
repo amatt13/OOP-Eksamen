@@ -46,7 +46,7 @@ namespace AuctionSystem
          *   Registreringsnummer XY12345 skal derfor vises som **123**. 
          */
 
-        readonly int Year;
+        public readonly int Year;
         decimal NewPrice{
             get { return this.NewPrice; }
             set
@@ -59,11 +59,12 @@ namespace AuctionSystem
         }
         bool Hook { get; set; } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
         public enum LicenseType {A,B,BE,C,CE,D,DE}
+        public LicenseType License;
         double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
         double KmPerLiter { get; set; }
         enum FuelType { Diesel, Gasoline }
         enum EnergyClass { A, B, C, D }
-        int AuctionNumber { get; set; }
+        public int AuctionNumber { get; set; }
         decimal MinPrice { get; set; }
 
         public struct Size //To describe Size of Trunk and Truck

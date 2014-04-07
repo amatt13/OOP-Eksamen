@@ -13,7 +13,7 @@ namespace AuctionSystem
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "Van - from: " + this.Year + " - AuctionNum " + this.AuctionNumber;
         }
     }
 }

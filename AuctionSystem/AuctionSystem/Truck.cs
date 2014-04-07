@@ -15,7 +15,7 @@ namespace AuctionSystem
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "Truck - from: " + this.Year + " - AuctionNum " + this.AuctionNumber;
         }
     }
 }

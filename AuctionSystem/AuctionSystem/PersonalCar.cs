@@ -12,7 +12,7 @@ namespace AuctionSystem
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "PersonalCar - from: " + this.Year + " - AuctionNum " + this.AuctionNumber;
         }
     }
 }

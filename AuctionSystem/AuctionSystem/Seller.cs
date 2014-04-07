@@ -6,9 +6,11 @@ using System.Threading.Tasks;
 
 namespace AuctionSystem
 {
-    abstract class Seller
+    abstract class Seller : Buyer
     {
         int PostalCode;
+
+        public List<Vehicle> Vehicles = new List<Vehicle>();
 
         public Seller() { }
 
@@ -17,8 +19,10 @@ namespace AuctionSystem
         }
     }
 
-    class PrivateSeller : PrivateBuyer, Seller // BUG No multiple base classes
+    class PrivateSeller : Seller // BUG No multiple base classes
     {
+        public int CPR { get; set; }
+
         public PrivateSeller() { this.CPR = 0; }
 
         public PrivateSeller(int id, decimal balance)
@@ -28,8 +32,10 @@ namespace AuctionSystem
         }
     }
 
-    class CompanySeller : CompanyBuyer, Seller // BUG No multiple base classes
+    class CompanySeller : Seller // BUG No multiple base classes
     {
+        public int CVR { get; set; }
+
         public CompanySeller() { this.CVR = 0; }
 
         public CompanySeller(int id, decimal balance)

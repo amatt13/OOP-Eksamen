@@ -26,14 +26,13 @@ namespace AuctionSystem
             (18.5 * 0.8 = 14.8) 
         */
 
-        public Autocamper()
-        {
-            this.LicenseType = B; //Always B
+        public Autocamper(){
+            this.License = Vehicle.LicenseType.B; //Always B
         }
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "Autocamper - from: " + this.Year + " - AuctionNum " + this.AuctionNumber ;
         }
     }
 }
