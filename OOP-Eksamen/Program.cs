@@ -10,6 +10,7 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
+            Console.ReadKey();
         }
     }
 }
