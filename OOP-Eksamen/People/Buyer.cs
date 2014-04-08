@@ -24,13 +24,10 @@ namespace OOP_Eksamen
         public Buyer(decimal Balance, decimal Credit)
         {
             _balance = Balance;
-            _credit = Credit;
+            _credits = Credit;
         }
 
-        public abstract bool RemoveBalance()
-        {
-            return true;
-        }
+        public abstract bool RemoveBalance();
     }
 
     class Business : Buyer
@@ -41,7 +38,7 @@ namespace OOP_Eksamen
         {
             get
             {
-                return _cVR;
+                return _cvr;
             }
 
             set
@@ -52,7 +49,7 @@ namespace OOP_Eksamen
 
         public bool RemoveBalance(decimal Price)
         {
-            if (Price > (_balance + _credit))
+            if (Price > (_balance + _credits))
             {
                 return true;
             }
