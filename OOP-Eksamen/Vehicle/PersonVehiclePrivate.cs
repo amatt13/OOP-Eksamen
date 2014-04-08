@@ -6,10 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    class Program
+    class PersonVehiclePrivate
     {
-        static void Main(string[] args)
-        {
-        }
     }
 }

@@ -28,7 +28,7 @@ namespace OOP_Eksamen
             double Depth;
         }
 
-        public PersonVehicle() { }
+        public PersonVehicle() {}
 
         public override string ToString()
         {
