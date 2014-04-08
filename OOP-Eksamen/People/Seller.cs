@@ -8,9 +8,9 @@ namespace OOP_Eksamen
 {
     class Seller
     {
-        private decimal _balance;
-        private int _zipCode;
-        private bool _notification;
+        protected decimal _balance;
+        protected int _zipCode;
+        protected bool _notification;
 
         public decimal Balance
         {
@@ -43,6 +43,66 @@ namespace OOP_Eksamen
             Console.WriteLine("OMG I GOT BID, SUCH PRICE!!!");
             return true;
         }
-
     }
+
+    class BusinessSeller : Seller
+    {
+        private int _cvr;
+
+        public int CVR
+        {
+            get
+            {
+                return _cvr;
+            }
+
+            set
+            {
+                _cvr = value;
+            }
+        }
+
+        public void AddBalance(decimal Price)
+        {
+            _balance += Price;
+        }
+
+        public BusinessSeller(int CVR, bool Notification)
+        {
+            _balance = 0;
+            _cvr = CVR;
+            _notification = Notification;
+        }
+    }
+
+    class PrivateSeller : Seller
+    {
+        private int _cpr;
+
+        public int CPR
+        {
+            get
+            {
+                return _cpr;
+            }
+
+            set
+            {
+                _cpr = value;
+            }
+        }
+
+        public void AddBalance(decimal Price)
+        {
+            _balance += Price;
+        }
+
+        public PrivateSeller(int CPR, bool Notification)
+        {
+            _balance = 0;
+            _cpr = CPR;
+            _notification = Notification;
+        }
+    }
+
 }
