@@ -14,11 +14,14 @@ namespace OOP_Eksamen
         protected int _year;
         private double _newPrice;
         private bool _towHook;
+		public enum LicenseType {A,B,BE,C,CE,D,DE}
         protected LicenseType _licenseType;
         protected double _engineSize;
         private double _kmL;
+		enum Fuel { Diesel, Gasoline }
         private Fuel _fuel;
-        private EnergyClass _energyClass;
+		enum EnergyClass { A, B, C, D }
+		private EnergyClass _energyClass;
 
         public string Name
         {
