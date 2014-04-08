@@ -19,21 +19,9 @@ namespace OOP_Eksamen
                 return _balance;
             }
         }
-
-        //The constructor is the place where the account balance is set.
-        public Buyer(decimal Balance, decimal Credit)
-        {
-            _balance = Balance;
-            _credit = Credit;
-        }
-
-        public abstract bool RemoveBalance()
-        {
-            return true;
-        }
     }
 
-    class Business : Buyer
+    class BusinessBuyer : Buyer
     {
         private int _cvr;
 
@@ -41,7 +29,7 @@ namespace OOP_Eksamen
         {
             get
             {
-                return _cVR;
+                return _cvr;
             }
 
             set
@@ -52,7 +40,7 @@ namespace OOP_Eksamen
 
         public bool RemoveBalance(decimal Price)
         {
-            if (Price > (_balance + _credit))
+            if (Price > (_balance + _credits))
             {
                 return true;
             }
@@ -60,6 +48,50 @@ namespace OOP_Eksamen
             {
                 return false;
             }
+        }
+
+        public BusinessBuyer(decimal Balance, decimal Credit, int CVR)
+        {
+            _balance = Balance;
+            _credits = Credit;
+            _cvr = CVR;
+        }
+    }
+
+    class PrivateBuyer : Buyer
+    {
+        private int _cpr;
+
+        public int CPR
+        {
+            get
+            {
+                return _cpr;
+            }
+
+            set
+            {
+                _cpr = value;
+            }
+        }
+
+        public bool RemoveBalance(decimal Price)
+        {
+            if (Price > _balance)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
+        public PrivateBuyer(decimal Balance, decimal Credit, int CPR)
+        {
+            _balance = Balance;
+            _credits = 0;
+            _cpr = CPR;
         }
     }
 }
