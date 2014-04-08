@@ -67,10 +67,11 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public BusinessSeller(decimal Balance, int CVR)
+        public BusinessSeller(int CVR, bool Notification)
         {
-            _balance = Balance;
+            _balance = 0;
             _cvr = CVR;
+            _notification = Notification;
         }
     }
 
@@ -96,10 +97,11 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public PrivateSeller(decimal Balance, int CPR)
+        public PrivateSeller(int CPR, bool Notification)
         {
-            _balance = Balance;
+            _balance = 0;
             _cpr = CPR;
+            _notification = Notification;
         }
     }
 

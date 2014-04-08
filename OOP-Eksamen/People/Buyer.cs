@@ -19,9 +19,6 @@ namespace OOP_Eksamen
                 return _balance;
             }
         }
-
-        //The constructor is the place where the account balance is set.
-        public Buyer() { }
     }
 
     class BusinessBuyer : Buyer
