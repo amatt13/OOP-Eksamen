@@ -9,7 +9,7 @@ namespace OOP_Eksamen
     class Buyer
     {
         protected decimal _balance;
-        protected decimal _credit;
+        protected decimal _credits;
 
         //The Balance has been made read-only
         public decimal Balance
