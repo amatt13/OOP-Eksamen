@@ -49,7 +49,14 @@ namespace OOP_Eksamen
                 _toilet = value;
             }
         }
-        private Size SizeOfBus { get; set; }//Så snart jeg kan merge går jeg i gang -Anders
+        private Size SizeOfBus {
+            get {
+                return _sizeOfBus;
+            }
+            set {
+                _sizeOfBus
+            }
+        }
         private uint Weight {
             get {
                 return _weight;
