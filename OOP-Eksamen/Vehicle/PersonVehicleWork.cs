@@ -6,17 +6,23 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-	class PersonVehiclePrivate : PersonVehicle 
+	class PersonVehicleWork : PersonVehicle 
 	{
 
 		bool Safetybrace{ get; set; }
 
-		public LicenseType Freightcapacity{
+		public int Freightcapacity{
 			get{ return this.Freightcapacity;}
-			set{ if (value > 750)
-					return Freightcapacity.BE;
-				else
-				return Freightcapacity.B;
+            set
+            {
+                if (value > 750)
+                {
+                    return (int)LicenseType.BE;
+                }
+                else
+                {
+                    return (int)LicenseType.B;
+                }
 				}
 		}
 
@@ -25,6 +31,6 @@ namespace OOP_Eksamen
 			throw new NotSupportedException ();
 		}
 
-		public PersonVehiclePrivate(){}
+        public PersonVehicleWork() { }
 	}
 }
