@@ -11,8 +11,10 @@ namespace OOP_Eksamen
         private uint _seat;
         private uint _beds;
         private bool _toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
+        private bool _hook;
         private Size _sizeOfBus;
         private uint _weight;
+        private LicenseType _licence;
 
         private uint Seat {
             get{
@@ -41,6 +43,7 @@ namespace OOP_Eksamen
                 }
             }
         }
+
        /* private bool Toilet {
             get {
                 return _toilet;
@@ -49,6 +52,7 @@ namespace OOP_Eksamen
                 _toilet = value;
             }
         }*/
+
         private Size SizeOfBus {
             get {
                 return _sizeOfBus;
@@ -58,12 +62,13 @@ namespace OOP_Eksamen
                     _sizeOfBus = value;
                 }
                 else {
-                    throw new ArgumentException("One of these following values were below zero","");
+                    throw new ArgumentException("One or more of these following values were below zero: Depth, Height and/or Width","SizeToLow");
                 }
                 
                 
             }
         }
+
         private uint Weight {
             get {
                 return _weight;
@@ -77,9 +82,37 @@ namespace OOP_Eksamen
                 }
             }
         }
-        public override string ToString()
-        {
-            throw new NotImplementedException();
+
+        private LicenseType Licence {
+            get {
+                return _licence;
+            }
+            set {
+                //Er som udgangspunkt D. Hvis bussen har trækkrog kræver det imidlertid et DE kørekort
+                if (_hook == true) {
+                    value = LicenseType.DE;
+                }
+                else {
+                    value = LicenseType.D;
+                }
+
+            }
+        }
+
+        public override string ToString() {
+            
+            string returnString;
+            string Sseat = Seat.ToString();
+            string Sbeds = Beds.ToString();
+            string Stoilet = _toilet.ToString();
+            string SsizeOfBusHeight = SizeOfBus.Height.ToString();
+            string SsizeOfBusDepth = SizeOfBus.Depth.ToString();
+            string SsizeOfBusWidth = SizeOfBus.Width.ToString();
+            string Sweight = Weight.ToString();
+
+            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet. The dimentions is " + SsizeOfBusHeight + " height, " + SsizeOfBusDepth + " depth and " + SsizeOfBusWidth + " width. The weight is " + Sweight;
+            
+            return returnString;
         }
     }
 }
