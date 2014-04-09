@@ -6,7 +6,20 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    class PersonVehicleWork
-    {
-    }
+	class PersonVehiclePrivate : PersonVehicle //Der er noget galt med nedarvning her 
+	{
+		bool IsoFixMount{ get; set; }
+
+		public LicenceType LicenseType
+		{
+			get { return LicenseType.B;}
+		}
+
+		public override string ToString()
+		{
+			throw new NotSupportedException ();
+		}
+
+		public PersonVehiclePrivate(){}
+	}
 }
