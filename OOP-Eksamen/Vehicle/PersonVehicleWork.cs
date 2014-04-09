@@ -6,13 +6,18 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-	class PersonVehiclePrivate : PersonVehicle //Der er noget galt med nedarvning her 
+	class PersonVehiclePrivate : PersonVehicle 
 	{
-		bool IsoFixMount{ get; set; }
 
-		public LicenceType LicenseType
-		{
-			get { return LicenseType.B;}
+		bool Safetybrace{ get; set; }
+
+		public LicenseType Freightcapacity{
+			get{ return this.Freightcapacity;}
+			set{ if (value > 750)
+					return Freightcapacity.BE;
+				else
+				return Freightcapacity.B;
+				}
 		}
 
 		public override string ToString()
