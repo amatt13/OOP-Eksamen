@@ -24,9 +24,9 @@ namespace OOP_Eksamen
         public enum LicenseType { A, B, BE, C, CE, D, DE }
         public LicenseType _licenseType; // Defined by vehicle subclass
         public struct Size {//To describe Size of Trunk and Truck
-            double Height;
-            double Width;
-            double Depth;
+            public double Height;
+            public double Width;
+            public double Depth;
         }
 
         public int AuctionNumber { get; set; }

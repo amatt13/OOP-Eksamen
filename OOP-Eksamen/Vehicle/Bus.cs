@@ -10,7 +10,7 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
-        private bool _toilet;
+        private bool _toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
         private Size _sizeOfBus;
         private uint _weight;
 
@@ -41,20 +41,27 @@ namespace OOP_Eksamen
                 }
             }
         }
-        private bool Toilet {
+       /* private bool Toilet {
             get {
                 return _toilet;
-            }//Er det her nødvendigt? -Anders
+            }
             set {
                 _toilet = value;
             }
-        }
+        }*/
         private Size SizeOfBus {
             get {
                 return _sizeOfBus;
             }
             set {
-                _sizeOfBus
+                if(_sizeOfBus.Depth > 0 || _sizeOfBus.Height > 0 || _sizeOfBus.Width > 0){
+                    _sizeOfBus = value;
+                }
+                else {
+                    throw new ArgumentException("One of these following values were below zero","");
+                }
+                
+                
             }
         }
         private uint Weight {
