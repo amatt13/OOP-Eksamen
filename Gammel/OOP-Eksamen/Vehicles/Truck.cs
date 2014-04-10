@@ -12,6 +12,7 @@ namespace OOP_Eksamen
         double Height { get; set; }
         double Length { get; set; }
         int Weight { get; set; }
+		//kørekort mangler stadig
 
         public override string ToString()
         {
