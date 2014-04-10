@@ -10,12 +10,13 @@ namespace OOP_Eksamen
 	abstract class Vehicle
     {
 		private string _name;
-		private uint _km;
+		private double _km;
 		private string _registration;
-		protected readonly int _year;
+		protected int _year;
 		private decimal _newPrice;
 		private bool _towHook;
 		protected double _engineSize;
+        protected abstract double EngineSize;// getters and setters needs to be implemented in subclasses
 		private double _kmPerLiter;
         enum FuelType { Diesel, Gasoline }
 		private FuelType _fuelType;
@@ -42,7 +43,7 @@ namespace OOP_Eksamen
 			}
 		}
 
-		public uint Km{
+		public double Km{
 			get { return _km; }
 			set {
 				if (value >= 0)
@@ -68,6 +69,16 @@ namespace OOP_Eksamen
 					throw new ArgumentException("RegNum must be 7 char and the 2 first letters");
 			}
 		}
+
+        protected readonly int Year{
+            get { return _year; }
+            set { 
+                if(value >= 0)
+                    _year = value;
+                else
+					throw new ArgumentException ("Year must be above 0");
+            }
+        }
 
 		decimal NewPrice{
 			get { return _newPrice; }
@@ -148,12 +159,27 @@ namespace OOP_Eksamen
             return energyClass;
         }
 
-		public Vehicle() : this(0){} // if not year supplied set to 0
+		//public Vehicle() : this(0){} // if not year supplied set to 0
 
-		public Vehicle(int year) //Needs better constructor with more vars
-		{
-			_year = year;
-		}
+        /*public Vehicle(string name, double km, string reg, int year){
+            Name = name;
+            Km = km;
+            Registration = reg;
+            Year = year;
+        }*/
+
+        public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, LicenseType licenseType, decimal minPrice){
+            Name = name;
+            Km = km;
+            Registration = reg;
+            Year = year;
+            NewPrice = newPrice;
+            TowHook = towHook;
+            KmPerLiter = kmPerLiter;
+            Fuel = fuelType;
+            License = licenseType;
+            MinPrice = minPrice;
+        }
 
 		public override abstract string ToString(); // Subject to override
 	}

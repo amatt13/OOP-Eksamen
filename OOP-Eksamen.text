@@ -1,0 +1,45 @@
+Mini-gruppe:
+============
+
+    A418b
+
+Gruppemedlemmer og underskrifter:
+=================================
+
+    Kasper Østergaard Helsted
+
+    Josias Overgaard Laugesen
+
+    Anders Lykke Matthiassen
+
+    Christian Heider Nielsen
+
+Beskrivelse af programmet:
+==========================
+
+Antagelser:
+-----------
+
+        AktionsNummer og Minimums pris tilæggelse direkte på det oprettet
+        køretøj.
+
+Begrænsninger:
+--------------
+
+Udvidelser:
+-----------
+
+Variationer:
+------------
+
+        Autocamper kunne godt nedarve fra Bus men det ville medfører unødvendig
+        propeties.
+
+        Sell funktionen kald Sell funktion med null delegate
+
+Kilder:
+=======
+
+        
+
+    
