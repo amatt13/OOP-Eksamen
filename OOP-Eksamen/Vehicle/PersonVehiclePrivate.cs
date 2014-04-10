@@ -6,18 +6,26 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    class PersonVehiclePrivate : Vehicle
+    class PersonVehiclePrivate : PersonVehicle
     {
 		bool IsoFixMount{ get; set; }
 
-		public LicenseType LicenseType
+        
+
+		public LicenseType License
 		{
 			get { return LicenseType.B;}
 		}
 
 		public override string ToString()
 		{
-			throw new NotSupportedException ();
+            string returnString;
+            string SisoFixMount = IsoFixMount.ToString();
+            string SlicenseType = License.ToString();
+
+            returnString = "This private car needs the licensetype " + SlicenseType + " and it is " + SisoFixMount + " that it has ISOFIX mountings.";
+            
+            return returnString;
 		}
     }
 }
