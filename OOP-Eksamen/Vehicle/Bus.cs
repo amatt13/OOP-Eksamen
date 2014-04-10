@@ -10,9 +10,11 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
-        private bool _toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
+        private bool Toilet { get; set; }
+        private bool Hook { get; set; }
         private Size _sizeOfBus;
-        private uint _weight;
+        private double _weight;
+        private LicenseType _license;
 
         public uint Seat {
             get{
@@ -42,6 +44,7 @@ namespace OOP_Eksamen
                 }
             }
         }
+
        /* private bool Toilet {
             get {
                 return _toilet;
@@ -50,8 +53,7 @@ namespace OOP_Eksamen
                 _toilet = value;
             }
         }*/
-        public Size SizeOfBus
-        {
+        public Size SizeOfBus {
             get {
                 return _sizeOfBus;
             }
@@ -60,20 +62,17 @@ namespace OOP_Eksamen
                     _sizeOfBus = value;
                 }
                 else {
-                    throw new ArgumentException("One of these following values were below zero","");
-                }
-                
-                
+                    throw new ArgumentException("One or more of these following values were below zero: Depth, Height and/or Width","SizeToLow");
+                }               
             }
         }
 
-        public uint Weight
-        {
+        public double Weight {
             get {
                 return _weight;
             }
             set {
-                if (value > 1000) {//Hvad ville en god max vægt være? -Anders
+                if (value > 0) {
                     _weight = value;
                 }
                 else {
@@ -82,9 +81,36 @@ namespace OOP_Eksamen
             }
         }
 
-        public override string ToString()
-        {
-            throw new NotImplementedException();
+        private LicenseType Licence {
+            get {
+                return _license;
+            }
+            set {
+                if (Hook == true) {
+                    value = LicenseType.DE;
+                }
+                else {
+                    value = LicenseType.D;
+                }
+
+            }
+        }
+
+        public override string ToString() {
+            
+            string returnString;
+            string Sseat = Seat.ToString();
+            string Sbeds = Beds.ToString();
+            string Stoilet = Toilet.ToString();
+            string Shook = Hook.ToString();
+            string SsizeOfBusHeight = SizeOfBus.Height.ToString();
+            string SsizeOfBusDepth = SizeOfBus.Depth.ToString();
+            string SsizeOfBusWidth = SizeOfBus.Width.ToString();
+            string Sweight = Weight.ToString();
+
+            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet, while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
+            
+            return returnString;
         }
     }
 }
