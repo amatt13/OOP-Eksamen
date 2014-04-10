@@ -28,7 +28,10 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-			throw new NotSupportedException ();
+            int Isafetybrace = Safetybrace.ToString();
+            int IlicenseType = LicenseType.ToString();
+
+            return "This vehicle has a safety brace" + Isafetybrace + ", and its licencetype is" + IlicenseType 0 ".";
 		}
 
         public PersonVehicleWork() { }
