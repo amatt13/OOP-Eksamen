@@ -10,8 +10,8 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
-        private bool Toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
-        private bool Hook;
+        private bool Toilet { get; set; }
+        private bool Hook { get; set; }
         private Size _sizeOfBus;
         private double _weight;
         private LicenseType _license;

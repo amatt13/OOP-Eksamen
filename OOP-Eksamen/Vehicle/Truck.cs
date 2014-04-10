@@ -8,11 +8,11 @@ namespace OOP_Eksamen
 {
     class Truck : Vehicle
     {
-        private uint LoadCapacity;
+        private uint LoadCapacity { get; set; }
         private double _height;
         private double _lenght;
         private double _weight;
-        private bool Hook;
+        private bool Hook { get; set; }
         private LicenseType _license;
 
 
