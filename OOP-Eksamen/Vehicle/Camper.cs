@@ -33,10 +33,10 @@ namespace OOP_Eksamen
 					throw new ArgumentException ("Vehicle can not have a negative number of beds");
 			}
 		}
-		bool Toilet { 
+		/*bool Toilet { 
 			get { return _toilet; } //Skal der stå noget her?
 			set { _toilet = value;} 
-		}
+		}*/
 		enum Heatsource { Gas, Electricity, Oil }
 
 		public override string ToString()

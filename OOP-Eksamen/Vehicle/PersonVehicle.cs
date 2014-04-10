@@ -8,18 +8,33 @@ namespace OOP_Eksamen
 {
 	abstract class PersonVehicle : Vehicle
     {
-		public int Seat{ 
-			get{ return this.Seat;} 
-			set{ this.Seat = value;} //Skal lige have clearet om vi bruger _seat eller this.seat
-	}
-		public struct Size
+        private uint Seat
+        {
+            get
+            {
+                return _seat;
+            }
+            set
+            {
+                if (value > 0)
+                {
+                    _seat = value;
+                }
+                else
+                {
+                    throw new ArgumentException("There have to be atleast 1 seat in a vehicle", "SeatTooLow");
+                }
+            }
+        }
+
+        public struct Size
 		{
 			double Height;
 			double Width;
 			double Depth;
 		}
 
-		public PersonVehicle() {}
+		public PersonVehicle(int Seat, stuct Size) {}
 
 		public override string ToString()
 		{
