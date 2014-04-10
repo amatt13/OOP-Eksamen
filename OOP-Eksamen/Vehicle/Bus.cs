@@ -14,7 +14,7 @@ namespace OOP_Eksamen
         private Size _sizeOfBus;
         private uint _weight;
 
-        private uint Seat {
+        public uint Seat {
             get{
                 return _seat;
             }
@@ -28,7 +28,8 @@ namespace OOP_Eksamen
             }
         }
 
-        private uint Beds {
+        public uint Beds
+        {
             get {
                 return _beds;
             }
@@ -49,7 +50,8 @@ namespace OOP_Eksamen
                 _toilet = value;
             }
         }*/
-        private Size SizeOfBus {
+        public Size SizeOfBus
+        {
             get {
                 return _sizeOfBus;
             }
@@ -64,7 +66,9 @@ namespace OOP_Eksamen
                 
             }
         }
-        private uint Weight {
+
+        public uint Weight
+        {
             get {
                 return _weight;
             }
@@ -77,6 +81,7 @@ namespace OOP_Eksamen
                 }
             }
         }
+
         public override string ToString()
         {
             throw new NotImplementedException();
