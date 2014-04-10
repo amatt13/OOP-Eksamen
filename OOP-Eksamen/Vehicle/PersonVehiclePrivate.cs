@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-	class PersonVehiclePrivate : PersonVehicle //Der er noget galt med nedarvning her 
+    class PersonVehiclePrivate : Vehicle
     {
 		bool IsoFixMount{ get; set; }
 
-		public LicenceType LicenseType
+		public LicenseType LicenseType
 		{
 			get { return LicenseType.B;}
 		}
@@ -19,7 +19,5 @@ namespace OOP_Eksamen
 		{
 			throw new NotSupportedException ();
 		}
-
-		public PersonVehiclePrivate(){}
     }
 }
