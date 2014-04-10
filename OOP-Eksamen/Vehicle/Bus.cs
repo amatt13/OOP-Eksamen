@@ -10,11 +10,11 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
-        private bool _toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
-        private bool _hook;
+        private bool Toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
+        private bool Hook;
         private Size _sizeOfBus;
-        private uint _weight;
-        private LicenseType _licence;
+        private double _weight;
+        private LicenseType _license;
 
         private uint Seat {
             get{
@@ -63,18 +63,16 @@ namespace OOP_Eksamen
                 }
                 else {
                     throw new ArgumentException("One or more of these following values were below zero: Depth, Height and/or Width","SizeToLow");
-                }
-                
-                
+                }               
             }
         }
 
-        private uint Weight {
+        private double Weight {
             get {
                 return _weight;
             }
             set {
-                if (value > 1000) {//Hvad ville en god max vægt være? -Anders
+                if (value > 0) {
                     _weight = value;
                 }
                 else {
@@ -85,11 +83,10 @@ namespace OOP_Eksamen
 
         private LicenseType Licence {
             get {
-                return _licence;
+                return _license;
             }
             set {
-                //Er som udgangspunkt D. Hvis bussen har trækkrog kræver det imidlertid et DE kørekort
-                if (_hook == true) {
+                if (Hook == true) {
                     value = LicenseType.DE;
                 }
                 else {
@@ -104,13 +101,14 @@ namespace OOP_Eksamen
             string returnString;
             string Sseat = Seat.ToString();
             string Sbeds = Beds.ToString();
-            string Stoilet = _toilet.ToString();
+            string Stoilet = Toilet.ToString();
+            string Shook = Hook.ToString();
             string SsizeOfBusHeight = SizeOfBus.Height.ToString();
             string SsizeOfBusDepth = SizeOfBus.Depth.ToString();
             string SsizeOfBusWidth = SizeOfBus.Width.ToString();
             string Sweight = Weight.ToString();
 
-            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet. The dimentions is " + SsizeOfBusHeight + " height, " + SsizeOfBusDepth + " depth and " + SsizeOfBusWidth + " width. The weight is " + Sweight;
+            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet, while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
             
             return returnString;
         }
