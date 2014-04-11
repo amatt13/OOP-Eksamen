@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+
+using System.Text.RegularExpressions;
 
 namespace OOP_Eksamen
 {
@@ -87,7 +88,7 @@ namespace OOP_Eksamen
                 }
                 else
                 {
-                    throw new ArgumentException("RegNum must be 7 char and the 2 first letters");
+                    throw new ArgumentException("Registration must be 2 lettes followed by 5 numbers.");
                 }
 			}
 		}

@@ -42,7 +42,7 @@ namespace OOP_Eksamen
             string Isafetybrace = _safetybrace.ToString();
             string IlicenseType = _licenseType.ToString();
 
-            return "This vehicle has a safety brace" + Isafetybrace + ", and its licencetype is" + IlicenseType + ".";
+            return "This vehicle has a safety brace " + Isafetybrace + ", and its licencetype is " + IlicenseType + ".";
 		}
 
         public PersonVehicleWork() { }

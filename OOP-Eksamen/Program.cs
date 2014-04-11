@@ -16,11 +16,28 @@ namespace OOP_Eksamen
             List<Buyer> Buyers = new List<Buyer>();
             Sales SalesBot = new Sales();
 
-            Bus TestBus = new Bus();
-            TestBus.Seat = 2;
-            TestBus.Weight = 500.52;
+            Bus Bus1 = new Bus();
+            Bus Bus2 = new Bus();
+            Truck Truck1 = new Truck();
+            Truck Truck2 = new Truck();
+            Camper Camper1 = new Camper();
+            Camper Camper2 = new Camper();
+            PersonVehiclePrivate PersonVehiclePrivate1 = new PersonVehiclePrivate();
+            PersonVehiclePrivate PersonVehiclePrivate2 = new PersonVehiclePrivate();
+            PersonVehicleWork PersonVehicleWork1 = new PersonVehicleWork();
+            PersonVehicleWork PersonVehicleWork2 = new PersonVehicleWork();
 
-            VehicleForSale.Add(TestBus);
+
+            VehicleForSale.Add(Bus1);
+            VehicleForSale.Add(Bus2);
+            VehicleForSale.Add(Truck1);
+            VehicleForSale.Add(Truck2);
+            VehicleForSale.Add(Camper1);
+            VehicleForSale.Add(Camper2);
+            VehicleForSale.Add(PersonVehiclePrivate1);
+            VehicleForSale.Add(PersonVehiclePrivate2);
+            VehicleForSale.Add(PersonVehicleWork1);
+            VehicleForSale.Add(PersonVehicleWork2);
 
             foreach( Vehicle testv in VehicleForSale ){
                 Console.WriteLine(testv.ToString());

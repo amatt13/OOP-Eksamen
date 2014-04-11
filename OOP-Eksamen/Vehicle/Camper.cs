@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    class Camper
+    class Camper : Vehicle
     {
 		private int _numberOfSeats;
 		private int _numberOfBeds;
@@ -41,7 +41,8 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-			throw new NotImplementedException(); //Kan ikke helt se hvad der menes her...
+            return "Camper mangler.";
+			//throw new NotImplementedException(); //Kan ikke helt se hvad der menes her...
 		}
 	}
 }
