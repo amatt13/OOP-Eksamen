@@ -14,20 +14,17 @@ namespace OOP_Eksamen
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
             List<Buyer> Buyers = new List<Buyer>();
-    
-            BusinessSeller TestSeller = new BusinessSeller(12345, false);
+            Sales SalesBot = new Sales();
+
             Bus TestBus = new Bus();
-            TestBus.Name = "WV Polo";
-            TestBus.Km = 1500;
-            TestBus.Registration = "AS12345";
-            TestBus.Beds = 30;
-            TestBus.Seat = 45;
-            
-            
-            Sales TestSales = new Sales();
-            int test = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
-            int test2 = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
-            int test3 = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
+            TestBus.Seat = 2;
+            TestBus.Weight = 500.52;
+
+            VehicleForSale.Add(TestBus);
+
+            foreach( Vehicle testv in VehicleForSale ){
+                Console.WriteLine(testv.ToString());
+            }
             
             Console.ReadKey();
         }
