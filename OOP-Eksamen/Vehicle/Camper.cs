@@ -10,32 +10,32 @@ namespace OOP_Eksamen
     {
         enum Heatsource { Gas, Electricity, Oil }
 
-		private uint _numberOfSeats;
-		private uint _numberOfBeds;
 		private uint _toilet;
         private Heatsource _usedheatsource;
         private double _energyClassModifier;
         private LicenseType _licence;
+		private uint _seat;
+		private uint _beds;
 
-		public uint NumberOfSeats { 
+		public uint Seat { 
 			get {
-                return _numberOfSeats; 
+                return _seat; 
             }
 			set { 
 				if (value > 0)
-					_numberOfSeats = value;
+					_seat = value;
 				else
-					throw new ArgumentException ("Vehicle has to have 1 or  more seats");
+					throw new ArgumentException ("Vehicle has to have 1 or  more seats", "SeatTooLow");
 			} 
 		}
 
-		public uint NumberOfBeds { 
+		public int Beds { 
 			get { 
-                return _numberOfSeats; 
+                return Beds; 
             }
 			set { 
 				if (value > 999)
-					_numberOfSeats = value;
+					Beds = value;
 				else
                     throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
 			}
@@ -85,8 +85,8 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-            string Sseats = NumberOfSeats.ToString();
-            string Sbeds = NumberOfBeds.ToString();
+            string Sseats = Seat.ToString();
+            string Sbeds = Beds.ToString();
             string Stoilet = Toilet.ToString();
             string SusedHeat = UsedHeatsource.ToString();
             string SenergyClassModifier = EnergyClassModifier.ToString();

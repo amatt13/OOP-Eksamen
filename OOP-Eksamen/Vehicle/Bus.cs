@@ -16,19 +16,21 @@ namespace OOP_Eksamen
         private double _weight;
         private LicenseType _license;
 
-        public uint Seat{
+
+        public uint Seat {
             get{
                 return _seat;
             }
-            set{
-                if (value > 0){
+            set {
+                if (value > 0) {
                     _seat = value;
                 }
-                else{
+                else {
                     throw new ArgumentException("There have to be atleast 1 seat in a bus", "SeatTooLow");
                 }
             }
         }
+
 
         public uint Beds{
             get{
@@ -44,14 +46,6 @@ namespace OOP_Eksamen
             }
         }
 
-        /* private bool Toilet {
-             get {
-                 return _toilet;
-             }
-             set {
-                 _toilet = value;
-             }
-         }*/
         public Size SizeOfBus{
             get{
                 return _sizeOfBus;
@@ -66,15 +60,15 @@ namespace OOP_Eksamen
             }
         }
 
-        public double Weight{
-            get{
+        public double Weight {
+            get {
                 return _weight;
             }
-            set{
-                if (value > 0){
+            set {
+                if (value > 0) {
                     _weight = value;
                 }
-                else{
+                else {
                     throw new ArgumentException("The bus weights too little", "WeightTooLow");
                 }
             }
@@ -94,7 +88,7 @@ namespace OOP_Eksamen
             }
         }
 
-        public override string ToString(){
+        public override string ToString() {
 
             string returnString;
             string Sseat = Seat.ToString();
@@ -107,8 +101,8 @@ namespace OOP_Eksamen
             string Sweight = Weight.ToString();
             
             returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and have " + Stoilet + " toilet(s), while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
-
             return returnString;
         }
     }
 }
+

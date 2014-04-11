@@ -27,7 +27,7 @@ namespace OOP_Eksamen
             }
         }
 
-        public Size Trunk {
+        public Size Trunk{
            get{
                return _trunk;
            }
