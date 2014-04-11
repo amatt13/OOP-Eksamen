@@ -45,7 +45,7 @@ namespace OOP_Eksamen
 			set { _toilet = value;} 
 		}
 
-        public Heatsource UsedHeatsource {
+        private Heatsource UsedHeatsource {
             get {
                 return _usedheatsource;
             }
