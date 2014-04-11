@@ -28,7 +28,6 @@ namespace OOP_Eksamen
             int test = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
             int test2 = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
             int test3 = TestSales.PutOpForSale(TestBus, TestSeller, 1500);
-
             
             Console.ReadKey();
         }

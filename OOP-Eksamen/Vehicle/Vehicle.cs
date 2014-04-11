@@ -10,6 +10,25 @@ namespace OOP_Eksamen
 	abstract class Vehicle
     {
 		private string _name;
+
+        //////////////////////////////////////////////////////////////////////////
+
+        private Seller _seller;
+        public Seller Seller
+        {
+            get
+            {
+                return _seller;
+            }
+
+            set
+            {
+                _seller = value;
+            }
+        }
+
+        //////////////////////////////////////////////////////////////////////////
+
 		private uint _km;
 		private string _registration;
 		protected readonly int _year;
@@ -62,14 +81,18 @@ namespace OOP_Eksamen
 		{
             get { return _registration; }
 			set {
-				if(GetMatches(value) == true) 
-					_registration = value;
-				else
-					throw new ArgumentException("RegNum must be 7 char and the 2 first letters");
+                if (GetMatches(value))
+                {
+                    _registration = value;
+                }
+                else
+                {
+                    throw new ArgumentException("RegNum must be 7 char and the 2 first letters");
+                }
 			}
 		}
 
-		decimal NewPrice{
+		public decimal NewPrice{
 			get { return _newPrice; }
 			set {
 				if (value >= 0)

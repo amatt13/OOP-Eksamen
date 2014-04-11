@@ -15,7 +15,8 @@ namespace OOP_Eksamen
 
         public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice)
         {
-            Console.WriteLine(K.Name);
+            K.NewPrice = MinPrice;
+            K.Seller = S;
             Console.WriteLine(i++);
             return i;
         }

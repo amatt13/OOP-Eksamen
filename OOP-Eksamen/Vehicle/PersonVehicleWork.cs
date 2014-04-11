@@ -8,8 +8,19 @@ namespace OOP_Eksamen
 {
 	class PersonVehicleWork : PersonVehicle 
 	{
+        private bool _safetybrace;
 
-		bool Safetybrace{ get; set; }
+        public bool Safetybrace{
+            get
+            {
+                return _safetybrace;
+            }
+
+            set
+            {
+                _safetybrace = value;
+            }
+        }
 
 		public int Freightcapacity{
 			get{ return this.Freightcapacity;}
@@ -28,10 +39,10 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-            int Isafetybrace = Safetybrace.ToString();
-            int IlicenseType = LicenseType.ToString();
+            string Isafetybrace = _safetybrace.ToString();
+            string IlicenseType = _licenseType.ToString();
 
-            return "This vehicle has a safety brace" + Isafetybrace + ", and its licencetype is" + IlicenseType 0 ".";
+            return "This vehicle has a safety brace" + Isafetybrace + ", and its licencetype is" + IlicenseType + ".";
 		}
 
         public PersonVehicleWork() { }
