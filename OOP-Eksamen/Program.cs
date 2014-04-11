@@ -10,6 +10,7 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
+<<<<<<< HEAD
             List<Vehicle> VehicleSold = new List<Vehicle>();
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
@@ -43,6 +44,9 @@ namespace OOP_Eksamen
                 Console.WriteLine(testv.ToString());
             }
             
+=======
+
+>>>>>>> origin/Heider
             Console.ReadKey();
         }
         static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {

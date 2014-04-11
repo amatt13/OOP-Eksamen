@@ -10,11 +10,17 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
+<<<<<<< HEAD
         private bool Toilet { get; set; }
         private bool Hook { get; set; }
         private Size _sizeOfBus;
         private double _weight;
         private LicenseType _license;
+=======
+        private bool _toilet;//Get set er fjernet og bare blevet til dette lilel fine stykke kode -Anders
+        private Size _sizeOfBus;
+        private uint _weight;
+>>>>>>> origin/Heider
 
         public uint Seat {
             get{
@@ -30,8 +36,12 @@ namespace OOP_Eksamen
             }
         }
 
+<<<<<<< HEAD
         public uint Beds
         {
+=======
+        public uint Beds {
+>>>>>>> origin/Heider
             get {
                 return _beds;
             }
@@ -44,7 +54,10 @@ namespace OOP_Eksamen
                 }
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> origin/Heider
        /* private bool Toilet {
             get {
                 return _toilet;
@@ -62,17 +75,32 @@ namespace OOP_Eksamen
                     _sizeOfBus = value;
                 }
                 else {
+<<<<<<< HEAD
                     throw new ArgumentException("One or more of these following values were below zero: Depth, Height and/or Width","SizeToLow");
                 }               
             }
         }
 
         public double Weight {
+=======
+                    throw new ArgumentException("One of these following values were below zero","");
+                }
+                
+                
+            }
+        }
+
+        public uint Weight {
+>>>>>>> origin/Heider
             get {
                 return _weight;
             }
             set {
+<<<<<<< HEAD
                 if (value > 0) {
+=======
+                if (value > 1000) {//Hvad ville en god max vægt være? -Anders
+>>>>>>> origin/Heider
                     _weight = value;
                 }
                 else {
@@ -81,6 +109,7 @@ namespace OOP_Eksamen
             }
         }
 
+<<<<<<< HEAD
         private LicenseType Licence {
             get {
                 return _license;
@@ -111,6 +140,11 @@ namespace OOP_Eksamen
             returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet, while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
             
             return returnString;
+=======
+        public override string ToString()
+        {
+            throw new NotImplementedException();
+>>>>>>> origin/Heider
         }
     }
 }
