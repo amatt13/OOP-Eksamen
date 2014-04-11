@@ -135,7 +135,7 @@ namespace OOP_Eksamen
 		
         double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
 
-		double KmPerLiter {
+		public double KmPerLiter {
             get { return _kmPerLiter; }
             set { _kmPerLiter = value; }
         }
