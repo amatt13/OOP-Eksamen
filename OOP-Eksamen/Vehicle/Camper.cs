@@ -8,13 +8,19 @@ namespace OOP_Eksamen
 {
     class Camper : Vehicle
     {
-		private int _numberOfSeats;
-		private int _numberOfBeds;
-		private bool _toilet;
-		//private enum _heatsource;
+        enum Heatsource { Gas, Electricity, Oil }
 
-		public int NumberOfSeats { 
-			get {return _numberOfSeats; }
+		private uint _numberOfSeats;
+		private uint _numberOfBeds;
+		private bool _toilet;
+        private Heatsource _usedheatsource;
+        private double _energyClassModifier;
+        private LicenseType _licence;
+
+		public uint NumberOfSeats { 
+			get {
+                return _numberOfSeats; 
+            }
 			set { 
 				if (value > 0)
 					_numberOfSeats = value;
@@ -23,26 +29,71 @@ namespace OOP_Eksamen
 			} 
 		}
 
-
-		int NumberOfBeds { 
-			get { return _numberOfSeats; }
+		public uint NumberOfBeds { 
+			get { 
+                return _numberOfSeats; 
+            }
 			set { 
-				if (value >= 0)
+				if (value > 999)
 					_numberOfSeats = value;
 				else
-					throw new ArgumentException ("Vehicle can not have a negative number of beds");
+                    throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
 			}
 		}
-		/*bool Toilet { 
+		public bool Toilet { 
 			get { return _toilet; } //Skal der stå noget her?
 			set { _toilet = value;} 
-		}*/
-		enum Heatsource { Gas, Electricity, Oil }
+		}
+
+        public Heatsource UsedHeatsource {
+            get {
+                return _usedheatsource;
+            }
+            set {
+                _usedheatsource = value;
+            }
+        }
+        //Det her skal udregnes fr at energiklassen bliver beregent!
+        private double EnergyClassModifier {
+            get {
+                return _energyClassModifier;
+            }
+            set {
+                if (UsedHeatsource == Heatsource.Electricity) {
+                    KmPerLiter = KmPerLiter * 0.8;
+                    value = 0.8;
+                }
+                else if (UsedHeatsource == Heatsource.Gas) {
+                    KmPerLiter = KmPerLiter * 0.9;
+                    value = 0.9;
+                }
+                else if (UsedHeatsource == Heatsource.Oil) {
+                    KmPerLiter = KmPerLiter * 0.7;
+                    value = 0.7;
+                }
+            }
+        }
+
+        public LicenseType Licence {
+            get {
+                return _licence;
+            }
+            set {
+                value = LicenseType.B;
+                }
+            }
 
 		public override string ToString()
 		{
-            return "Camper mangler.";
-			//throw new NotImplementedException(); //Kan ikke helt se hvad der menes her...
-		}
+            string Sseats = NumberOfSeats.ToString();
+            string Sbeds = NumberOfBeds.ToString();
+            string Stoilet = Toilet.ToString();
+            string SusedHeat = UsedHeatsource.ToString();
+            string SenergyClassModifier = EnergyClassModifier.ToString();
+            string Slicence = Licence.ToString();
+
+            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and it is " + Stoilet +" that there are a toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
+            return returnString;
+        }
 	}
 }
