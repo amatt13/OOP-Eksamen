@@ -11,40 +11,32 @@ namespace OOP_Eksamen
         private bool _safetybrace;
 
         public bool Safetybrace{
-            get
-            {
+            get{
                 return _safetybrace;
             }
-
-            set
-            {
+            set{
                 _safetybrace = value;
             }
         }
 
 		public int Freightcapacity{
 			get{ return this.Freightcapacity;}
-            set
-            {
-                if (value > 750)
-                {
+            set{
+                if (value > 750){
                     _licenseType = LicenseType.BE;
                 }
-                else
-                {
+                else{
                     _licenseType = LicenseType.B;
                 }
             }
 		}
 
-		public override string ToString()
-		{
+		public override string ToString(){
             string Isafetybrace = _safetybrace.ToString();
             string IlicenseType = _licenseType.ToString();
 
             return "This vehicle has a safety brace " + Isafetybrace + ", and its licencetype is " + IlicenseType + ".";
 		}
-
         public PersonVehicleWork() { }
 	}
 }

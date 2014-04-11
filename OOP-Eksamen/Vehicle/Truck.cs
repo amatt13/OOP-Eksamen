@@ -8,15 +8,15 @@ namespace OOP_Eksamen
 {
     class Truck : Vehicle
     {
-        private uint LoadCapacity { get; set; }
+        public uint LoadCapacity { get; set; }
         private double _height;
         private double _lenght;
         private double _weight;
-        private bool Hook { get; set; }
+        public bool Hook { get; set; }
         private LicenseType _license;
 
 
-        private double Weight {
+        public double Weight {
             get {
                 return _weight;
             }
@@ -30,7 +30,7 @@ namespace OOP_Eksamen
             }
         }
 
-        private double Height {
+        public double Height {
             get {
                 return _height;
             }
@@ -44,7 +44,7 @@ namespace OOP_Eksamen
             }
         }
 
-        private double Lenght {
+        public double Lenght {
             get {
                 return _lenght;
             }
@@ -58,7 +58,7 @@ namespace OOP_Eksamen
             }
         }
 
-        private LicenseType Licence {
+        public LicenseType Licence {
             get {
                 return _license;
             }
@@ -69,7 +69,6 @@ namespace OOP_Eksamen
                 else {
                     value = LicenseType.C;
                 }
-
             }
         }
 
@@ -82,7 +81,6 @@ namespace OOP_Eksamen
             string Slicence = Licence.ToString();
 
             return "This truck have " + SloadCapacity +"kg loadcapacity, is " + Sheight + "m high, " + Slenght + "m long and weights " + Sweight + "kg. Is is " + Shook + " that there is a hook attached and the licenstype needed is " + Slicence + ".";
-            //This truck have Xkg loadcapacity, is Xm high, Xm long and weights Xkg. Is is XXX that there is a hook attached and the licenstype needed is X.
         }
     }
 }

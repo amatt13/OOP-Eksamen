@@ -8,9 +8,7 @@ namespace OOP_Eksamen
 {
     class PersonVehiclePrivate : PersonVehicle
     {
-		bool IsoFixMount{ get; set; }
-
-        
+		public bool IsoFixMount{ get; set; }
 
 		public LicenseType License
 		{
