@@ -8,27 +8,27 @@ namespace OOP_Eksamen
 {
     class Camper : Vehicle
     {
-		private int _numberOfSeats;
-		private int _numberOfBeds;
+		private int _seat;
+		private int _beds;
 		private bool _toilet;
 		//private enum _heatsource;
 
-		public int NumberOfSeats { 
-			get {return _numberOfSeats; }
+		public int Seat { 
+			get {return _seat; }
 			set { 
 				if (value > 0)
-					_numberOfSeats = value;
+					_seat = value;
 				else
 					throw new ArgumentException ("Vehicle has to have 1 or  more seats");
 			} 
 		}
 
 
-		int NumberOfBeds { 
-			get { return _numberOfSeats; }
+		public int Beds { 
+			get { return Beds; }
 			set { 
 				if (value >= 0)
-					_numberOfSeats = value;
+					Beds= value;
 				else
 					throw new ArgumentException ("Vehicle can not have a negative number of beds");
 			}

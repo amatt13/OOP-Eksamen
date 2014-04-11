@@ -45,7 +45,7 @@ namespace OOP_Eksamen
             }
         }
 
-       /* private bool Toilet {
+       /*private bool Toilet {
             get {
                 return _toilet;
             }

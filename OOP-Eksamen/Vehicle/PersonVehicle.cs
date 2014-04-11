@@ -12,7 +12,7 @@ namespace OOP_Eksamen
         private Size _trunk;
         //Licenceype bliver håndteret i Work og Private.
 
-        private uint Seat
+        public uint Seat
         {
             get {
                 return _seat;
@@ -27,7 +27,7 @@ namespace OOP_Eksamen
             }
         }
         
-        private Size Trunk{
+        public Size Trunk{
            get{
                return _trunk;
            }
