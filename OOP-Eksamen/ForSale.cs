@@ -21,9 +21,20 @@ namespace OOP_Eksamen
             return i;
         }
 
-        /*public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification)
+        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification)
         {
-            return 1;
-        }*/
+            if (WantNotification)
+            {
+                K.SellerNotif = true;
+            }
+            else
+            {
+                K.SellerNotif = false;
+            }
+            K.NewPrice = MinPrice;
+            K.Seller = S;
+            Console.WriteLine(i++);
+            return i;
+        }
     }
 }
