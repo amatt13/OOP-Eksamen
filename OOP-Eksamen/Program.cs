@@ -10,7 +10,6 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
-<<<<<<< HEAD
             List<Vehicle> VehicleSold = new List<Vehicle>();
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
@@ -27,7 +26,7 @@ namespace OOP_Eksamen
             PersonVehiclePrivate PersonVehiclePrivate2 = new PersonVehiclePrivate();
             PersonVehicleWork PersonVehicleWork1 = new PersonVehicleWork();
             PersonVehicleWork PersonVehicleWork2 = new PersonVehicleWork();
-
+            
 
             VehicleForSale.Add(Bus1);
             VehicleForSale.Add(Bus2);
@@ -39,16 +38,13 @@ namespace OOP_Eksamen
             VehicleForSale.Add(PersonVehiclePrivate2);
             VehicleForSale.Add(PersonVehicleWork1);
             VehicleForSale.Add(PersonVehicleWork2);
-
+            
             foreach( Vehicle testv in VehicleForSale ){
                 Console.WriteLine(testv.ToString());
             }
-            
-=======
-
->>>>>>> origin/Heider
             Console.ReadKey();
         }
+
         static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {
 
             //bool foundResult = false;
@@ -77,6 +73,33 @@ namespace OOP_Eksamen
             }*/
             return vehicleList;
         }
-        
+        static List<Vehicle> SearchSeatToilet(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfToilets) {
+            List<Bus> BusList = new List<Bus>();
+            List<Camper> CamperList = new List<Camper>();
+
+            foreach (Bus n in vehicleList) {//Det er kun busser og campingvogne der har toiletter.
+                    BusList.Add(n);
+            }
+            foreach (Camper n in CamperList) {
+                CamperList.Add(n);
+            }
+
+            for (int i = 0; i < BusList.Count; i++) {
+                if (BusList[i].Seat < numberOfSeats && BusList[i].Toilet < numberOfToilets) {
+                    BusList.RemoveAt(i);
+                }
+            }
+            for (int j = 0; j < CamperList.Count; j++) {
+                if (CamperList[j].NumberOfSeats < numberOfSeats && CamperList[j].Toilet < numberOfToilets) {
+                    CamperList.RemoveAt(j);
+                }
+            }
+
+            List<Vehicle> SearchList = new List<Vehicle>();
+            SearchList.AddRange(BusList);
+            SearchList.AddRange(CamperList);
+
+            return SearchList;
+        }
     }
 }
