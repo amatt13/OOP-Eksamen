@@ -12,7 +12,7 @@ namespace OOP_Eksamen
 
 		private uint _numberOfSeats;
 		private uint _numberOfBeds;
-		private bool _toilet;
+		private uint _toilet;
         private Heatsource _usedheatsource;
         private double _energyClassModifier;
         private LicenseType _licence;
@@ -40,8 +40,8 @@ namespace OOP_Eksamen
                     throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
 			}
 		}
-		public bool Toilet { 
-			get { return _toilet; } //Skal der stå noget her?
+		public uint Toilet { 
+			get { return _toilet; }
 			set { _toilet = value;} 
 		}
 
@@ -92,7 +92,7 @@ namespace OOP_Eksamen
             string SenergyClassModifier = EnergyClassModifier.ToString();
             string Slicence = Licence.ToString();
 
-            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and it is " + Stoilet +" that there are a toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
+            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet(s). The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
             return returnString;
         }
 	}

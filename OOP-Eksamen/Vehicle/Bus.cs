@@ -10,7 +10,7 @@ namespace OOP_Eksamen
     {
         private uint _seat;
         private uint _beds;
-        public bool Toilet { get; set; }
+        public uint Toilet { get; set; }
         public bool Hook { get; set; }
         private Size _sizeOfBus;
         private double _weight;
@@ -106,7 +106,7 @@ namespace OOP_Eksamen
             string SsizeOfBusWidth = SizeOfBus.Width.ToString();
             string Sweight = Weight.ToString();
             
-            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and it is " + Stoilet + " that it contains a toilet, while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
+            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and have " + Stoilet + " toilet(s), while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
 
             return returnString;
         }
