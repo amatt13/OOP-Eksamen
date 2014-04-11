@@ -17,13 +17,13 @@ namespace OOP_Eksamen
             {
                 if (value > 750)
                 {
-                    return (int)LicenseType.BE;
+                    _licenseType = LicenseType.BE;
                 }
                 else
                 {
-                    return (int)LicenseType.B;
+                    _licenseType = LicenseType.B;
                 }
-				}
+            }
 		}
 
 		public override string ToString()

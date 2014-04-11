@@ -11,9 +11,13 @@ namespace OOP_Eksamen
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris)
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris, notifikationsMetode)
 
+        private int i = 0;
+
         public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice)
         {
-            return 1;
+            Console.WriteLine(K.Name);
+            Console.WriteLine(i++);
+            return i;
         }
 
         /*public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification)
