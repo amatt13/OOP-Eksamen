@@ -61,8 +61,6 @@ namespace OOP_Eksamen
                 else {
                     throw new ArgumentException("One of these following values were below zero","");
                 }
-                
-                
             }
         }
 

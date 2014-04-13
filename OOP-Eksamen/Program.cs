@@ -14,7 +14,6 @@ namespace OOP_Eksamen
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
             List<Buyer> Buyers = new List<Buyer>();
-            List<int, int> Offers = new List<int, int>();
             Sales SalesBot = new Sales();
 
             /*Bus Bus1 = new Bus();
@@ -37,6 +36,7 @@ namespace OOP_Eksamen
                 //Bus1.Weight = ;
             */
 
+            /*
                 Vehicle.Size size = new Vehicle.Size();
                 size.Depth=2;
                 size.Height=5;
@@ -205,6 +205,12 @@ namespace OOP_Eksamen
             foreach( Vehicle testv in VehicleForSale ){
                 Console.WriteLine(testv.ToString());
             }
+             */
+
+            BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
+
+            Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 75000).ToString());
+
             Console.ReadKey();
         }
 

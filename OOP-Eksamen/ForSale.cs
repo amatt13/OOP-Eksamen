@@ -17,7 +17,7 @@ namespace OOP_Eksamen
         {
             K.NewPrice = MinPrice;
             K.Seller = S;
-            K.SellerNotif = false;
+            K.SellerNotif = true;
             Console.WriteLine(i++);
             return i;
         }
@@ -40,10 +40,18 @@ namespace OOP_Eksamen
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
 
-        public bool ModtagBud(Seller Seller, int AuctionNumber, decimal Offer)
+        public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer)
         {
-
-            return false;
+            if (Buyer.GetBalance() >= Offer)
+            {
+                return true;
+            }
+            else
+            {
+                throw new ArgumentException("The buyer cannot affort the car", "NotEnoughMoney");
+            }
         }
+
+        //public bool AccepterBud(Sælger sælger, int auktionsNummer)
     }
 }

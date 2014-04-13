@@ -19,6 +19,11 @@ namespace OOP_Eksamen
                 return _balance;
             }
         }
+
+        public decimal GetBalance()
+        {
+            return _credits + _balance;
+        }
     }
 
     class BusinessBuyer : Buyer

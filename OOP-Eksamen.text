@@ -23,6 +23,8 @@ Antagelser:
         AktionsNummer og Minimums pris tilæggelse direkte på det oprettet
         køretøj.
 
+        I den "SætTilSalg" metode hvor der ikke defineres en notifikationsMetode antages det at sælgeren gerne vil have en notifikation ved bud på køretøj
+
 Begrænsninger:
 --------------
 
@@ -40,9 +42,7 @@ Variationer:
 Kilder:
 =======
 
-<<<<<<< HEAD
 =======
         
 
->>>>>>> origin/Heider
     
