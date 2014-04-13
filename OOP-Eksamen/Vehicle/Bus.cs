@@ -8,22 +8,19 @@ namespace OOP_Eksamen
 {
     class Bus : Vehicle
     {
-        private uint _seat;
+        private uint _seats;
         private uint _beds;
-        public uint Toilet { get; set; }
-        public bool Hook { get; set; }
+        public bool _toilet;
         private Size _sizeOfBus;
         private double _weight;
-        private LicenseType _license;
 
-
-        public uint Seat {
+        public uint Seats {
             get{
-                return _seat;
+                return _seats;
             }
             set {
                 if (value > 0) {
-                    _seat = value;
+                    _seats = value;
                 }
                 else {
                     throw new ArgumentException("There have to be atleast 1 seat in a bus", "SeatTooLow");
@@ -31,41 +28,48 @@ namespace OOP_Eksamen
             }
         }
 
-
-        public uint Beds{
-            get{
+        public uint Beds {
+            get {
                 return _beds;
             }
-            set{
-                if (value < 999){
+            set {
+                if (value < 999) {
                     _beds = value;
                 }
-                else{
-                    throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
+                else {
+                    throw new ArgumentException("The number of beds can't be a negative number", "BedTooLow");
                 }
             }
         }
 
-        public Size SizeOfBus{
-            get{
+       public bool Toilet {
+            get {
+                return _toilet;
+            }
+            set {
+                _toilet = value;
+            }
+        }
+        public Size SizeOfBus {
+            get {
                 return _sizeOfBus;
             }
-            set{
-                if (_sizeOfBus.Depth > 0 || _sizeOfBus.Height > 0 || _sizeOfBus.Width > 0){
+            set {
+                if(_sizeOfBus.Depth > 0 || _sizeOfBus.Height > 0 || _sizeOfBus.Width > 0){
                     _sizeOfBus = value;
                 }
-                else{
-                    throw new ArgumentException("One or more of these following values were below zero: Depth, Height and/or Width", "SizeToLow");
+                else {
+                    throw new ArgumentException("One of these following values were below zero","");
                 }
+                
+                
             }
         }
 
         public double Weight {
-            get {
-                return _weight;
-            }
-            set {
-                if (value > 0) {
+            get {return _weight;}
+            set {       
+                if (value > 1000) {//Hvad ville en god max vægt være? -Anders
                     _weight = value;
                 }
                 else {
@@ -76,25 +80,33 @@ namespace OOP_Eksamen
 
         public LicenseType Licence{
             get{
-                return _license;
+                return _licenseType;
             }
             set{
-                if (Hook == true){
-                    value = LicenseType.DE;
-                }
+                if (_towHook == true){
+                    value = LicenseType.DE;           }
                 else{
                     value = LicenseType.D;
                 }
             }
         }
 
+        public Bus(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, uint beds, bool toilet, Size sizeOfBus, double weight) : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice){
+            Seats = seats;
+            Beds = beds;
+            Toilet = toilet;
+            SizeOfBus = sizeOfBus;
+            Weight = weight;
+        }
+        
+
         public override string ToString() {
 
             string returnString;
-            string Sseat = Seat.ToString();
+            string Sseat = Seats.ToString();
             string Sbeds = Beds.ToString();
             string Stoilet = Toilet.ToString();
-            string Shook = Hook.ToString();
+            string Shook = _towHook.ToString();
             string SsizeOfBusHeight = SizeOfBus.Height.ToString();
             string SsizeOfBusDepth = SizeOfBus.Depth.ToString();
             string SsizeOfBusWidth = SizeOfBus.Width.ToString();
@@ -105,4 +117,3 @@ namespace OOP_Eksamen
         }
     }
 }
-

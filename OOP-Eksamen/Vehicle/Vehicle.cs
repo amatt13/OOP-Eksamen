@@ -47,13 +47,13 @@ namespace OOP_Eksamen
 		private string _registration;
 		protected int _year;
 		private decimal _newPrice;
-		private bool _towHook;
+		protected bool _towHook;
 		protected double _engineSize;
-        protected abstract double EngineSize;// getters and setters needs to be implemented in subclasses
+        // getters and setters til engineSize needs to be implemented in subclasses
 		private double _kmPerLiter;
-        enum FuelType { Diesel, Gasoline }
+        public enum FuelType { Diesel, Gasoline }
 		private FuelType _fuelType;
-        enum EnergyClass { A, B, C, D }
+        public enum EnergyClass { A, B, C, D }
         private EnergyClass _energyClass; // Calculated from fuelType, kmPerLiter and year
         public enum LicenseType { A, B, BE, C, CE, D, DE }
         public LicenseType _licenseType; // Defined by vehicle subclass
@@ -107,7 +107,8 @@ namespace OOP_Eksamen
 			}
 		}
 
-        protected readonly int Year{
+        /* Skal være readonly, kun sættes ved instansiering i constructor
+        protected int Year{
             get { return _year; }
             set { 
                 if(value >= 0)
@@ -115,7 +116,7 @@ namespace OOP_Eksamen
                 else
 					throw new ArgumentException ("Year must be above 0");
             }
-        }
+        }*/
 
 		public decimal NewPrice{
 			get { return _newPrice; }
@@ -143,7 +144,7 @@ namespace OOP_Eksamen
         LicenseType License {
             get { return _licenseType; }
             set { _licenseType = value; }
-        }
+        } // Skal have en costum getter og setter i subklasser
 
         FuelType Fuel {
             get { return _fuelType; }
@@ -205,16 +206,15 @@ namespace OOP_Eksamen
             Year = year;
         }*/
 
-        public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, LicenseType licenseType, decimal minPrice){
+        public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice){
             Name = name;
             Km = km;
             Registration = reg;
-            Year = year;
+            _year = year; //Readonly
             NewPrice = newPrice;
             TowHook = towHook;
             KmPerLiter = kmPerLiter;
             Fuel = fuelType;
-            License = licenseType;
             MinPrice = minPrice;
         }
 

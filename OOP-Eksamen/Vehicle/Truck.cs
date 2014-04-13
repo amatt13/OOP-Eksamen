@@ -72,6 +72,10 @@ namespace OOP_Eksamen
             }
         }
 
+        public Truck():base("test",1234,"AZ23412",1999,0,false,0,Vehicle.FuelType.Gasoline,0){
+            Lenght = 0;
+        }
+
         public override string ToString() {
             string SloadCapacity = LoadCapacity.ToString();
             string Sheight = Height.ToString();

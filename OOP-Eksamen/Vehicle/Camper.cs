@@ -95,5 +95,7 @@ namespace OOP_Eksamen
             string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet(s). The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
             return returnString;
         }
+
+        public Camper() : base("test", 1234, "AZ23412", 1999, 0, false, 0, Vehicle.FuelType.Gasoline, 0) { }
 	}
 }
