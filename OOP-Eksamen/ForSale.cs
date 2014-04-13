@@ -17,6 +17,7 @@ namespace OOP_Eksamen
         {
             K.NewPrice = MinPrice;
             K.Seller = S;
+            K.SellerNotif = false;
             Console.WriteLine(i++);
             return i;
         }
@@ -35,6 +36,14 @@ namespace OOP_Eksamen
             K.Seller = S;
             Console.WriteLine(i++);
             return i;
+        }
+
+        //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
+
+        public bool ModtagBud(Seller Seller, int AuctionNumber, decimal Offer)
+        {
+
+            return false;
         }
     }
 }

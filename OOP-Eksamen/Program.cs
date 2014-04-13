@@ -14,6 +14,7 @@ namespace OOP_Eksamen
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
             List<Buyer> Buyers = new List<Buyer>();
+            List<int, int> Offers = new List<int, int>();
             Sales SalesBot = new Sales();
 
             Bus Bus1 = new Bus();
