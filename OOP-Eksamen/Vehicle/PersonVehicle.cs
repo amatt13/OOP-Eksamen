@@ -40,6 +40,10 @@ namespace OOP_Eksamen
                } 
            }
        }
+
+        public PersonVehicle():base("test",1234,"AZ23412",1999,0,false,0,Vehicle.FuelType.Gasoline,0){
+            Seat = 2;
+        }
     }
 		//public PersonVehicle(int Seat, Size Size) {}
 }

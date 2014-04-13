@@ -14,9 +14,9 @@ namespace OOP_Eksamen
             List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
             List<Buyer> Buyers = new List<Buyer>();
-            Sales SalesBot = new Sales();
+            //Sales SalesBot = new Sales();
 
-            Bus Bus1 = new Bus();
+            /*Bus Bus1 = new Bus();
                 Bus1.Name = "Volvo B10M Carrus 302";
                 Bus1.Km = 296716;
                 Bus1.Registration = "QE25987";
@@ -28,31 +28,33 @@ namespace OOP_Eksamen
                 //Bus1.Kmpl = ;
                 //Bus1.FuelType = ;
                 //Bus1.EnergyClass = ;
-                Bus1.Seat = 47;
+                Bus1.Seats = 47;
                 Bus1.Beds = 47; //Antager at alle stole kan lægges ned
                 //Bus1.Toilet = false;
                 //Bus1.Height = ;
                 //Bus1.Length = ;
                 //Bus1.Weight = ;
+            */
 
-            Bus Bus2 = new Bus();
-                Bus2.Name = "Scania Irizar";
-                Bus2.Km = 982505;
-                Bus2.Registration = "KS12387";
-                //Bus2.Year = 1997;
-                Bus2.NewPrice = 210000;
-                //Bus2.TowHook = true;
-                Bus2._licenseType = Vehicle.LicenseType.DE;
-                //Bus2.Enginesize = ;
-                //Bus2.Kmpl = ;
-                //Bus2.FuelType = Diesel;
-                //Bus2.EnergyClass = ;
-                Bus2.Seat = 49;
-                Bus2.Beds = 49; //Antager at alle stole kan lægges ned
-                //Bus2.Toilet = true;
-                //Bus2.Height = ;
-                //Bus2.Length = ;
-                //Bus2.Weight = ;
+                Vehicle.Size size = new Vehicle.Size();
+                size.Depth=2;
+                size.Height=5;
+                size.Width=0;
+
+                Bus Bus2 = new Bus( "Scania Irizar",
+                                    982505,
+                                    "KS12387",
+                                    1997,
+                                    21000,
+                                    true,
+                                    0,
+                                    Vehicle.FuelType.Diesel,
+                                    12000,
+                                    49,
+                                    49,
+                                    true,
+                                    size,
+                                    324);
 
             Truck Truck1 = new Truck();
                 Truck1.Name = "Scania 114 380 stetter";
@@ -188,7 +190,7 @@ namespace OOP_Eksamen
 
 
 
-            VehicleForSale.Add(Bus1);
+            //VehicleForSale.Add(Bus1);
             VehicleForSale.Add(Bus2);
             VehicleForSale.Add(Truck1);
             VehicleForSale.Add(Truck2);
@@ -216,7 +218,7 @@ namespace OOP_Eksamen
             }
             return vehicleList;
         }
-        static List<Vehicle> SearchSeatToilet(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfToilets) {
+        static List<Vehicle> SearchSeatBeds(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfBeds) {
             List<Bus> BusList = new List<Bus>();
             List<Camper> CamperList = new List<Camper>();
 
@@ -228,12 +230,12 @@ namespace OOP_Eksamen
             }
 
             for (int i = 0; i < BusList.Count; i++) {
-                if (BusList[i].Seat < numberOfSeats && BusList[i].Toilet < numberOfToilets) {
+                if (BusList[i].Seats < numberOfSeats && BusList[i].Beds < numberOfBeds) {
                     BusList.RemoveAt(i);
                 }
             }
             for (int j = 0; j < CamperList.Count; j++) {
-                if (CamperList[j].Seat < numberOfSeats && CamperList[j].Toilet < numberOfToilets) {
+                if (CamperList[j].Seat < numberOfSeats && CamperList[j].Beds < numberOfBeds) {
                     CamperList.RemoveAt(j);
                 }
             }
