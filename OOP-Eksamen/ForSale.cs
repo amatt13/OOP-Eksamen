@@ -13,16 +13,7 @@ namespace OOP_Eksamen
 
         private int i = 0;
 
-        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice)
-        {
-            K.NewPrice = MinPrice;
-            K.Seller = S;
-            K.SellerNotif = true;
-            Console.WriteLine(i++);
-            return i;
-        }
-
-        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification)
+        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification = false)
         {
             if (WantNotification)
             {

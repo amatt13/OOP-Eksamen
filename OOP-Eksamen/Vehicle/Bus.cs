@@ -82,7 +82,8 @@ namespace OOP_Eksamen
             }
             set{
                 if (_towHook == true){
-                    value = LicenseType.DE;           }
+                    value = LicenseType.DE;
+           }
                 else{
                     value = LicenseType.D;
                 }

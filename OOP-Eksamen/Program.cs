@@ -209,7 +209,7 @@ namespace OOP_Eksamen
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
 
-            Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 75000).ToString());
+            Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 5000).ToString());
 
             Console.ReadKey();
         }
