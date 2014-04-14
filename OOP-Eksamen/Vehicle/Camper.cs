@@ -10,7 +10,7 @@ namespace OOP_Eksamen
     {
         enum Heatsource { Gas, Electricity, Oil }
 
-		private uint _toilet;
+		private bool _toilet;
         private Heatsource _usedheatsource;
         private double _energyClassModifier;
         private LicenseType _licence;
@@ -29,18 +29,18 @@ namespace OOP_Eksamen
 			} 
 		}
 
-		public int Beds { 
+		public uint Beds { 
 			get { 
-                return Beds; 
+                return _beds; 
             }
 			set { 
-				if (value > 999)
-					Beds = value;
+				if (value > 99)
+					_beds = value;
 				else
-                    throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
+                    throw new ArgumentException("There have been placed 100 beds or more.\nWas this a mistake?", "BedTooHigh");
 			}
 		}
-		public uint Toilet { 
+		public bool Toilet { 
 			get { return _toilet; }
 			set { _toilet = value;} 
 		}
@@ -87,15 +87,30 @@ namespace OOP_Eksamen
 		{
             string Sseats = Seat.ToString();
             string Sbeds = Beds.ToString();
-            string Stoilet = Toilet.ToString();
+            String Stoilet = Toilet.ToString();
+
+            if (Stoilet == "true"){
+                Stoilet = "a";
+            }
+            else{ 
+                Stoilet = "not got a"; 
+            }
             string SusedHeat = UsedHeatsource.ToString();
             string SenergyClassModifier = EnergyClassModifier.ToString();
             string Slicence = Licence.ToString();
 
-            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet(s). The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
+            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
             return returnString;
         }
 
-        public Camper() : base("test", 1234, "AZ23412", 1999, 0, false, 0, Vehicle.FuelType.Gasoline, 0) { }
+        public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet, double energyClassModifier) 
+            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice) 
+            {
+            Seat = seat; 
+            Beds = beds;
+            Toilet = toilet;
+            EnergyClassModifier = energyClassModifier;
+            }
+
 	}
 }
