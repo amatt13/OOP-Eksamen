@@ -214,17 +214,39 @@ namespace OOP_Eksamen
             Console.ReadKey();
         }
 
-        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {
+        static void SearchName(List<Vehicle> vehicleList, string searchString) {
 
-            foreach (Vehicle n in vehicleList) {
+            IEnumerable<IGrouping<string, Vehicle>> Vehicle2 =
+                from p in vehicleList
+                where p.Name.Contains(searchString)
+                orderby p.Name
+                group p by p.Name;
+
+
+            foreach (Vehicle n in Vehicle2) {
+                Console.WriteLine(n.Name);
+            }
+
+                    /*
+        IEnumerable<IGrouping<string, Person>> persons2 = 
+            from p in persons 
+            where p.Age >= 18 
+            orderby p.LastName, p.FirstName descending //komma-separeret 
+            group p by p.LastName;*/
+
+
+         /*   foreach (Vehicle n in vehicleList) {
                 if (n.Name.Contains(searchString)) {
                 }
                 else {
                     vehicleList.Remove(n);
                 }
             }
-            return vehicleList;
+            return vehicleList;*/
         }
+
+
+
         static List<Vehicle> SearchSeatBeds(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfBeds) {
             List<Bus> BusList = new List<Bus>();
             List<Camper> CamperList = new List<Camper>();
