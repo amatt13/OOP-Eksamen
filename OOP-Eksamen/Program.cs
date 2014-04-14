@@ -33,14 +33,12 @@ namespace OOP_Eksamen
                 //Bus1.Toilet = false;
                 //Bus1.Height = ;
                 //Bus1.Length = ;
-                //Bus1.Weight = ;
-            */
+                //Bus1.Weight = ;*/
 
-            /*
-                Vehicle.Size size = new Vehicle.Size();
+            Vehicle.Size size = new Vehicle.Size();
                 size.Depth=2;
                 size.Height=5;
-                size.Width=0;
+                size.Width=3;
 
                 Bus Bus2 = new Bus( "Scania Irizar",
                                     982505,
@@ -57,6 +55,7 @@ namespace OOP_Eksamen
                                     size,
                                     324);
 
+
             Truck Truck1 = new Truck();
                 Truck1.Name = "Scania 114 380 stetter";
                 Truck1.Km = 417000;
@@ -70,9 +69,9 @@ namespace OOP_Eksamen
                 //Truck1.FuelType = Diesel;
                 //Truck1.EnergyClass = ;
                 //Truck1.LoadCapacity = ;
-                //Truck1.Height = ;
-                //Truck1.Weight = 32000;
-                //Truck1.Length = ;
+                Truck1.Height = 50;
+                Truck1.Weight = 32000;
+                Truck1.Length = 1000;
 
             Truck Truck2 = new Truck();
                 Truck2.Name = "Volvo FM9 260";
@@ -205,9 +204,10 @@ namespace OOP_Eksamen
             foreach( Vehicle testv in VehicleForSale ){
                 Console.WriteLine(testv.ToString());
             }
-             */
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
+
+            Console.WriteLine(BusinessBuyer.GetBalance());
 
             Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 5000).ToString());
 

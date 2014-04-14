@@ -71,7 +71,7 @@ namespace OOP_Eksamen
             }
             set
             {
-                if (_sizeOfBus.Depth > 0 || _sizeOfBus.Height > 0 || _sizeOfBus.Width > 0)
+                if (value.Depth > 0 && value.Height > 0 && value.Width > 0)
                 {
                     _sizeOfBus = value;
                 }
@@ -87,7 +87,7 @@ namespace OOP_Eksamen
             get { return _weight; }
             set
             {
-                if (value > 1000)
+                if (value < 1000)
                 {//Hvad ville en god max vægt være? -Anders
                     _weight = value;
                 }

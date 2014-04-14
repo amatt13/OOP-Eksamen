@@ -10,7 +10,7 @@ namespace OOP_Eksamen
     {
         public uint LoadCapacity { get; set; }
         private double _height;
-        private double _lenght;
+        private double _length;
         private double _weight;
         public bool Hook { get; set; }
         private LicenseType _license;
@@ -44,13 +44,13 @@ namespace OOP_Eksamen
             }
         }
 
-        public double Lenght {
+        public double Length {
             get {
-                return _lenght;
+                return _length;
             }
             set {
                 if (value > 0) {
-                    _lenght = value;
+                    _length = value;
                 }
                 else {
                     throw new ArgumentException("The truck can not have a negative lenght value", "LenghtTooLow");
@@ -73,13 +73,13 @@ namespace OOP_Eksamen
         }
 
         public Truck():base("test",1234,"AZ23412",1999,0,false,0,Vehicle.FuelType.Gasoline,0){
-            Lenght = 0;
+            Length = 1;
         }
 
         public override string ToString() {
             string SloadCapacity = LoadCapacity.ToString();
             string Sheight = Height.ToString();
-            string Slenght = Lenght.ToString();
+            string Slenght = Length.ToString();
             string Sweight = Weight.ToString();
             string Shook = Hook.ToString();
             string Slicence = Licence.ToString();

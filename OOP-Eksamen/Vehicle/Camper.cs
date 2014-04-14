@@ -29,16 +29,15 @@ namespace OOP_Eksamen
 			} 
 		}
 
-		public int Beds { 
-			get { 
-                return Beds; 
+		public uint Beds {
+            get
+            {
+                return _beds;
             }
-			set { 
-				if (value > 999)
-					Beds = value;
-				else
-                    throw new ArgumentException("There have been placed 1.000 beds or more.\nWas this a mistake?", "BedTooHigh");
-			}
+            set
+            {
+                _beds = value;
+            }
 		}
 		public uint Toilet { 
 			get { return _toilet; }
