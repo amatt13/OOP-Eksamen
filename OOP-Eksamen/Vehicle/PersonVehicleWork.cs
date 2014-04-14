@@ -37,6 +37,11 @@ namespace OOP_Eksamen
 
             return "This vehicle has a safety brace " + Isafetybrace + ", and its licencetype is " + IlicenseType + ".";
 		}
-        public PersonVehicleWork() { }
+        public PersonVehicleWork(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, Size size, bool safetybrace, int freightcapacity)
+            :base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seat, size){
+                Safetybrace = safetybrace;
+                Freightcapacity = freightcapacity;
+                //Seat = 2;
+        }
 	}
 }

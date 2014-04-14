@@ -100,66 +100,92 @@ namespace OOP_Eksamen
                     0.7);                               //EnergyclassModifier 
                 
             Camper Camper2 = new Camper("Hymer 544 classic",
-                                            213000,
-                                            "GH65986",
-                                            2006,
-                                            102000,
-                                            false,
-                                            0,
-                                            Vehicle.FuelType.Diesel,
-                                            18000,
-                                            4,
-                                            8,
-                                            true,
-                                            0.8);
+                    213000,
+                    "GH65986",
+                    2006,
+                    102000,
+                    false,
+                    0,
+                    Vehicle.FuelType.Diesel,
+                    18000,
+                    4,
+                    8,
+                    true,
+                    0.8);
 
-            PersonVehiclePrivate PersonVehiclePrivate1 = new PersonVehiclePrivate();
-                PersonVehiclePrivate1.Name = "Audi A6 Avant";
-                PersonVehiclePrivate1.Km = 309000;
-                PersonVehiclePrivate1.Registration = "PH48689";
-                //PersonVehiclePrivate1.Year = 2008;
-                PersonVehiclePrivate1.NewPrice = 420000;
-                //PersonVehiclePrivate1.TowHook = true;
-                //PersonVehiclePrivate1.Enginesize = ;
-                //PersonVehiclePrivate1.Kmpl = ;
-                //PersonVehiclePrivate1.FuelType = Diesel
-                PersonVehiclePrivate1.Seat = 5;
-                //PersonVehiclePrivate1.Trunk = {2,2,2} SÆT DET HER RIGTIGT OP
-                PersonVehiclePrivate1._licenseType = Vehicle.LicenseType.B;
-                //PersonVehiclePrivate1.Isofix = true;
+            Vehicle.Size sizePv1 = new Vehicle.Size();
+                sizePv1.Depth=2;
+                sizePv1.Height=5;
+                sizePv1.Width=3;
 
-            PersonVehiclePrivate PersonVehiclePrivate2 = new PersonVehiclePrivate();
-                PersonVehiclePrivate2.Name = "Ford Scorpio";
-                PersonVehiclePrivate2.Km = 902120;
-                PersonVehiclePrivate2.Registration = "EF46898";
-                //PersonVehiclePrivate2.Year = 1999;
-                PersonVehiclePrivate2.NewPrice = 180000;
-                //PersonVehiclePrivate2.TowHook = true;
-                //PersonVehiclePrivate2.Enginesize = ;
-                //PersonVehiclePrivate2.Kmpl = ;
-                //PersonVehiclePrivate2.FuelType = Diesel
-                PersonVehiclePrivate2.Seat = 5;
-                //PersonVehiclePrivate2.Trunk = {2,2,2} SÆT DET HER RIGTIGT OP
-                PersonVehiclePrivate2._licenseType = Vehicle.LicenseType.B;
-                //PersonVehiclePrivate2.Isofix = false;
+            PersonVehiclePrivate PersonVehiclePrivate1 = new PersonVehiclePrivate("Audi A6A vant",
+                309000,
+                "PH48689",
+                2008,
+                420000,
+                true,
+                0,
+                Vehicle.FuelType.Gasoline,
+                360000,
+                5,
+                sizePv1,
+                true);
 
-            PersonVehicleWork PersonVehicleWork1 = new PersonVehicleWork();
-                PersonVehicleWork1.Name = "Peugeot Boxer";
-                PersonVehicleWork1.Km = 310000;
-                PersonVehicleWork1.Registration = "JK45963";
-                //PersonVehicleWork1.Year = 203;
-                PersonVehicleWork1.NewPrice = 70000;
-                //PersonVehicleWork1.TowHook = true;
-                //PersonVehicleWork1.Enginesize = ;
-                //PersonVehicleWork1.Kmpl = ;
-                //PersonVehicleWork1.FuelType = Diesel;
-                PersonVehicleWork1.Seat = 2;
-                //PersonVehicleWork1.Trunk = {2,2,2} SÆT DET HER RIGTIGT OP
-                PersonVehicleWork1._licenseType = Vehicle.LicenseType.BE;
-                PersonVehicleWork1.Safetybrace = true;
-                //PersonVehicleWork1.LoadCapacity = 0;
+            Vehicle.Size sizePv2 = new Vehicle.Size();
+            sizePv2.Depth = 2;
+            sizePv2.Height = 5;
+            sizePv2.Width = 3;
+
+            PersonVehiclePrivate PersonVehiclePrivate2 = new PersonVehiclePrivate("Ford Scorpio",
+            902120,
+            "EF46898",
+            1999,
+            180000,
+            true,
+            0,
+            Vehicle.FuelType.Gasoline,
+            70000,
+            5,
+            sizePv2,
+            false);
             
-            PersonVehicleWork PersonVehicleWork2 = new PersonVehicleWork();
+            Vehicle.Size sizeWv1 = new Vehicle.Size(); //Wv1 = Work vehicle 1
+            sizeWv1.Depth = 2;
+            sizeWv1.Height = 5;
+            sizeWv1.Width = 3;    
+
+            PersonVehicleWork PersonVehicleWork1 = new PersonVehicleWork("Peugeot Boxer",
+            310000,
+            "JK45963",
+            2003,
+            70000,
+            false,
+            0,
+            Vehicle.FuelType.Diesel,
+            50000,
+            2,
+            sizeWv1,
+            true,
+            350);
+
+            Vehicle.Size sizeWv2 = new Vehicle.Size();
+            sizeWv2.Depth = 2;
+            sizeWv2.Height = 5;
+            sizeWv2.Width = 3;    
+
+            PersonVehicleWork PersonVehicleWork2 = new PersonVehicleWork("Doblò Cargo",             
+            20000,
+            "IY49635",
+            2008,
+            98000,
+            true,
+            0,
+            Vehicle.FuelType.Gasoline,
+            68000,
+            2,
+            sizeWv2,
+            false,
+            400);
                 PersonVehicleWork2.Name = "Doblò Cargo";
                 PersonVehicleWork2.Km = 20000;
                 PersonVehicleWork2.Registration = "IY49635";

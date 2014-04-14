@@ -41,9 +41,10 @@ namespace OOP_Eksamen
            }
        }
 
-        public PersonVehicle():base("test",1234,"AZ23412",1999,0,false,0,Vehicle.FuelType.Gasoline,0){
-            Seat = 2;
+        public PersonVehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size size)
+            :base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice){
+            Seat = seats;
+            Trunk = size;
         }
     }
-		//public PersonVehicle(int Seat, Size Size) {}
 }
