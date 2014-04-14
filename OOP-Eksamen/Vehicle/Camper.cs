@@ -13,7 +13,6 @@ namespace OOP_Eksamen
 		private bool _toilet;
         private Heatsource _usedheatsource;
         private double _energyClassModifier;
-        private LicenseType _licence;
 		private uint _seat;
 		private uint _beds;
 
@@ -74,15 +73,6 @@ namespace OOP_Eksamen
             }
         }
 
-        public LicenseType Licence {
-            get {
-                return _licence;
-            }
-            set {
-                value = LicenseType.B;
-                }
-            }
-
 		public override string ToString()
 		{
             string Sseats = Seat.ToString();
@@ -97,7 +87,7 @@ namespace OOP_Eksamen
             }
             string SusedHeat = UsedHeatsource.ToString();
             string SenergyClassModifier = EnergyClassModifier.ToString();
-            string Slicence = Licence.ToString();
+            string Slicence = _licenseType.ToString();
 
             string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
             return returnString;
@@ -110,6 +100,7 @@ namespace OOP_Eksamen
             Beds = beds;
             Toilet = toilet;
             EnergyClassModifier = energyClassModifier;
+            _licenseType = LicenseType.B;
             }
 
 	}

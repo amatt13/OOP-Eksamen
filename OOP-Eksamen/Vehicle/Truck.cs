@@ -10,10 +10,15 @@ namespace OOP_Eksamen
     {
         public uint LoadCapacity { get; set; }
         private double _height;
-        private double _lenght;
+        private double _length;
         private double _weight;
-        public bool Hook { get; set; }
         private LicenseType _license;
+        private string p1;
+        private int p2;
+        private string p3;
+        private int p4;
+        private int p5;
+        private bool p6;
 
 
         public double Weight {
@@ -44,13 +49,13 @@ namespace OOP_Eksamen
             }
         }
 
-        public double Lenght {
+        public double Length {
             get {
-                return _lenght;
+                return _length;
             }
             set {
                 if (value > 0) {
-                    _lenght = value;
+                    _length = value;
                 }
                 else {
                     throw new ArgumentException("The truck can not have a negative lenght value", "LenghtTooLow");
@@ -58,12 +63,12 @@ namespace OOP_Eksamen
             }
         }
 
-        public LicenseType Licence {
+        public LicenseType License {
             get {
                 return _license;
             }
             set {
-                if (Hook == true) {
+                if (_towHook == true) {
                     value = LicenseType.CE;
                 }
                 else {
@@ -73,18 +78,28 @@ namespace OOP_Eksamen
         }
 
         public Truck():base("test",1234,"AZ23412",1999,0,false,0,Vehicle.FuelType.Gasoline,0){
-            Lenght = 0;
+            Length = 1;
+        }
+
+        public Truck(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint loadcapacity , double height, double weight, double length) 
+            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
+        {
+            LoadCapacity = loadcapacity;
+            Height = height;
+            Weight = weight;
+            Length = length;
+            License = _license;
         }
 
         public override string ToString() {
             string SloadCapacity = LoadCapacity.ToString();
             string Sheight = Height.ToString();
-            string Slenght = Lenght.ToString();
+            string Slenght = Length.ToString();
             string Sweight = Weight.ToString();
-            string Shook = Hook.ToString();
-            string Slicence = Licence.ToString();
+            string StowHook = _towHook.ToString();
+            string Slicence = License.ToString();
 
-            return "This truck have " + SloadCapacity +"kg loadcapacity, is " + Sheight + "m high, " + Slenght + "m long and weights " + Sweight + "kg. Is is " + Shook + " that there is a hook attached and the licenstype needed is " + Slicence + ".";
+            return "This truck have " + SloadCapacity +"kg loadcapacity, is " + Sheight + "m high, " + Slenght + "m long and weights " + Sweight + "kg. Is is " + StowHook + " that there is a hook attached and the licenstype needed is " + Slicence + ".";
         }
     }
 }

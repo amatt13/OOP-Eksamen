@@ -16,116 +16,102 @@ namespace OOP_Eksamen
             List<Buyer> Buyers = new List<Buyer>();
             Sales SalesBot = new Sales();
 
-            /*Bus Bus1 = new Bus();
-                Bus1.Name = "Volvo B10M Carrus 302";
-                Bus1.Km = 296716;
-                Bus1.Registration = "QE25987";
-                //Bus1.Year = 1998;
-                Bus1.NewPrice = 10000;
-                //Bus1.TowHook = false;
-                Bus1._licenseType = Vehicle.LicenseType.D;
-                //Bus1.Enginesize = ;
-                //Bus1.Kmpl = ;
-                //Bus1.FuelType = ;
-                //Bus1.EnergyClass = ;
-                Bus1.Seats = 47;
-                Bus1.Beds = 47; //Antager at alle stole kan lægges ned
-                //Bus1.Toilet = false;
-                //Bus1.Height = ;
-                //Bus1.Length = ;
-                //Bus1.Weight = ;
-            */
+            Vehicle.Size sizeBus1 = new Vehicle.Size();       //Values to calculate the size of the bus
+            sizeBus1.Depth = 2;
+            sizeBus1.Height = 5;
+            sizeBus1.Width = 3;
 
-            /*
-                Vehicle.Size size = new Vehicle.Size();
-                size.Depth=2;
-                size.Height=5;
-                size.Width=0;
+                Bus Bus1 = new Bus("Volvo B10M Carrus 302",
+                    2967165,
+                    "QE25987",
+                    1998,
+                    10000,
+                    false,
+                    0,
+                    Vehicle.FuelType.Diesel,
+                    12000,
+                    47,
+                    47,
+                    false,
+                    sizeBus1,
+                    7);
+
+            Vehicle.Size sizeBus2 = new Vehicle.Size();
+                sizeBus2.Depth=2;
+                sizeBus2.Height=5;
+                sizeBus2.Width=3;
 
                 Bus Bus2 = new Bus( "Scania Irizar",
-                                    982505,
-                                    "KS12387",
-                                    1997,
-                                    21000,
-                                    true,
-                                    0,
-                                    Vehicle.FuelType.Diesel,
-                                    12000,
-                                    49,
-                                    49,
-                                    true,
-                                    size,
-                                    324);
+                    982505,
+                    "KS12387",
+                    1997,
+                    21000,
+                    true,
+                    0,
+                    Vehicle.FuelType.Diesel,
+                    12000,
+                    49,
+                    49,
+                    true,
+                    sizeBus2,
+                    9.2);
 
-            Truck Truck1 = new Truck();
-                Truck1.Name = "Scania 114 380 stetter";
-                Truck1.Km = 417000;
-                Truck1.Registration = "QW89746";
-                //Truck1.Year = 2005;
-                Truck1.NewPrice = 108000;
-                //Truck1.TowHook = true;
-                Truck1._licenseType = Vehicle.LicenseType.CE;
-                //Truck1.Enginesize = ;
-                //Truck1.Kmpl = ;
-                //Truck1.FuelType = Diesel;
-                //Truck1.EnergyClass = ;
-                //Truck1.LoadCapacity = ;
-                //Truck1.Height = ;
-                //Truck1.Weight = 32000;
-                //Truck1.Length = ;
 
-            Truck Truck2 = new Truck();
-                Truck2.Name = "Volvo FM9 260";
-                Truck2.Km = 213000;
-                Truck2.Registration = "GH65986";
-                //Truck2.Year = 2006;
-                Truck2.NewPrice = 102000;
-                //Truck2.TowHook = false;
-                Truck2._licenseType = Vehicle.LicenseType.C;
-                //Truck2.Enginesize = ;
-                //Truck2.Kmpl = ;
-                //Truck2.FuelType = Diesel;
-                //Truck2.EnergyClass = ;
-                //Truck2.LoadCapacity = 8000;
-                //Truck2.Height = ;
-                //Truck2.Weight = 18000;
-                //Truck2.Length = ;
+                Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
+                    417000,                                         //Km driven
+                    "QW89746",                                      //License number
+                    2005,                                           //Year the car was build
+                    108000,                                         //Price of the car
+                    true,                                           //Has the truck got a tow hook
+                    0,                                              //KM per liter
+                    Vehicle.FuelType.Diesel,                        //The fuel the truck uses
+                    0,                                              //minimum price
+                    6000,                                           //load capacity
+                    3.5,                                            //height in metres
+                    15000,                                          //Weight of vehicle
+                    9);                                             //Length in metres
 
-            Camper Camper1 = new Camper();
-                Camper1.Name = "Fiat CI Fiat Ducato Riviera 55 Special P";
-                Camper1.Km = 417000;
-                Camper1.Registration = "QW89746";
-                //Camper1.Year = 2005;
-                Camper1.NewPrice = 108000;
-                //Camper1.TowHook = true;
-                Camper1._licenseType = Vehicle.LicenseType.CE;
-                //Camper1.Enginesize = ;
-                //Camper1.Kmpl = ;
-                //Camper1.FuelType = Diesel;
-                Camper1.Seat = 2;
-                Camper1.Beds = 4;
-                //Camper1.Toilet  = true;
-                //Camper1.HeatSource = Gas;
-                //Camper1.EnergyClass = ;
-                Camper1._licenseType = Vehicle.LicenseType.B;
+                Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
+                    213000,                               //Km driven
+                    "GH65986",                            //License number
+                    2006,                                 //Year the car was build
+                    102000,                               //Price of the car
+                    false,                                //Has the truck got a tow hook
+                    0,                                    //KM per liter
+                    Vehicle.FuelType.Gasoline,            //The fuel the truck uses
+                    0,                                    //minimum price
+                    8000,                                 //load capacity
+                    4,                                    //height in metres
+                    18000,                                //Weight of vehicle
+                    12);                                  //Length in metres
+
+                Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P",
+                    417000,
+                    "QW89746",
+                    2005,
+                    108000,
+                    true,
+                    0,
+                    Vehicle.FuelType.Diesel,
+                    0,
+                    2,                                  //seats
+                    4,                                  //beds
+                    false,                              //toilet
+                    0.7);                               //EnergyclassModifier 
                 
-            Camper Camper2 = new Camper();
-                Camper2.Name = "Hymer 544 classic";
-                Camper2.Km = 213000;
-                Camper2.Registration = "GH65986";
-                //Camper2.Year = 2006;
-                Camper2.NewPrice = 102000;
-                //Camper2.TowHook = false;
-                Camper2._licenseType = Vehicle.LicenseType.C;
-                //Camper2.Enginesize = ;
-                //Camper2.Kmpl = ;
-                //Camper2.FuelType = Diesel;
-                Camper1.Seat = 2;
-                Camper1.Beds = 6;
-                //Camper1.Toilet  = true;
-                //Camper1.HeatSource = Electricty;
-                //Camper1.EnergyClass = ;
-                Camper1._licenseType = Vehicle.LicenseType.B;
+            Camper Camper2 = new Camper("Hymer 544 classic",
+                                            213000,
+                                            "GH65986",
+                                            2006,
+                                            102000,
+                                            false,
+                                            0,
+                                            Vehicle.FuelType.Diesel,
+                                            18000,
+                                            4,
+                                            8,
+                                            true,
+                                            0.8);
 
             PersonVehiclePrivate PersonVehiclePrivate1 = new PersonVehiclePrivate();
                 PersonVehiclePrivate1.Name = "Audi A6 Avant";
@@ -205,9 +191,10 @@ namespace OOP_Eksamen
             foreach( Vehicle testv in VehicleForSale ){
                 Console.WriteLine(testv.ToString());
             }
-             */
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
+
+            Console.WriteLine(BusinessBuyer.GetBalance());
 
             Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 5000).ToString());
 
