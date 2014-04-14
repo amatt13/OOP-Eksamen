@@ -224,38 +224,29 @@ namespace OOP_Eksamen
 
             Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 5000).ToString());
 
+            Console.WriteLine("ANDERS TEST VVV\n");
+            SearchName(VehicleForSale, "Boxer");
             Console.ReadKey();
         }
 
-        static void SearchName(List<Vehicle> vehicleList, string searchString) {
-
-            IEnumerable<IGrouping<string, Vehicle>> Vehicle2 =
+        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {
+            //Finder Vehicles i en liste med et specifikt søge ord/sætning. 
+            //Spytter det ud igen i en ny liste som kan blive printet.
+            IEnumerable<IGrouping<string, Vehicle>> VehicleSorted =
                 from p in vehicleList
                 where p.Name.Contains(searchString)
                 orderby p.Name
                 group p by p.Name;
 
+            List<Vehicle> ReturnVehicles = new List<Vehicle>();
 
-            foreach (Vehicle n in Vehicle2) {
-                Console.WriteLine(n.Name);
-            }
-
-                    /*
-        IEnumerable<IGrouping<string, Person>> persons2 = 
-            from p in persons 
-            where p.Age >= 18 
-            orderby p.LastName, p.FirstName descending //komma-separeret 
-            group p by p.LastName;*/
-
-
-         /*   foreach (Vehicle n in vehicleList) {
-                if (n.Name.Contains(searchString)) {
-                }
-                else {
-                    vehicleList.Remove(n);
+            foreach (IGrouping<string, Vehicle> testcars in VehicleSorted) {
+                foreach (Vehicle cars in testcars) {
+                    ReturnVehicles.Add(cars);
                 }
             }
-            return vehicleList;*/
+
+            return ReturnVehicles;
         }
 
 
