@@ -212,16 +212,19 @@ namespace OOP_Eksamen
             PrivateSeller PrivateSeller5 = new PrivateSeller(9865123584, 2700);
             PrivateSeller PrivateSeller6 = new PrivateSeller(6585348963, 3500);
 
-            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, true);
-            SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, true);
-            SalesBot.PutOpForSale(Van1, PrivateSeller2, 2000, true);
-            SalesBot.PutOpForSale(Van2, PrivateSeller2, 8000, true);
-            SalesBot.PutOpForSale(Car1, PrivateSeller3, 16000, true);
-            SalesBot.PutOpForSale(Car2, PrivateSeller4, 4500, true);
-            SalesBot.PutOpForSale(Bus1, PrivateSeller5, 68000, true);
-            SalesBot.PutOpForSale(Bus2, PrivateSeller2, 480000, true);
-            SalesBot.PutOpForSale(Camper1, PrivateSeller6, 1200, true);
-            SalesBot.PutOpForSale(Camper2, PrivateSeller6, 2400000, true);
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Van1, PrivateSeller2, 2000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Van2, PrivateSeller2, 8000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Car1, PrivateSeller3, 16000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Car2, PrivateSeller4, 4500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Bus1, PrivateSeller5, 68000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Bus2, PrivateSeller2, 480000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Camper1, PrivateSeller6, 1200, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Camper2, PrivateSeller6, 2400000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Truck2, PrivateSeller2, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
 
             if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
             {
