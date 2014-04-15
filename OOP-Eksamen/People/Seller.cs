@@ -65,10 +65,11 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public BusinessSeller(long CVR)
+        public BusinessSeller(long CVR, int ZipCode)
         {
             _balance = 0;
             _cvr = CVR;
+            _zipCode = ZipCode;
         }
     }
 
@@ -94,10 +95,11 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public PrivateSeller(long CPR)
+        public PrivateSeller(long CPR, int ZipCode)
         {
             _balance = 0;
             _cpr = CPR;
+            _zipCode = ZipCode;
         }
     }
 

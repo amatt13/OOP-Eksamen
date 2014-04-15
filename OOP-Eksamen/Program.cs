@@ -204,15 +204,12 @@ namespace OOP_Eksamen
             }
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
-            PrivateSeller PrivateSeller = new PrivateSeller(114477881144);
+            PrivateSeller PrivateSeller = new PrivateSeller(114477881144, 7800);
 
-            SalesBot.PutOpForSale(Bus1, PrivateSeller, 1500, true);
-            SalesBot.PutOpForSale(Bus2, PrivateSeller, 1500, true);
+            SalesBot.PutOpForSale(Truck1, PrivateSeller, 1500, true);
+            SalesBot.PutOpForSale(Truck2, PrivateSeller, 1500, true);
 
-            SalesBot.ReciveOffer(BusinessBuyer, Bus1.AuctionNumber, 2000);
-
-            //Console.WriteLine(Bus1.AuctionNumber);
-            //Console.WriteLine(Bus2.AuctionNumber);
+            SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 2000);
 
             Console.ReadKey();
         }
