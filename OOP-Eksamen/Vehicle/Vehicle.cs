@@ -76,7 +76,7 @@ namespace OOP_Eksamen
             }
         }
 
-        decimal MinPrice { get; set; }
+        public decimal MinPrice { get; set; }
 
 		public string Name{
 			get { return _name; }

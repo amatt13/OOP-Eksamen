@@ -29,7 +29,7 @@ namespace OOP_Eksamen
                 K.SellerNotif = false;
             }
             K.AuctionNumber = i++;
-            K.NewPrice = MinPrice;
+            K.MinPrice = MinPrice;
             K.Seller = S;
             return i;
         }
@@ -51,7 +51,7 @@ namespace OOP_Eksamen
                 Bid.Buyer = Buyer;
                 Bid.AuctionNumber = AuctionNumber;
 
-                Vehicle.First().NewPrice = Offer;
+                Vehicle.First().MinPrice = Offer;
 
                 Bids.Add(Bid);
 
