@@ -200,16 +200,15 @@ namespace OOP_Eksamen
 
             foreach (Vehicle testv in SalesBot.VehicleForSale)
             {
-                Console.WriteLine(testv.ToString());
+                //Console.WriteLine(testv.ToString());
             }
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
-            PrivateSeller PrivateSeller = new PrivateSeller(114477881144);
+            PrivateSeller PrivateSeller = new PrivateSeller(114477881144, 7800);
 
-            if (SalesBot.ReciveOffer(BusinessBuyer, Bus2.AuctionNumber, 22000))
-            {
-                SalesBot.AcceptBid(PrivateSeller, Bus2.AuctionNumber);
-            }
+            SalesBot.PutOpForSale(Truck1, PrivateSeller, 1500, true);
+            SalesBot.PutOpForSale(Truck2, PrivateSeller, 1500, true);
+
 
             if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
             {
@@ -217,6 +216,7 @@ namespace OOP_Eksamen
             }
             double i = 8000;
             SearchBigWeight(SalesBot.VehicleForSale, i);
+
 
             Console.ReadKey();
         }

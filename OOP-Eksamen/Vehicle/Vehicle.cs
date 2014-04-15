@@ -63,7 +63,19 @@ namespace OOP_Eksamen
             public double Depth;
         }
 
-        public int AuctionNumber { get; set; }
+        private int _auctionNumber = -1;
+        public int AuctionNumber
+        {
+            get
+            {
+                return _auctionNumber;
+            }
+            set
+            {
+                _auctionNumber = value;
+            }
+        }
+
         decimal MinPrice { get; set; }
 
 		public string Name{

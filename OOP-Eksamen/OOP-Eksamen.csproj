@@ -41,7 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ForSale.cs" />
+    <Compile Include="AuctionHouse.cs" />
+    <Compile Include="AuctionHouseStruct.cs" />
     <Compile Include="People\Buyer.cs" />
     <Compile Include="People\Seller.cs" />
     <Compile Include="Program.cs" />
