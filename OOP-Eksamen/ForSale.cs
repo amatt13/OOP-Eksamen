@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace OOP_Eksamen
 {
@@ -27,9 +28,9 @@ namespace OOP_Eksamen
             {
                 K.SellerNotif = false;
             }
+            K.AuctionNumber = i++;
             K.NewPrice = MinPrice;
             K.Seller = S;
-            Console.WriteLine(i++);
             return i;
         }
 

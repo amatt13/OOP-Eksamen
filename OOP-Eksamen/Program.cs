@@ -206,15 +206,11 @@ namespace OOP_Eksamen
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
             PrivateSeller PrivateSeller = new PrivateSeller(114477881144);
 
-            if (SalesBot.ReciveOffer(BusinessBuyer, Bus2.AuctionNumber, 22000))
-            {
-                SalesBot.AcceptBid(PrivateSeller, Bus2.AuctionNumber);
-            }
+            SalesBot.PutOpForSale(Bus1, PrivateSeller, 1500, true);
+            SalesBot.PutOpForSale(Bus2, PrivateSeller, 1500, true);
 
-            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
-            {
-                SalesBot.AcceptBid(PrivateSeller, Truck1.AuctionNumber);
-            }
+            Console.WriteLine(Bus1.AuctionNumber);
+            Console.WriteLine(Bus2.AuctionNumber);
 
 
             Console.WriteLine("ANDERS TEST VVV\n");
