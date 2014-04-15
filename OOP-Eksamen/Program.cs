@@ -214,7 +214,14 @@ namespace OOP_Eksamen
 
             SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, true);
             SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, true);
-
+            SalesBot.PutOpForSale(Van1, PrivateSeller2, 2000, true);
+            SalesBot.PutOpForSale(Van2, PrivateSeller2, 8000, true);
+            SalesBot.PutOpForSale(Car1, PrivateSeller3, 16000, true);
+            SalesBot.PutOpForSale(Car2, PrivateSeller4, 4500, true);
+            SalesBot.PutOpForSale(Bus1, PrivateSeller5, 68000, true);
+            SalesBot.PutOpForSale(Bus2, PrivateSeller2, 480000, true);
+            SalesBot.PutOpForSale(Camper1, PrivateSeller6, 1200, true);
+            SalesBot.PutOpForSale(Camper2, PrivateSeller6, 2400000, true);
 
             if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
             {
