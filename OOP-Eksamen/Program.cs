@@ -208,6 +208,8 @@ namespace OOP_Eksamen
             Seller Per = AH.Sellers[0];
 
             AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            AH.PutOpForSale(Van2, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            AH.PutOpForSale(Car1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
 
             if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
             {
@@ -324,6 +326,18 @@ Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en beste
             IEnumerable<Vehicle> ReturnList = Vehicles.Where(v => v.GetType() == typeof(Car) && v.Km <= MaxKM && v.MinPrice <= MinPrice).OrderByDescending(v => v.Km);
 
             return ReturnList.ToList();
+        }
+
+        static int AVGEnergyClass(List<Vehicle> Vehicles)
+        {
+            int avg = 0;
+
+            foreach (Vehicle car in Vehicles)
+            {
+                avg += ((int)car._energyClass + 1);
+            }
+
+            return (avg / Vehicles.Count);
         }
     }
 }
