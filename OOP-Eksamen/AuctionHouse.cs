@@ -35,7 +35,6 @@ namespace OOP_Eksamen
         }
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
-
         public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer)
         {
             if (Buyer.Balance >= Offer && VehicleForSale[AuctionNumber].NewPrice <= Offer)

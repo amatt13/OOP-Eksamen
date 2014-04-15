@@ -200,7 +200,7 @@ namespace OOP_Eksamen
 
             foreach (Vehicle testv in SalesBot.VehicleForSale)
             {
-                Console.WriteLine(testv.ToString());
+                //Console.WriteLine(testv.ToString());
             }
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
@@ -209,8 +209,10 @@ namespace OOP_Eksamen
             SalesBot.PutOpForSale(Bus1, PrivateSeller, 1500, true);
             SalesBot.PutOpForSale(Bus2, PrivateSeller, 1500, true);
 
-            Console.WriteLine(Bus1.AuctionNumber);
-            Console.WriteLine(Bus2.AuctionNumber);
+            SalesBot.ReciveOffer(BusinessBuyer, Bus1.AuctionNumber, 2000);
+
+            //Console.WriteLine(Bus1.AuctionNumber);
+            //Console.WriteLine(Bus2.AuctionNumber);
 
             Console.ReadKey();
         }
