@@ -315,5 +315,15 @@ Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en beste
             return ReturnList;
         }
 
+        //Find alle personbiler til privatbrug som har kørt under et angivet antal km, og hvor minimum 
+        //salgsprisen samtidig ligger under et angivet beløb. Køretøjerne skal returneres i sorteret
+        //rækkefølge efter antal kørte km.
+
+        static List<Vehicle> FindCars(List<Vehicle> Vehicles, int MaxKM, int MinPrice )
+        {
+            IEnumerable<Vehicle> ReturnList = Vehicles.Where(v => v.GetType() == typeof(Car) && v.Km <= MaxKM && v.MinPrice <= MinPrice).OrderByDescending(v => v.Km);
+
+            return ReturnList.ToList();
+        }
     }
 }
