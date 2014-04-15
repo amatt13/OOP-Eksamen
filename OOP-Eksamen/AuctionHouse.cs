@@ -24,9 +24,10 @@ namespace OOP_Eksamen {
 
         public int PutOpForSale(Vehicle v, Seller s, decimal MinPrice, NotificationMethod Method) {
             Method(v);
-
-            K.NewPrice = MinPrice;
-            K.Seller = S;
+            VehicleForSale.Add(v);
+            s.Vehicles.Add(v);
+            v.MinPrice = MinPrice;
+            v.Seller = s;
             return i;
         }
 

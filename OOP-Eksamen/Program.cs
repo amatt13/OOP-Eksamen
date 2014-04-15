@@ -17,20 +17,20 @@ namespace OOP_Eksamen
             sizeBus1.Height = 5;
             sizeBus1.Width = 3;
 
-                Bus Bus1 = new Bus("Volvo B10M Carrus 302",
-                    2967165,
-                    "QE25987",
-                    1998,
-                    10000,
-                    false,
-                    0,
-                    Vehicle.FuelType.Diesel,
-                    12000,
-                    47,
-                    47,
-                    false,
-                    sizeBus1,
-                    7);
+                Bus Bus1 = new Bus( "Volvo B10M Carrus 302",
+                                    2967165,
+                                    "QE25987",
+                                    1998,
+                                    10000,
+                                    false,
+                                    0,
+                                    Vehicle.FuelType.Diesel,
+                                    12000,
+                                    47,
+                                    47,
+                                    false,
+                                    sizeBus1,
+                                    7);
 
             Vehicle.Size sizeBus2 = new Vehicle.Size();
                 sizeBus2.Depth=2;
@@ -206,10 +206,8 @@ namespace OOP_Eksamen
             AH.Sellers.Add(new PrivateSeller(6585348963, 3500));
 
             Seller Per = AH.Sellers[0];
-            Per.Vehicles.Add(Van1);
-            Per.Vehicles.Add(Camper1);
 
-            AH.PutOpForSale(Per.Vehicles[0], Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
 
             if (AH.ReciveOffer(AH.Buyers[0], Truck1.AuctionNumber, 22000))
             {
