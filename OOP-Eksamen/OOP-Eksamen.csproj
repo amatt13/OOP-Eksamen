@@ -49,8 +49,8 @@
     <Compile Include="Vehicle\Bus.cs" />
     <Compile Include="Vehicle\Camper.cs" />
     <Compile Include="Vehicle\PersonVehicle.cs" />
-    <Compile Include="Vehicle\PersonVehiclePrivate.cs" />
-    <Compile Include="Vehicle\PersonVehicleWork.cs" />
+    <Compile Include="Vehicle\Car.cs" />
+    <Compile Include="Vehicle\Van.cs" />
     <Compile Include="Vehicle\Truck.cs" />
     <Compile Include="Vehicle\Vehicle.cs" />
   </ItemGroup>

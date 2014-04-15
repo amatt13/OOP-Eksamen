@@ -116,7 +116,7 @@ namespace OOP_Eksamen
                 sizePv1.Height=5;
                 sizePv1.Width=3;
 
-            Car PersonVehiclePrivate1 = new Car("Audi A6A vant",
+            Car Car1 = new Car("Audi A6A vant",
                 309000,
                 "PH48689",
                 2008,
@@ -134,7 +134,7 @@ namespace OOP_Eksamen
             sizePv2.Height = 5;
             sizePv2.Width = 3;
 
-            Car PersonVehiclePrivate2 = new Car("Ford Scorpio",
+            Car Car2 = new Car("Ford Scorpio",
             902120,
             "EF46898",
             1999,
@@ -152,7 +152,7 @@ namespace OOP_Eksamen
             sizeWv1.Height = 5;
             sizeWv1.Width = 3;    
 
-            Van PersonVehicleWork1 = new Van("Peugeot Boxer",
+            Van Van1 = new Van("Peugeot Boxer",
             310000,
             "JK45963",
             2003,
@@ -169,9 +169,9 @@ namespace OOP_Eksamen
             Vehicle.Size sizeWv2 = new Vehicle.Size();
             sizeWv2.Depth = 2;
             sizeWv2.Height = 5;
-            sizeWv2.Width = 3;    
+            sizeWv2.Width = 3;
 
-            Van PersonVehicleWork2 = new Van("Doblò Cargo",             
+            Van Van2 = new Van("Doblò Cargo",             
             20000,
             "IY49635",
             2008,
@@ -184,20 +184,6 @@ namespace OOP_Eksamen
             sizeWv2,
             false,
             400);
-                PersonVehicleWork2.Name = "Doblò Cargo";
-                PersonVehicleWork2.Km = 20000;
-                PersonVehicleWork2.Registration = "IY49635";
-                //PersonVehicleWork2.Year = 2008;
-                PersonVehicleWork2.NewPrice = 98000;
-                //PersonVehicleWork2.TowHook = false;
-                //PersonVehicleWork2.Enginesize = ;
-                //PersonVehicleWork2.Kmpl = ;
-                //PersonVehicleWork2.FuelType = Diesel;
-                PersonVehicleWork2.Seat = 2;
-                //PersonVehicleWork2.Trunk = {2,2,2} SÆT DET HER RIGTIGT OP
-                PersonVehicleWork2._licenseType = Vehicle.LicenseType.BE;
-                PersonVehicleWork2.Safetybrace = true;
-                //PersonVehicleWork2.LoadCapacity = 0;                
 
 
 
@@ -207,10 +193,10 @@ namespace OOP_Eksamen
             SalesBot.VehicleForSale.Add(Truck2);
             SalesBot.VehicleForSale.Add(Camper1);
             SalesBot.VehicleForSale.Add(Camper2);
-            SalesBot.VehicleForSale.Add(PersonVehiclePrivate1);
-            SalesBot.VehicleForSale.Add(PersonVehiclePrivate2);
-            SalesBot.VehicleForSale.Add(PersonVehicleWork1);
-            SalesBot.VehicleForSale.Add(PersonVehicleWork2);
+            SalesBot.VehicleForSale.Add(Car1);
+            SalesBot.VehicleForSale.Add(Car2);
+            SalesBot.VehicleForSale.Add(Van1);
+            SalesBot.VehicleForSale.Add(Van2);
 
             foreach (Vehicle testv in SalesBot.VehicleForSale)
             {
