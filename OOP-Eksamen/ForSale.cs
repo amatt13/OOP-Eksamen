@@ -8,6 +8,10 @@ namespace OOP_Eksamen
 {
     class Sales
     {
+        //Liste hvor alle køretøjer er tilsalg
+        public List<Vehicle> VehicleSold = new List<Vehicle>();
+        public List<Vehicle> VehicleForSale = new List<Vehicle>();
+
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris)
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris, notifikationsMetode)
 
@@ -31,9 +35,9 @@ namespace OOP_Eksamen
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
 
-        public bool ReciveOffer(Buyer Buyer, Vehicle Vehicle, decimal Offer)
+        public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer)
         {
-            if (Buyer.Balance >= Offer && Vehicle.NewPrice <= Offer)
+            if (Buyer.Balance >= Offer && VehicleForSale[AuctionNumber].NewPrice <= Offer)
             {
                 return true;
             }
@@ -45,7 +49,7 @@ namespace OOP_Eksamen
 
         //public bool AccepterBud(Sælger sælger, int auktionsNummer)
 
-        public bool AcceptBid(Seller Seller, Vehicle Vehicle)
+        public bool AcceptBid(Seller Seller, int AuctionNumber)
         {
             Seller.ReceiveNotificationAboutBid();
             return false;

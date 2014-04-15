@@ -10,8 +10,6 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
-            List<Vehicle> VehicleSold = new List<Vehicle>();
-            List<Vehicle> VehicleForSale = new List<Vehicle>();
             List<Seller> Sellers = new List<Seller>();
             List<Buyer> Buyers = new List<Buyer>();
             Sales SalesBot = new Sales();
@@ -204,38 +202,39 @@ namespace OOP_Eksamen
 
 
             //VehicleForSale.Add(Bus1);
-            VehicleForSale.Add(Bus2);
-            VehicleForSale.Add(Truck1);
-            VehicleForSale.Add(Truck2);
-            VehicleForSale.Add(Camper1);
-            VehicleForSale.Add(Camper2);
-            VehicleForSale.Add(PersonVehiclePrivate1);
-            VehicleForSale.Add(PersonVehiclePrivate2);
-            VehicleForSale.Add(PersonVehicleWork1);
-            VehicleForSale.Add(PersonVehicleWork2);
-            
-            foreach( Vehicle testv in VehicleForSale ){
+            SalesBot.VehicleForSale.Add(Bus2);
+            SalesBot.VehicleForSale.Add(Truck1);
+            SalesBot.VehicleForSale.Add(Truck2);
+            SalesBot.VehicleForSale.Add(Camper1);
+            SalesBot.VehicleForSale.Add(Camper2);
+            SalesBot.VehicleForSale.Add(PersonVehiclePrivate1);
+            SalesBot.VehicleForSale.Add(PersonVehiclePrivate2);
+            SalesBot.VehicleForSale.Add(PersonVehicleWork1);
+            SalesBot.VehicleForSale.Add(PersonVehicleWork2);
+
+            foreach (Vehicle testv in SalesBot.VehicleForSale)
+            {
                 Console.WriteLine(testv.ToString());
             }
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
             PrivateSeller PrivateSeller = new PrivateSeller(114477881144);
 
-            if (SalesBot.ReciveOffer(BusinessBuyer, Bus2, 22000))
+            if (SalesBot.ReciveOffer(BusinessBuyer, Bus2.AuctionNumber, 22000))
             {
-                SalesBot.AcceptBid(PrivateSeller, Bus2);
+                SalesBot.AcceptBid(PrivateSeller, Bus2.AuctionNumber);
             }
 
-            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1, 22000))
+            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
             {
-                SalesBot.AcceptBid(PrivateSeller, Truck1);
+                SalesBot.AcceptBid(PrivateSeller, Truck1.AuctionNumber);
             }
 
 
             Console.WriteLine("ANDERS TEST VVV\n");
             uint i = 1;
             bool tr = true;
-            SearchSeatsToilet(VehicleForSale, i, tr);
+            SearchSeatsToilet(SalesBot.VehicleForSale, i, tr);
             //SearchName(VehicleForSale, "Boxer");
             Console.ReadKey();
         }

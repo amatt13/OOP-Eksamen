@@ -32,7 +32,8 @@ namespace OOP_Eksamen
                return _trunk;
            }
            set{
-               if (_trunk.Depth > 0 || _trunk.Height > 0 || _trunk.Width > 0) {
+               if (value.Depth > 0 && value.Height > 0 && value.Width > 0)
+               {
                    _trunk = value;
                }
                else {
