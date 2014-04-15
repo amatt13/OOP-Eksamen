@@ -4,10 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Eksamen
-{
-    class Sales
-    {
+namespace OOP_Eksamen {
+    class Sales {
         //Liste hvor alle køretøjer er tilsalg
         public List<Vehicle> VehicleSold = new List<Vehicle>();
         public List<Vehicle> VehicleForSale = new List<Vehicle>();
@@ -18,34 +16,24 @@ namespace OOP_Eksamen
 
         private int i = 0;
 
-        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, bool WantNotification = false)
-        {
-            if (WantNotification)
-            {
-                K.SellerNotif = true;
-            }
-            else
-            {
-                K.SellerNotif = false;
-            }
-            K.AuctionNumber = i++;
+        public delegate void NotificationMethod(Vehicle k);
+
+        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, NotificationMethod Method) {
+            Method(K);
             K.NewPrice = MinPrice;
             K.Seller = S;
             return i;
         }
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
-        public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer)
-        {
-            if (AuctionNumber == -1)
-            {
+        public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer) {
+            if (AuctionNumber == -1) {
                 throw new ArgumentException("The vehicle has not been registered in the auction house", "NotRegisteredAuctionHouse");
             }
 
             IEnumerable<Vehicle> Vehicle = VehicleForSale.Where(v => v.AuctionNumber == AuctionNumber).Take(1);
 
-            if (Buyer.Balance >= Offer && Vehicle.First().NewPrice <= Offer)
-            {
+            if (Buyer.Balance >= Offer && Vehicle.First().NewPrice <= Offer) {
                 AuctionHouseStruct.VehicleBids Bid = new AuctionHouseStruct.VehicleBids();
                 Bid.Bid = Offer;
                 Bid.Buyer = Buyer;
@@ -57,17 +45,14 @@ namespace OOP_Eksamen
 
                 return true;
             }
-            else
-            {
+            else {
                 return false;
             }
         }
 
         //public bool AccepterBud(Sælger sælger, int auktionsNummer)
 
-        public bool AcceptBid(Seller Seller, int AuctionNumber)
-        {
-            Seller.ReceiveNotificationAboutBid();
+        public bool AcceptBid(Seller Seller, int AuctionNumber) {
             return false;
         }
     }

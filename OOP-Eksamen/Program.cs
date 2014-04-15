@@ -212,8 +212,8 @@ namespace OOP_Eksamen
             PrivateSeller PrivateSeller5 = new PrivateSeller(9865123584, 2700);
             PrivateSeller PrivateSeller6 = new PrivateSeller(6585348963, 3500);
 
-            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, true);
-            SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, true);
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Truck2, PrivateSeller2, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
 
 
             if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
