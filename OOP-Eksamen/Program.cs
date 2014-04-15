@@ -203,16 +203,22 @@ namespace OOP_Eksamen
                 //Console.WriteLine(testv.ToString());
             }
 
-            BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
-            PrivateSeller PrivateSeller = new PrivateSeller(114477881144, 7800);
+            BusinessBuyer BusinessBuyer  = new BusinessBuyer(1500, 50000, 15411);
 
-            SalesBot.PutOpForSale(Truck1, PrivateSeller, 1500, true);
-            SalesBot.PutOpForSale(Truck2, PrivateSeller, 1500, true);
+            PrivateSeller PrivateSeller1 = new PrivateSeller(4477881144, 7800);
+            PrivateSeller PrivateSeller2 = new PrivateSeller(4564894568, 9700);
+            PrivateSeller PrivateSeller3 = new PrivateSeller(1234567895, 9210);
+            PrivateSeller PrivateSeller4 = new PrivateSeller(1234568789, 4800);
+            PrivateSeller PrivateSeller5 = new PrivateSeller(9865123584, 2700);
+            PrivateSeller PrivateSeller6 = new PrivateSeller(6585348963, 3500);
+
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, true);
+            SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, true);
 
 
             if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
             {
-                SalesBot.AcceptBid(PrivateSeller, Truck1.AuctionNumber);
+                SalesBot.AcceptBid(PrivateSeller1, Truck1.AuctionNumber);
             }
             double i = 8000;
             SearchBigWeight(SalesBot.VehicleForSale, i);
@@ -221,7 +227,7 @@ namespace OOP_Eksamen
             Console.ReadKey();
         }
 
-        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {
+        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) { //Opgave 1
             //Finder Vehicles i en liste med et specifikt søge ord/sætning. 
             //Spytter det ud igen i en ny liste som kan blive printet.
             IEnumerable<IGrouping<string, Vehicle>> VehicleSorted =
@@ -294,28 +300,16 @@ Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en beste
  * sælgers postnummer ligger mellem 6500 og 9500.*/
         //PrivateSeller.Zipcode
 
-        static List<Vehicle> SearchRadius(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
+        static List<Vehicle> SearchRadius(List<Seller> sellerlist, int Radius)//Opgave 3
         {
 
             List<Vehicle> ReturnList = new List<Vehicle>();
 
-            foreach (Vehicle n in vehicleList) //Der er ingen grund til at søge efter licensetype, da det kun er bus og truck der er indbefattet i C,CE,D & DE
+            foreach (Seller n in sellerlist) //
             {
-                if (n is Bus)
-                {
-                    if (((Bus)n).Weight <= maxWeigth)
-                    {
-                        ReturnList.Add(n);
-
-                    }
-                }
-                else if (n is Truck)
-                {
-                    if (((Truck)n).Weight <= maxWeigth)
-                    {
-                        ReturnList.Add(n);
-                    }
-                }
+                
+                
+               
             }
             return ReturnList;
         }
