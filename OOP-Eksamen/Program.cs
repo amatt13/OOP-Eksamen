@@ -52,7 +52,7 @@ namespace OOP_Eksamen
                     49,
                     true,
                     sizeBus2,
-                    9.2);
+                    900);
 
 
                 Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
@@ -66,7 +66,7 @@ namespace OOP_Eksamen
                     0,                                              //minimum price
                     6000,                                           //load capacity
                     3.5,                                            //height in metres
-                    15000,                                          //Weight of vehicle
+                    7000,                                           //Weight of vehicle
                     9);                                             //Length in metres
 
                 Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
@@ -203,18 +203,41 @@ namespace OOP_Eksamen
                 //Console.WriteLine(testv.ToString());
             }
 
-            BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
-            PrivateSeller PrivateSeller = new PrivateSeller(114477881144, 7800);
+            BusinessBuyer BusinessBuyer  = new BusinessBuyer(1500, 50000, 15411);
 
-            SalesBot.PutOpForSale(Truck1, PrivateSeller, 1500, true);
-            SalesBot.PutOpForSale(Truck2, PrivateSeller, 1500, true);
+            PrivateSeller PrivateSeller1 = new PrivateSeller(4477881144, 7800);
+            PrivateSeller PrivateSeller2 = new PrivateSeller(4564894568, 9700);
+            PrivateSeller PrivateSeller3 = new PrivateSeller(1234567895, 9210);
+            PrivateSeller PrivateSeller4 = new PrivateSeller(1234568789, 4800);
+            PrivateSeller PrivateSeller5 = new PrivateSeller(9865123584, 2700);
+            PrivateSeller PrivateSeller6 = new PrivateSeller(6585348963, 3500);
 
-            SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 2000);
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Truck2, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Van1, PrivateSeller2, 2000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Van2, PrivateSeller2, 8000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Car1, PrivateSeller3, 16000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Car2, PrivateSeller4, 4500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Bus1, PrivateSeller5, 68000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Bus2, PrivateSeller2, 480000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Camper1, PrivateSeller6, 1200, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Camper2, PrivateSeller6, 2400000, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+
+            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+            SalesBot.PutOpForSale(Truck2, PrivateSeller2, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
+
+            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
+            {
+                SalesBot.AcceptBid(PrivateSeller1, Truck1.AuctionNumber);
+            }
+            double i = 8000;
+            SearchBigWeight(SalesBot.VehicleForSale, i);
+
 
             Console.ReadKey();
         }
 
-        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) {
+        static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString) { //Opgave 1
             //Finder Vehicles i en liste med et specifikt søge ord/sætning. 
             //Spytter det ud igen i en ny liste som kan blive printet.
             IEnumerable<IGrouping<string, Vehicle>> VehicleSorted =
@@ -234,7 +257,7 @@ namespace OOP_Eksamen
             return ReturnVehicles;
         }
 
-        static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) {
+        static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) { //Opgave2
 
             List<Vehicle> ReturnList = new List<Vehicle>();
 
@@ -253,5 +276,53 @@ namespace OOP_Eksamen
            
             return ReturnList;
        }
+
+        static List<Vehicle> SearchBigWeight(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
+        {
+
+            List<Vehicle> ReturnList = new List<Vehicle>();
+
+            foreach (Vehicle n in vehicleList) //Der er ingen grund til at søge efter licensetype, da det kun er bus og truck der er indbefattet i C,CE,D & DE
+            {
+                if (n is Bus)
+                {
+                    if (((Bus)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);
+
+                    }
+                }
+                else if (n is Truck)
+                {
+                    if (((Truck)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);                    
+                    }
+                }
+            }
+            return ReturnList;
+        }
+
+/*
+Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en bestemt radius af et angivet postnummer. 
+ * I denne forbindelse kan radius blot anskues som et tal der skal lægges til/trækkes fra postnummeret. F.eks. 
+ * vil en søgning efter køretøjer indenfor en radius af 1500 fra postnummer 8000, inkludere alle køretøjer hvor 
+ * sælgers postnummer ligger mellem 6500 og 9500.*/
+        //PrivateSeller.Zipcode
+
+        static List<Vehicle> SearchRadius(List<Seller> sellerlist, int Radius)//Opgave 3
+        {
+
+            List<Vehicle> ReturnList = new List<Vehicle>();
+
+            foreach (Seller n in sellerlist) //
+            {
+                
+                
+               
+            }
+            return ReturnList;
+        }
+
     }
 }

@@ -13,12 +13,6 @@ namespace OOP_Eksamen
         private double _length;
         private double _weight;
         private LicenseType _license;
-        private string p1;
-        private int p2;
-        private string p3;
-        private int p4;
-        private int p5;
-        private bool p6;
 
 
         public double Weight {

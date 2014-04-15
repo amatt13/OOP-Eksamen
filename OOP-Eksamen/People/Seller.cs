@@ -11,6 +11,8 @@ namespace OOP_Eksamen
         protected decimal _balance;
         protected int _zipCode;
 
+        public List<Vehicle> Vehicles = new List<Vehicle>();
+
         public decimal Balance
         {
             get
@@ -37,7 +39,7 @@ namespace OOP_Eksamen
             }
         }
 
-        public void ReceiveNotificationAboutBid()
+        public static void ReceiveNotificationAboutBid(Vehicle K)
         {
             Console.WriteLine("OMG I GOT BID, SUCH PRICE!!!");
         }
