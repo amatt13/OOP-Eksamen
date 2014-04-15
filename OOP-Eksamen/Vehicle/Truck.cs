@@ -86,14 +86,24 @@ namespace OOP_Eksamen
         }
 
         public override string ToString() {
-            string SloadCapacity = LoadCapacity.ToString();
-            string Sheight = Height.ToString();
-            string Slenght = Length.ToString();
-            string Sweight = Weight.ToString();
-            string StowHook = _towHook.ToString();
-            string Slicence = License.ToString();
-
-            return "This truck have " + SloadCapacity +"kg loadcapacity, is " + Sheight + "m high, " + Slenght + "m long and weights " + Sweight + "kg. Is is " + StowHook + " that there is a hook attached and the licenstype needed is " + Slicence + ".";
+            return
+                string.Format("------------ \nName: {0} \nKilometers: {1} \nRegistration: {2} \nYear: {3} \nNew Price: {4:#,0} DKK \nTow Hook: {5} \nEngine Size: {6:0.0}L \nKilometers Per Liter: {7:0.0} Km/L \nFuel Type: {8} \nEnergyclass: {9} \nRequired Drivers License: {10} \nMinimum Price: {11:#,0} DKK \nLoadCapacity: {12} \nHeight: {13}\nLength: {14}\nWeight: {15}",
+                    Name,
+                    Km,
+                    Registration,
+                    _year,
+                    NewPrice,
+                    _towHook,
+                    _engineSize,
+                    KmPerLiter,
+                    Fuel,
+                    _energyClass,
+                    _licenseType,
+                    MinPrice,
+                    LoadCapacity,
+                    Height,
+                    Length,
+                    Weight);
         }
     }
 }

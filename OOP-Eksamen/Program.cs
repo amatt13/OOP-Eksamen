@@ -209,12 +209,20 @@ namespace OOP_Eksamen
 
             AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
 
-            if (AH.ReciveOffer(AH.Buyers[0], Truck1.AuctionNumber, 22000))
+            if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
             {
-                AH.AcceptBid(AH.Sellers[0], Truck1.AuctionNumber);
+                AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
             }
+
+            foreach (Vehicle v in AH.VehicleForSale)
+            {
+                Console.WriteLine(v.ToString());
+            }
+
             double i = 8000;
             SearchBigWeight(AH.VehicleForSale, i);
+
+
 
 
             Console.ReadKey();

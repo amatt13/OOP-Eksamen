@@ -54,7 +54,7 @@ namespace OOP_Eksamen
         public enum FuelType { Diesel, Gasoline }
 		private FuelType _fuelType;
         public enum EnergyClass { A, B, C, D }
-        private EnergyClass _energyClass; // Calculated from fuelType, kmPerLiter and year
+        protected EnergyClass _energyClass; // Calculated from fuelType, kmPerLiter and year
         public enum LicenseType { A, B, BE, C, CE, D, DE }
         public LicenseType _licenseType; // Defined by vehicle subclass
         public struct Size {//To describe Size of Trunk and Truck
@@ -158,7 +158,7 @@ namespace OOP_Eksamen
             set { _licenseType = value; }
         } // Skal have en costum getter og setter i subklasser
 
-        FuelType Fuel {
+        public FuelType Fuel {
             get { return _fuelType; }
             set { _fuelType = value; }
         }

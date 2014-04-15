@@ -23,12 +23,13 @@ namespace OOP_Eksamen {
         public delegate void NotificationMethod(Vehicle k);
 
         public int PutOpForSale(Vehicle v, Seller s, decimal MinPrice, NotificationMethod Method) {
-            Method(v);
+            //Method(v);
             VehicleForSale.Add(v);
             s.Vehicles.Add(v);
             v.MinPrice = MinPrice;
             v.Seller = s;
-            return i;
+            v.AuctionNumber = i;
+            return i++;
         }
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)

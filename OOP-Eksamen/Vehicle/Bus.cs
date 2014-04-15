@@ -130,21 +130,24 @@ namespace OOP_Eksamen
 
         public override string ToString()
         {
-
-            string returnString;
-            string Sseat = Seats.ToString();
-            string Sbeds = Beds.ToString();
-            string Stoilet = Toilet.ToString();
-            string Shook = _towHook.ToString();
-            string SsizeOfBusHeight = SizeOfBus.Height.ToString();
-            string SsizeOfBusDepth = SizeOfBus.Depth.ToString();
-            string SsizeOfBusWidth = SizeOfBus.Width.ToString();
-            string Sweight = Weight.ToString();
-
-            returnString = "This bus have " + Sseat + " seats, " + Sbeds + " beds, " + " and have " + Stoilet + " toilet(s), while it is " + Shook + " the bus have a hook. The dimentions is " + SsizeOfBusHeight + "m height, " + SsizeOfBusDepth + "m deep and " + SsizeOfBusWidth + "m width. The weight is " + Sweight + "kg.";
-            return returnString;
-
-
+            return
+                string.Format("------------ \nName: {0} \nKilometers: {1} \nRegistration: {2} \nYear: {3} \nNew Price: {4:#,0} DKK \nTow Hook: {5} \nEngine Size: {6:0.0}L \nKilometers Per Liter: {7:0.0} Km/L \nFuel Type: {8} \nEnergyclass: {9} \nRequired Drivers License: {10} \nMinimum Price: {11:#,0} DKK \nSeats: {12}\nBeds: {13}\nToilet: {14}\nWeight: {15}",
+                    Name,
+                    Km,
+                    Registration,
+                    _year,
+                    NewPrice,
+                    _towHook,
+                    _engineSize,
+                    KmPerLiter,
+                    Fuel,
+                    _energyClass,
+                    _licenseType,
+                    MinPrice,
+                    Seats,
+                    Beds,
+                    Toilet,
+                    Weight);
         }
 
     }

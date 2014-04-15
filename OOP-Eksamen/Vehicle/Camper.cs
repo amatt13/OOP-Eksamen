@@ -75,22 +75,24 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-            string Sseats = Seats.ToString();
-            string Sbeds = Beds.ToString();
-            string SToilet;
-
-            if (Toilet) {
-                SToilet = "a";
-            }
-            else{ 
-                SToilet = "not got a"; 
-            }
-            string SusedHeat = UsedHeatsource.ToString();
-            string SenergyClassModifier = EnergyClassModifier.ToString();
-            string Slicence = _licenseType.ToString();
-
-            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + SToilet +" toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
-            return returnString;
+            return
+                string.Format("------------ \nName: {0} \nKilometers: {1} \nRegistration: {2} \nYear: {3} \nNew Price: {4:#,0} DKK \nTow Hook: {5} \nEngine Size: {6:0.0}L \nKilometers Per Liter: {7:0.0} Km/L \nFuel Type: {8} \nEnergyclass: {9} \nRequired Drivers License: {10} \nMinimum Price: {11:#,0} DKK \nToilet: {12}\nHeatsource: {13}\nSeats: {14}\nBeds: {15}",
+                    Name,
+                    Km,
+                    Registration,
+                    _year,
+                    NewPrice,
+                    _towHook,
+                    _engineSize,
+                    KmPerLiter,
+                    Fuel,
+                    _energyClass,
+                    _licenseType,
+                    MinPrice,
+                    Toilet,
+                    UsedHeatsource,
+                    Seats,
+                    Beds);
         }
 
         public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet, double energyClassModifier) 
