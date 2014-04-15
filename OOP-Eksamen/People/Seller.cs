@@ -39,9 +39,9 @@ namespace OOP_Eksamen
             }
         }
 
-        public static void ReceiveNotificationAboutBid(Vehicle K)
+        public static void SMS(Vehicle K)
         {
-            Console.WriteLine("OMG I GOT BID, SUCH PRICE!!!");
+            Console.WriteLine("I received a notification SMS on vehicle" + K.ToString());
         }
     }
 

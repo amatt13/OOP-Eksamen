@@ -10,9 +10,7 @@ namespace OOP_Eksamen
     {
         static void Main(string[] args)
         {
-            List<Seller> Sellers = new List<Seller>();
-            List<Buyer> Buyers = new List<Buyer>();
-            Sales SalesBot = new Sales();
+            AuctionHouse AH = new AuctionHouse();
 
             Vehicle.Size sizeBus1 = new Vehicle.Size();       //Values to calculate the size of the bus
             sizeBus1.Depth = 2;
@@ -187,41 +185,38 @@ namespace OOP_Eksamen
 
 
 
-            //VehicleForSale.Add(Bus1);
-            SalesBot.VehicleForSale.Add(Bus2);
-            SalesBot.VehicleForSale.Add(Truck1);
-            SalesBot.VehicleForSale.Add(Truck2);
-            SalesBot.VehicleForSale.Add(Camper1);
-            SalesBot.VehicleForSale.Add(Camper2);
-            SalesBot.VehicleForSale.Add(Car1);
-            SalesBot.VehicleForSale.Add(Car2);
-            SalesBot.VehicleForSale.Add(Van1);
-            SalesBot.VehicleForSale.Add(Van2);
+            //AH.VehicleForSale.Add(Bus1);
+            //AH.VehicleForSale.Add(Bus2);
+            //AH.VehicleForSale.Add(Truck1);
+            //AH.VehicleForSale.Add(Truck2);
+            //AH.VehicleForSale.Add(Camper1);
+            //AH.VehicleForSale.Add(Camper2);
+            //AH.VehicleForSale.Add(Car1);
+            //AH.VehicleForSale.Add(Car2);
+            //AH.VehicleForSale.Add(Van1);
+            //AH.VehicleForSale.Add(Van2);
 
-            foreach (Vehicle testv in SalesBot.VehicleForSale)
+            AH.Buyers.Add(new BusinessBuyer(1500, 50000, 15411));
+
+            AH.Sellers.Add(new PrivateSeller(4477881144, 7800));
+            AH.Sellers.Add(new PrivateSeller(4564894568, 9700));
+            AH.Sellers.Add(new PrivateSeller(1234567895, 9210));
+            AH.Sellers.Add(new PrivateSeller(1234568789, 4800));
+            AH.Sellers.Add(new PrivateSeller(9865123584, 2700));
+            AH.Sellers.Add(new PrivateSeller(6585348963, 3500));
+
+            Seller Per = AH.Sellers[0];
+            Per.Vehicles.Add(Van1);
+            Per.Vehicles.Add(Camper1);
+
+            AH.PutOpForSale(Per.Vehicles[0], Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+
+            if (AH.ReciveOffer(AH.Buyers[0], Truck1.AuctionNumber, 22000))
             {
-                //Console.WriteLine(testv.ToString());
-            }
-
-            BusinessBuyer BusinessBuyer  = new BusinessBuyer(1500, 50000, 15411);
-
-            PrivateSeller PrivateSeller1 = new PrivateSeller(4477881144, 7800);
-            PrivateSeller PrivateSeller2 = new PrivateSeller(4564894568, 9700);
-            PrivateSeller PrivateSeller3 = new PrivateSeller(1234567895, 9210);
-            PrivateSeller PrivateSeller4 = new PrivateSeller(1234568789, 4800);
-            PrivateSeller PrivateSeller5 = new PrivateSeller(9865123584, 2700);
-            PrivateSeller PrivateSeller6 = new PrivateSeller(6585348963, 3500);
-
-            SalesBot.PutOpForSale(Truck1, PrivateSeller1, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
-            SalesBot.PutOpForSale(Truck2, PrivateSeller2, 1500, new Sales.NotificationMethod(PrivateSeller.ReceiveNotificationAboutBid));
-
-
-            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1.AuctionNumber, 22000))
-            {
-                SalesBot.AcceptBid(PrivateSeller1, Truck1.AuctionNumber);
+                AH.AcceptBid(AH.Sellers[0], Truck1.AuctionNumber);
             }
             double i = 8000;
-            SearchBigWeight(SalesBot.VehicleForSale, i);
+            SearchBigWeight(AH.VehicleForSale, i);
 
 
             Console.ReadKey();

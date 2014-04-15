@@ -5,8 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP_Eksamen {
-    class Sales {
+    class AuctionHouse {
         //Liste hvor alle køretøjer er tilsalg
+
+        public List<Seller> Sellers = new List<Seller>();
+        public List<Buyer> Buyers = new List<Buyer>();
+
         public List<Vehicle> VehicleSold = new List<Vehicle>();
         public List<Vehicle> VehicleForSale = new List<Vehicle>();
         public List<AuctionHouseStruct.VehicleBids> Bids = new List<AuctionHouseStruct.VehicleBids>();
@@ -18,8 +22,9 @@ namespace OOP_Eksamen {
 
         public delegate void NotificationMethod(Vehicle k);
 
-        public int PutOpForSale(Vehicle K, Seller S, decimal MinPrice, NotificationMethod Method) {
-            Method(K);
+        public int PutOpForSale(Vehicle v, Seller s, decimal MinPrice, NotificationMethod Method) {
+            Method(v);
+
             K.NewPrice = MinPrice;
             K.Seller = S;
             return i;
