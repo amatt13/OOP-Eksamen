@@ -212,18 +212,6 @@ namespace OOP_Eksamen
             Console.WriteLine(Bus1.AuctionNumber);
             Console.WriteLine(Bus2.AuctionNumber);
 
-
-            Console.WriteLine("ANDERS TEST VVV\n");
-            uint i = 1;
-            bool tr = true;
-            List<Vehicle> sa = new List<Vehicle>();
-            sa = SearchSeatsToilet(VehicleForSale, i, tr);
-            foreach (Vehicle n in sa) {
-                Console.WriteLine(n.ToString());
-            }
-            //SearchName(VehicleForSale, "Boxer");
-            
-
             Console.ReadKey();
         }
 
