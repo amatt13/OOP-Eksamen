@@ -52,7 +52,7 @@ namespace OOP_Eksamen
                     49,
                     true,
                     sizeBus2,
-                    9.2);
+                    900);
 
 
                 Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
@@ -66,7 +66,7 @@ namespace OOP_Eksamen
                     0,                                              //minimum price
                     6000,                                           //load capacity
                     3.5,                                            //height in metres
-                    15000,                                          //Weight of vehicle
+                    7000,                                           //Weight of vehicle
                     9);                                             //Length in metres
 
                 Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
@@ -215,6 +215,8 @@ namespace OOP_Eksamen
             {
                 SalesBot.AcceptBid(PrivateSeller, Truck1.AuctionNumber);
             }
+            double i = 8000;
+            SearchBigWeight(SalesBot.VehicleForSale, i);
 
             Console.ReadKey();
         }
@@ -239,7 +241,7 @@ namespace OOP_Eksamen
             return ReturnVehicles;
         }
 
-        static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) {
+        static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) { //Opgave2
 
             List<Vehicle> ReturnList = new List<Vehicle>();
 
@@ -258,5 +260,65 @@ namespace OOP_Eksamen
            
             return ReturnList;
        }
+
+        static List<Vehicle> SearchBigWeight(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
+        {
+
+            List<Vehicle> ReturnList = new List<Vehicle>();
+
+            foreach (Vehicle n in vehicleList) //Der er ingen grund til at søge efter licensetype, da det kun er bus og truck der er indbefattet i C,CE,D & DE
+            {
+                if (n is Bus)
+                {
+                    if (((Bus)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);
+
+                    }
+                }
+                else if (n is Truck)
+                {
+                    if (((Truck)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);                    
+                    }
+                }
+            }
+            return ReturnList;
+        }
+
+/*
+Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en bestemt radius af et angivet postnummer. 
+ * I denne forbindelse kan radius blot anskues som et tal der skal lægges til/trækkes fra postnummeret. F.eks. 
+ * vil en søgning efter køretøjer indenfor en radius af 1500 fra postnummer 8000, inkludere alle køretøjer hvor 
+ * sælgers postnummer ligger mellem 6500 og 9500.*/
+        //PrivateSeller.Zipcode
+
+        static List<Vehicle> SearchRadius(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
+        {
+
+            List<Vehicle> ReturnList = new List<Vehicle>();
+
+            foreach (Vehicle n in vehicleList) //Der er ingen grund til at søge efter licensetype, da det kun er bus og truck der er indbefattet i C,CE,D & DE
+            {
+                if (n is Bus)
+                {
+                    if (((Bus)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);
+
+                    }
+                }
+                else if (n is Truck)
+                {
+                    if (((Truck)n).Weight <= maxWeigth)
+                    {
+                        ReturnList.Add(n);
+                    }
+                }
+            }
+            return ReturnList;
+        }
+
     }
 }
