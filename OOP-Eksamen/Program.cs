@@ -251,10 +251,10 @@ namespace OOP_Eksamen
 
 
 
-        static List<Vehicle> SearchSeatBeds(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfBeds) {
-            List<Bus> BusList = new List<Bus>();
-            List<Camper> CamperList = new List<Camper>();
+     //   static List<Vehicle> SearchSeatBeds(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfBeds) {
 
+
+            /*
             foreach (Bus n in vehicleList) {//Det er kun busser og campingvogne der har toiletter.
                     BusList.Add(n);
             }
@@ -276,8 +276,9 @@ namespace OOP_Eksamen
             List<Vehicle> SearchList = new List<Vehicle>();
             SearchList.AddRange(BusList);
             SearchList.AddRange(CamperList);
-
+            
             return SearchList;
-        }
+             */
+ //       }
     }
 }
