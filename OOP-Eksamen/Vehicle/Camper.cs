@@ -77,19 +77,19 @@ namespace OOP_Eksamen
 		{
             string Sseats = Seats.ToString();
             string Sbeds = Beds.ToString();
-            String Stoilet = Toilet.ToString();
+            string SToilet;
 
-            if (Stoilet == "true"){
-                Stoilet = "a";
+            if (Toilet) {
+                SToilet = "a";
             }
             else{ 
-                Stoilet = "not got a"; 
+                SToilet = "not got a"; 
             }
             string SusedHeat = UsedHeatsource.ToString();
             string SenergyClassModifier = EnergyClassModifier.ToString();
             string Slicence = _licenseType.ToString();
 
-            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + Stoilet +" toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
+            string returnString = "This camper have " + Sseats + " seats, " + Sbeds + " beds and have " + SToilet +" toilet. The primary heating source is powered by " + SusedHeat +", the energyclass modifier is " + SenergyClassModifier + " and the licencetype is " + Slicence + ".";
             return returnString;
         }
 

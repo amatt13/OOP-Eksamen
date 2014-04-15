@@ -220,8 +220,14 @@ namespace OOP_Eksamen
             Console.WriteLine("ANDERS TEST VVV\n");
             uint i = 1;
             bool tr = true;
-            SearchSeatsToilet(SalesBot.VehicleForSale, i, tr);
+            List<Vehicle> sa = new List<Vehicle>();
+            sa = SearchSeatsToilet(VehicleForSale, i, tr);
+            foreach (Vehicle n in sa) {
+                Console.WriteLine(n.ToString());
+            }
             //SearchName(VehicleForSale, "Boxer");
+            
+
             Console.ReadKey();
         }
 
@@ -245,27 +251,23 @@ namespace OOP_Eksamen
             return ReturnVehicles;
         }
 
-
-
         static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) {
 
-            List<Bus> BusList = new List<Bus>();
-            List<Camper> CamperList = new List<Camper>();
             List<Vehicle> ReturnList = new List<Vehicle>();
 
-            foreach (Bus n in vehicleList) {//Det er kun busser og campingvogne der har toiletter.
-                if (n.Seats >= numberOfSeats && n.Toilet == HaveToilet) {
-                    ReturnList.Add(n);
-                    Console.WriteLine(n.ToString());
+            foreach (Vehicle n in vehicleList) {//Det er kun busser og campingvogne der har toiletter.
+                if (n is Bus){
+                    if (((Bus)n).Seats >= numberOfSeats && ((Bus)n).Toilet == HaveToilet) {
+                        ReturnList.Add(n);
+                    }
+                }
+                else if (n is Camper) {
+                    if (((Camper)n).Seats >= numberOfSeats && ((Camper)n).Toilet == HaveToilet) {
+                        ReturnList.Add(n);
+                    }
                 }
             }
-            foreach (Camper n in vehicleList) {
-                if (n.Seats >= numberOfSeats && n.Toilet == HaveToilet) {
-                    ReturnList.Add(n);
-                    Console.WriteLine(n.ToString());
-                }
-            }
-
+           
             return ReturnList;
        }
     }
