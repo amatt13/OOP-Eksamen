@@ -44,7 +44,7 @@ namespace OOP_Eksamen {
                 Bid.Buyer = Buyer;
                 Bid.AuctionNumber = AuctionNumber;
 
-                Vehicle.First().NewPrice = Offer;
+                Vehicle.First().MinPrice = Offer;
 
                 Bids.Add(Bid);
 
