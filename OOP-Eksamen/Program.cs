@@ -118,7 +118,7 @@ namespace OOP_Eksamen
                 sizePv1.Height=5;
                 sizePv1.Width=3;
 
-            PersonVehiclePrivate PersonVehiclePrivate1 = new PersonVehiclePrivate("Audi A6A vant",
+            Car PersonVehiclePrivate1 = new Car("Audi A6A vant",
                 309000,
                 "PH48689",
                 2008,
@@ -136,7 +136,7 @@ namespace OOP_Eksamen
             sizePv2.Height = 5;
             sizePv2.Width = 3;
 
-            PersonVehiclePrivate PersonVehiclePrivate2 = new PersonVehiclePrivate("Ford Scorpio",
+            Car PersonVehiclePrivate2 = new Car("Ford Scorpio",
             902120,
             "EF46898",
             1999,
@@ -154,7 +154,7 @@ namespace OOP_Eksamen
             sizeWv1.Height = 5;
             sizeWv1.Width = 3;    
 
-            PersonVehicleWork PersonVehicleWork1 = new PersonVehicleWork("Peugeot Boxer",
+            Van PersonVehicleWork1 = new Van("Peugeot Boxer",
             310000,
             "JK45963",
             2003,
@@ -173,7 +173,7 @@ namespace OOP_Eksamen
             sizeWv2.Height = 5;
             sizeWv2.Width = 3;    
 
-            PersonVehicleWork PersonVehicleWork2 = new PersonVehicleWork("Doblò Cargo",             
+            Van PersonVehicleWork2 = new Van("Doblò Cargo",             
             20000,
             "IY49635",
             2008,
@@ -233,7 +233,10 @@ namespace OOP_Eksamen
 
 
             Console.WriteLine("ANDERS TEST VVV\n");
-            SearchName(VehicleForSale, "Boxer");
+            uint i = 1;
+            bool tr = true;
+            SearchSeatsToilet(VehicleForSale, i, tr);
+            //SearchName(VehicleForSale, "Boxer");
             Console.ReadKey();
         }
 
@@ -259,34 +262,26 @@ namespace OOP_Eksamen
 
 
 
-     //   static List<Vehicle> SearchSeatBeds(List<Vehicle> vehicleList, uint numberOfSeats, uint numberOfBeds) {
+        static List<Vehicle> SearchSeatsToilet(List<Vehicle> vehicleList, uint numberOfSeats, bool HaveToilet) {
 
+            List<Bus> BusList = new List<Bus>();
+            List<Camper> CamperList = new List<Camper>();
+            List<Vehicle> ReturnList = new List<Vehicle>();
 
-            /*
             foreach (Bus n in vehicleList) {//Det er kun busser og campingvogne der har toiletter.
-                    BusList.Add(n);
-            }
-            foreach (Camper n in CamperList) {
-                CamperList.Add(n);
-            }
-
-            for (int i = 0; i < BusList.Count; i++) {
-                if (BusList[i].Seats < numberOfSeats && BusList[i].Beds < numberOfBeds) {
-                    BusList.RemoveAt(i);
+                if (n.Seats >= numberOfSeats && n.Toilet == HaveToilet) {
+                    ReturnList.Add(n);
+                    Console.WriteLine(n.ToString());
                 }
             }
-            for (int j = 0; j < CamperList.Count; j++) {
-                if (CamperList[j].Seat < numberOfSeats && CamperList[j].Beds < numberOfBeds) {
-                    CamperList.RemoveAt(j);
+            foreach (Camper n in vehicleList) {
+                if (n.Seats >= numberOfSeats && n.Toilet == HaveToilet) {
+                    ReturnList.Add(n);
+                    Console.WriteLine(n.ToString());
                 }
             }
 
-            List<Vehicle> SearchList = new List<Vehicle>();
-            SearchList.AddRange(BusList);
-            SearchList.AddRange(CamperList);
-            
-            return SearchList;
-             */
- //       }
+            return ReturnList;
+       }
     }
 }

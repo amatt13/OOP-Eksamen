@@ -16,7 +16,7 @@ namespace OOP_Eksamen
 		private uint _seat;
 		private uint _beds;
 
-		public uint Seat { 
+		public uint Seats { 
 			get {
                 return _seat; 
             }
@@ -75,7 +75,7 @@ namespace OOP_Eksamen
 
 		public override string ToString()
 		{
-            string Sseats = Seat.ToString();
+            string Sseats = Seats.ToString();
             string Sbeds = Beds.ToString();
             String Stoilet = Toilet.ToString();
 
@@ -96,7 +96,7 @@ namespace OOP_Eksamen
         public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet, double energyClassModifier) 
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice) 
             {
-            Seat = seat; 
+            Seats = seat; 
             Beds = beds;
             Toilet = toilet;
             EnergyClassModifier = energyClassModifier;

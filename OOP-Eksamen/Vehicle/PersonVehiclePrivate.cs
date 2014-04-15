@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace OOP_Eksamen
 {
-    class PersonVehiclePrivate : PersonVehicle
+    class Car : PersonVehicle
     {
         private bool _isofix;
 
@@ -16,7 +16,11 @@ namespace OOP_Eksamen
             set { _isofix = value; }
         }
 
-        public PersonVehiclePrivate(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size sizeOfPv, bool isofix)
+        public override string ToString() {
+            return "";
+        }
+
+        public Car(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size sizeOfPv, bool isofix)
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seats, sizeOfPv)
         {
             Isofix = isofix;
