@@ -10,7 +10,6 @@ namespace OOP_Eksamen
     {
         protected decimal _balance;
         protected int _zipCode;
-        protected bool _notification;
 
         public decimal Balance
         {
@@ -38,18 +37,17 @@ namespace OOP_Eksamen
             }
         }
 
-        public bool ReceiveNotificationAboutBid()
+        public void ReceiveNotificationAboutBid()
         {
             Console.WriteLine("OMG I GOT BID, SUCH PRICE!!!");
-            return true;
         }
     }
 
     class BusinessSeller : Seller
     {
-        private int _cvr;
+        private long _cvr;
 
-        public int CVR
+        public long CVR
         {
             get
             {
@@ -67,19 +65,18 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public BusinessSeller(int CVR, bool Notification)
+        public BusinessSeller(long CVR)
         {
             _balance = 0;
             _cvr = CVR;
-            _notification = Notification;
         }
     }
 
     class PrivateSeller : Seller
     {
-        private int _cpr;
+        private long _cpr;
 
-        public int CPR
+        public long CPR
         {
             get
             {
@@ -97,11 +94,10 @@ namespace OOP_Eksamen
             _balance += Price;
         }
 
-        public PrivateSeller(int CPR, bool Notification)
+        public PrivateSeller(long CPR)
         {
             _balance = 0;
             _cpr = CPR;
-            _notification = Notification;
         }
     }
 

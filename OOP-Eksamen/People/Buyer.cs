@@ -16,13 +16,8 @@ namespace OOP_Eksamen
         {
             get
             {
-                return _balance;
+                return _credits + _balance;
             }
-        }
-
-        public decimal GetBalance()
-        {
-            return _credits + _balance;
         }
     }
 

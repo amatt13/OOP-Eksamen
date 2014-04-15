@@ -33,7 +33,7 @@ namespace OOP_Eksamen
                 return _beds; 
             }
 			set { 
-				if (value > 99)
+				if (value < 99)
 					_beds = value;
 				else
                     throw new ArgumentException("There have been placed 100 beds or more.\nWas this a mistake?", "BedTooHigh");

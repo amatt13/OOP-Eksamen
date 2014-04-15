@@ -31,18 +31,24 @@ namespace OOP_Eksamen
 
         //public bool ModtagBud(Køber køber, int auktionsNummer, decimal bud)
 
-        public bool ReciveOffer(Buyer Buyer, int AuctionNumber, decimal Offer)
+        public bool ReciveOffer(Buyer Buyer, Vehicle Vehicle, decimal Offer)
         {
-            if (Buyer.GetBalance() >= Offer)
+            if (Buyer.Balance >= Offer && Vehicle.NewPrice <= Offer)
             {
                 return true;
             }
             else
             {
-                throw new ArgumentException("The buyer cannot affort the car", "NotEnoughMoney");
+                return false;
             }
         }
 
         //public bool AccepterBud(Sælger sælger, int auktionsNummer)
+
+        public bool AcceptBid(Seller Seller, Vehicle Vehicle)
+        {
+            Seller.ReceiveNotificationAboutBid();
+            return false;
+        }
     }
 }

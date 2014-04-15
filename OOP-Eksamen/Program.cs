@@ -219,10 +219,18 @@ namespace OOP_Eksamen
             }
 
             BusinessBuyer BusinessBuyer = new BusinessBuyer(1500, 50000, 15411);
+            PrivateSeller PrivateSeller = new PrivateSeller(114477881144);
 
-            Console.WriteLine(BusinessBuyer.GetBalance());
+            if (SalesBot.ReciveOffer(BusinessBuyer, Bus2, 22000))
+            {
+                SalesBot.AcceptBid(PrivateSeller, Bus2);
+            }
 
-            Console.WriteLine(SalesBot.ReciveOffer(BusinessBuyer, 1, 5000).ToString());
+            if (SalesBot.ReciveOffer(BusinessBuyer, Truck1, 22000))
+            {
+                SalesBot.AcceptBid(PrivateSeller, Truck1);
+            }
+
 
             Console.WriteLine("ANDERS TEST VVV\n");
             SearchName(VehicleForSale, "Boxer");
