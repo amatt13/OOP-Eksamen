@@ -15,6 +15,8 @@ namespace OOP_Eksamen {
         public List<Vehicle> VehiclesForSale = new List<Vehicle>();
         public List<AuctionHouseStruct.VehicleBids> Bids = new List<AuctionHouseStruct.VehicleBids>();
 
+        CalculateFees FeeCalculater = new CalculateFees();
+
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris)
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris, notifikationsMetode)
 
@@ -40,11 +42,12 @@ namespace OOP_Eksamen {
 
             IEnumerable<Vehicle> Vehicle = VehiclesForSale.Where(v => v.AuctionNumber == AuctionNumber).Take(1);
 
-            if (Buyer.Balance >= Offer && Vehicle.First().NewPrice <= Offer) {
+            if (Buyer.Balance >= Offer && Vehicle.First().MinPrice <= Offer) {
                 AuctionHouseStruct.VehicleBids Bid = new AuctionHouseStruct.VehicleBids();
                 Bid.Bid = Offer;
                 Bid.Buyer = Buyer;
                 Bid.AuctionNumber = AuctionNumber;
+                Bid.BidPlaced = DateTime.Now;
 
                 Vehicle.First().MinPrice = Offer;
 
@@ -57,10 +60,26 @@ namespace OOP_Eksamen {
             }
         }
 
+
         public bool AcceptBid(Seller seller, int auctionNumber) {
-            IEnumerable<Vehicle> vehicle = seller.Vehicles.Where(v => v.AuctionNumber == auctionNumber);
-            if (vehicle == null || !vehicle.Any())
+            IEnumerable<Vehicle> vehicle = seller.Vehicles.Where(v => v.AuctionNumber == auctionNumber).Take(1);
+            decimal tmpPrice = vehicle.First().MinPrice;
+
+            if (vehicle == null || !vehicle.Any()) {
                 return false;
+            }
+
+            IEnumerable<AuctionHouseStruct.VehicleBids> vehicleBids = Bids.Where(b => b.AuctionNumber == auctionNumber).OrderByDescending( b => b.BidPlaced ).Take(1);
+
+            foreach (AuctionHouseStruct.VehicleBids b in vehicleBids)
+            {
+                b.Buyer.RemoveBalance(tmpPrice);
+            }
+
+            tmpPrice -= FeeCalculater.Fees(tmpPrice);
+
+            seller.AddBalance(tmpPrice);
+
             VehiclesSold.Add(vehicle.First());
             VehiclesForSale.Remove(vehicle.First());
             return true;

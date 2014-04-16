@@ -13,6 +13,7 @@ namespace OOP_Eksamen
             public Buyer Buyer;
             public decimal Bid;
             public int AuctionNumber;
+            public DateTime BidPlaced;
         }
     }
 }

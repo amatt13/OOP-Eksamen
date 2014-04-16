@@ -196,7 +196,7 @@ namespace OOP_Eksamen
             //AH.VehicleForSale.Add(Van1);
             //AH.VehicleForSale.Add(Van2);
 
-            AH.Buyers.Add(new BusinessBuyer(1500, 50000, 15411));
+            AH.Buyers.Add(new BusinessBuyer(150000000, 50000, 15411));
 
             AH.Sellers.Add(new PrivateSeller(4477881144, 7800));
             AH.Sellers.Add(new PrivateSeller(4564894568, 9700));
@@ -210,9 +210,10 @@ namespace OOP_Eksamen
             AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
             AH.PutOpForSale(Van2, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
             AH.PutOpForSale(Car1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            
             foreach (Vehicle v in AH.VehiclesForSale)
             {
-                Console.WriteLine("@@@@@@@@@@@" + v.ToString());
+                //Console.WriteLine("@@@@@@@@@@@" + v.ToString());
             }
 
             if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
@@ -222,7 +223,7 @@ namespace OOP_Eksamen
 
             foreach (Vehicle v in AH.VehiclesForSale)
             {
-                Console.WriteLine(v.ToString());
+                //Console.WriteLine(v.ToString());
             }
 
             double i = 8000;

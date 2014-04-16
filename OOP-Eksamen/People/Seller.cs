@@ -39,6 +39,11 @@ namespace OOP_Eksamen
             }
         }
 
+        public void AddBalance(decimal Price)
+        {
+            _balance += Price;
+        }
+
         public static void SMS(Vehicle K)
         {
             Console.WriteLine("I received a notification SMS on vehicle" + K.ToString());
@@ -60,11 +65,6 @@ namespace OOP_Eksamen
             {
                 _cvr = value;
             }
-        }
-
-        public void AddBalance(decimal Price)
-        {
-            _balance += Price;
         }
 
         public BusinessSeller(long CVR, int ZipCode)
@@ -90,11 +90,6 @@ namespace OOP_Eksamen
             {
                 _cpr = value;
             }
-        }
-
-        public void AddBalance(decimal Price)
-        {
-            _balance += Price;
         }
 
         public PrivateSeller(long CPR, int ZipCode)

@@ -19,6 +19,30 @@ namespace OOP_Eksamen
                 return _credits + _balance;
             }
         }
+
+        public bool RemoveBalance(decimal Price)
+        {
+            if (Price < (_balance + _credits))
+            {
+                if (_balance < Price)
+                {
+                    Price -= _balance;
+                    _credits -= Price;
+                    _balance = 0;
+                }
+                else
+                {
+                    _balance -= Price;
+                }
+
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 
     class BusinessBuyer : Buyer
@@ -35,18 +59,6 @@ namespace OOP_Eksamen
             set
             {
                 _cvr = value;
-            }
-        }
-
-        public bool RemoveBalance(decimal Price)
-        {
-            if (Price > (_balance + _credits))
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
@@ -72,18 +84,6 @@ namespace OOP_Eksamen
             set
             {
                 _cpr = value;
-            }
-        }
-
-        public bool RemoveBalance(decimal Price)
-        {
-            if (Price > _balance)
-            {
-                return true;
-            }
-            else
-            {
-                return false;
             }
         }
 
