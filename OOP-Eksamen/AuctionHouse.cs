@@ -11,8 +11,8 @@ namespace OOP_Eksamen {
         public List<Seller> Sellers = new List<Seller>();
         public List<Buyer> Buyers = new List<Buyer>();
 
-        public List<Vehicle> VehicleSold = new List<Vehicle>();
-        public List<Vehicle> VehicleForSale = new List<Vehicle>();
+        public List<Vehicle> VehiclesSold = new List<Vehicle>();
+        public List<Vehicle> VehiclesForSale = new List<Vehicle>();
         public List<AuctionHouseStruct.VehicleBids> Bids = new List<AuctionHouseStruct.VehicleBids>();
 
         //public int SætTilSalg(Køretøj k, Sælger s, decimal minPris)
@@ -24,7 +24,7 @@ namespace OOP_Eksamen {
 
         public int PutOpForSale(Vehicle v, Seller s, decimal MinPrice, NotificationMethod Method) {
             //Method(v);
-            VehicleForSale.Add(v);
+            VehiclesForSale.Add(v);
             s.Vehicles.Add(v);
             v.MinPrice = MinPrice;
             v.Seller = s;
@@ -38,7 +38,7 @@ namespace OOP_Eksamen {
                 throw new ArgumentException("The vehicle has not been registered in the auction house", "NotRegisteredAuctionHouse");
             }
 
-            IEnumerable<Vehicle> Vehicle = VehicleForSale.Where(v => v.AuctionNumber == AuctionNumber).Take(1);
+            IEnumerable<Vehicle> Vehicle = VehiclesForSale.Where(v => v.AuctionNumber == AuctionNumber).Take(1);
 
             if (Buyer.Balance >= Offer && Vehicle.First().NewPrice <= Offer) {
                 AuctionHouseStruct.VehicleBids Bid = new AuctionHouseStruct.VehicleBids();
@@ -57,10 +57,14 @@ namespace OOP_Eksamen {
             }
         }
 
-        //public bool AccepterBud(Sælger sælger, int auktionsNummer)
+        public bool AcceptBid(Seller seller, int auctionNumber) {
+            IEnumerable<Vehicle> vehicle = seller.Vehicles.Where(v => v.AuctionNumber == auctionNumber);
+            if (vehicle == null || !vehicle.Any())
+                return false;
+            VehiclesSold.Add(vehicle.First());
+            VehiclesForSale.Remove(vehicle.First());
+            return true;
 
-        public bool AcceptBid(Seller Seller, int AuctionNumber) {
-            return false;
         }
     }
 }

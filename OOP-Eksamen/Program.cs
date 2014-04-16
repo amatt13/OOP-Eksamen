@@ -210,19 +210,23 @@ namespace OOP_Eksamen
             AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
             AH.PutOpForSale(Van2, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
             AH.PutOpForSale(Car1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            foreach (Vehicle v in AH.VehiclesForSale)
+            {
+                Console.WriteLine("@@@@@@@@@@@" + v.ToString());
+            }
 
             if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
             {
                 AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
             }
 
-            foreach (Vehicle v in AH.VehicleForSale)
+            foreach (Vehicle v in AH.VehiclesForSale)
             {
                 Console.WriteLine(v.ToString());
             }
 
             double i = 8000;
-            SearchBigWeight(AH.VehicleForSale, i);
+            SearchBigWeight(AH.VehiclesForSale, i);
 
 
 
@@ -296,6 +300,14 @@ namespace OOP_Eksamen
             return ReturnList;
         }
 
+
+        static List<Vehicle> FindCars(List<Vehicle> Vehicles, int MaxKM, int MinPrice) //Opgave 4
+        {
+            IEnumerable<Vehicle> ReturnList = Vehicles.Where(v => v.GetType() == typeof(Car) && v.Km <= MaxKM && v.MinPrice <= MinPrice).OrderByDescending(v => v.Km);
+
+            return ReturnList.ToList();
+        }
+
 /*
 Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en bestemt radius af et angivet postnummer. 
  * I denne forbindelse kan radius blot anskues som et tal der skal lægges til/trækkes fra postnummeret. F.eks. 
@@ -303,32 +315,22 @@ Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en beste
  * sælgers postnummer ligger mellem 6500 og 9500.*/
         //PrivateSeller.Zipcode
 
-        static List<Vehicle> SearchRadius(List<Seller> sellerlist, int Radius)//Opgave 3
+        static List<Seller> SearchRadius(List<Seller> sellerlist, int zipCode , int radius)//Opgave 5
         {
 
-            List<Vehicle> ReturnList = new List<Vehicle>();
+            List<Seller> ReturnList = new List<Seller>();
 
-            foreach (Seller n in sellerlist) //
+            foreach (Seller s in sellerlist) //
             {
-                
-                
-               
+                if (s.ZipCode > zipCode - radius && s.ZipCode < zipCode + radius)
+                {
+                    ReturnList.Add(s);
+                }
             }
             return ReturnList;
         }
 
-        //Find alle personbiler til privatbrug som har kørt under et angivet antal km, og hvor minimum 
-        //salgsprisen samtidig ligger under et angivet beløb. Køretøjerne skal returneres i sorteret
-        //rækkefølge efter antal kørte km.
-
-        static List<Vehicle> FindCars(List<Vehicle> Vehicles, int MaxKM, int MinPrice )
-        {
-            IEnumerable<Vehicle> ReturnList = Vehicles.Where(v => v.GetType() == typeof(Car) && v.Km <= MaxKM && v.MinPrice <= MinPrice).OrderByDescending(v => v.Km);
-
-            return ReturnList.ToList();
-        }
-
-        static double AVGEnergyClass(List<Vehicle> Vehicles)
+        static double AVGEnergyClass(List<Vehicle> Vehicles) //Opgave 6
         {
             int avg = 0;
 
