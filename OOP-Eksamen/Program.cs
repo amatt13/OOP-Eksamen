@@ -328,7 +328,7 @@ Find alle køretøjer hvor køretøjets sælger er bosiddende inden for en beste
             return ReturnList.ToList();
         }
 
-        static int AVGEnergyClass(List<Vehicle> Vehicles)
+        static double AVGEnergyClass(List<Vehicle> Vehicles)
         {
             int avg = 0;
 
