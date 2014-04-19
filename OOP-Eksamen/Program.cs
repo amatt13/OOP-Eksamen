@@ -236,7 +236,7 @@ namespace OOP_Eksamen{
             Console.WriteLine("\n Sell: y/n? ");
             ConsoleKeyInfo choice = Console.ReadKey();
 
-            if( choice.KeyChar.Equals('y'))
+			//if( choice.KeyChar.Equals('y'))
                 AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
 
             foreach (Vehicle v in AH.VehiclesSold) {
