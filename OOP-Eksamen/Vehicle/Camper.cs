@@ -60,15 +60,15 @@ namespace OOP_Eksamen
             set {
                 if (UsedHeatsource == Heatsource.Electricity) {
                     KmPerLiter = KmPerLiter * 0.8;
-                    value = 0.8;
+					_energyClassModifier = 0.8;
                 }
                 else if (UsedHeatsource == Heatsource.Gas) {
                     KmPerLiter = KmPerLiter * 0.9;
-                    value = 0.9;
+					_energyClassModifier = 0.9;
                 }
                 else if (UsedHeatsource == Heatsource.Oil) {
                     KmPerLiter = KmPerLiter * 0.7;
-                    value = 0.7;
+					_energyClassModifier = 0.7;
                 }
             }
         }

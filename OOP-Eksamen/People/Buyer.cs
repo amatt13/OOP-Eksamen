@@ -15,7 +15,7 @@ namespace OOP_Eksamen {
             }
         }
 
-        public bool RemoveBalance(decimal Price) {
+		public bool RemoveBalance(decimal Price) {
             if (Price < _balance) {
                 if (_balance < Price) {
                     Price -= _balance;
@@ -30,7 +30,7 @@ namespace OOP_Eksamen {
             }
         }
 
-        public Buyer(decimal balance) {
+		public Buyer(decimal balance) {
             _balance = balance;
         }
     }
@@ -49,13 +49,13 @@ namespace OOP_Eksamen {
             }
         }
 
-        public decimal Balance {
+		new public decimal Balance {
             get {
                 return _credits + _balance;
             }
         }
 
-        public bool RemoveBalance(decimal Price) {
+		new public bool RemoveBalance(decimal Price) {
             if (Price < (_balance + _credits)) {
                 if (_balance < Price) {
                     Price -= _balance;

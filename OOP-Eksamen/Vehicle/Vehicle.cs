@@ -136,7 +136,10 @@ abstract class Vehicle {
         }
     } // I denne opgave skal personbiler til erhverv være udstyret med en trækkrog. For alle andre køretøjer er det frivilligt at have trækkrog.
 
-    double MotorSize; // Different types of vehicles must implement getter and setter for specific allowed ranges
+		public abstract double EngineSize {
+		get;
+		set;
+	}// Different types of vehicles must implement getter and setter for specific allowed ranges
 
     public double KmPerLiter {
         get {

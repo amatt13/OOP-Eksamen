@@ -63,10 +63,10 @@ namespace OOP_Eksamen
             }
             set {
                 if (_towHook == true) {
-                    value = LicenseType.CE;
+					_license = LicenseType.CE;
                 }
                 else {
-                    value = LicenseType.C;
+					_license = LicenseType.C;
                 }
             }
         }

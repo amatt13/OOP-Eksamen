@@ -187,6 +187,8 @@ namespace OOP_Eksamen{
             AH.Buyers.Add(BBuyer1);
             AH.Buyers.Add(PBuyer1);
 
+
+
             Console.WriteLine("_______________Buyers_______________");
             foreach(Buyer b in AH.Buyers){
                 Console.WriteLine(b.ToString());
@@ -208,10 +210,16 @@ namespace OOP_Eksamen{
                 Console.WriteLine(s.ToString());
             }
 
-            AH.PutOpForSale(Van1, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Van2, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+			AH.PutOpForSale(Van1, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+			AH.PutOpForSale(Van2, BSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
+			AH.PutOpForSale(Truck1, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+			AH.PutOpForSale(Truck2, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+			AH.PutOpForSale(Camper1, BSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
             AH.PutOpForSale(Camper2, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
             AH.PutOpForSale(Car1, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
+			AH.PutOpForSale(Car2, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+			AH.PutOpForSale(Bus1, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
+			AH.PutOpForSale(Bus2, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
 
             Console.WriteLine("\n_______________Vehicles for sale_______________");
 
@@ -236,7 +244,7 @@ namespace OOP_Eksamen{
             Console.WriteLine("\n Sell: y/n? ");
             ConsoleKeyInfo choice = Console.ReadKey();
 
-			//if( choice.KeyChar.Equals('y'))
+			if( choice.KeyChar.Equals('y'))
                 AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
 
             foreach (Vehicle v in AH.VehiclesSold) {
