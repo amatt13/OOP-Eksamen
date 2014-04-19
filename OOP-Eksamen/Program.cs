@@ -4,20 +4,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Eksamen
-{
-    class Program
-    {
-        static void Main(string[] args)
-        {
-            AuctionHouse AH = new AuctionHouse();
-
+namespace OOP_Eksamen{
+    class Program{
+        static void Main(string[] args){
             Vehicle.Size sizeBus1 = new Vehicle.Size();       //Values to calculate the size of the bus
             sizeBus1.Depth = 2;
             sizeBus1.Height = 5;
             sizeBus1.Width = 3;
 
-                Bus Bus1 = new Bus( "Volvo B10M Carrus 302",
+            Bus Bus1 = new Bus( "Volvo B10M Carrus 302",
                                     2967165,
                                     "QE25987",
                                     1998,
@@ -183,54 +178,50 @@ namespace OOP_Eksamen
             false,
             400);
 
+            AuctionHouse AH = new AuctionHouse();
 
+            //Buyers
+            Buyer BBuyer1 = new BusinessBuyer(150000000, 50000, 15411);
+            Buyer PBuyer1 = new PrivateBuyer(150000000, 50000);
 
-            //AH.VehicleForSale.Add(Bus1);
-            //AH.VehicleForSale.Add(Bus2);
-            //AH.VehicleForSale.Add(Truck1);
-            //AH.VehicleForSale.Add(Truck2);
-            //AH.VehicleForSale.Add(Camper1);
-            //AH.VehicleForSale.Add(Camper2);
-            //AH.VehicleForSale.Add(Car1);
-            //AH.VehicleForSale.Add(Car2);
-            //AH.VehicleForSale.Add(Van1);
-            //AH.VehicleForSale.Add(Van2);
+            AH.Buyers.Add(BBuyer1);
+            AH.Buyers.Add(PBuyer1);
 
-            AH.Buyers.Add(new BusinessBuyer(150000000, 50000, 15411));
-
-            AH.Sellers.Add(new PrivateSeller(4477881144, 7800));
-            AH.Sellers.Add(new PrivateSeller(4564894568, 9700));
-            AH.Sellers.Add(new PrivateSeller(1234567895, 9210));
-            AH.Sellers.Add(new PrivateSeller(1234568789, 4800));
-            AH.Sellers.Add(new PrivateSeller(9865123584, 2700));
-            AH.Sellers.Add(new PrivateSeller(6585348963, 3500));
-
-            Seller Per = AH.Sellers[0];
-
-            AH.PutOpForSale(Van1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Van2, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Car1, Per, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            
-            foreach (Vehicle v in AH.VehiclesForSale)
-            {
-                //Console.WriteLine("@@@@@@@@@@@" + v.ToString());
+            Console.WriteLine("_______________Buyers_______________");
+            foreach(Buyer b in AH.Buyers){
+                Console.WriteLine(b.ToString());
             }
+
+            //Sellers
+            Seller PSeller1 = new PrivateSeller(4477881144, 7800, 0);
+            Seller PSeller2 = new PrivateSeller(4564894568, 9700, 0);
+            Seller BSeller1 = new BusinessSeller(1234568789, 4800, 0);
+            Seller BSeller2 = new BusinessSeller(1234568789, 4800, 0);
+
+            AH.Sellers.Add(PSeller1);
+            AH.Sellers.Add(PSeller2);
+            AH.Sellers.Add(BSeller1);
+            AH.Sellers.Add(BSeller2);
+
+            Console.WriteLine("\n_______________Sellers_______________");
+            foreach (Seller s in AH.Sellers) {
+                Console.WriteLine(s.ToString());
+            }
+
+            AH.PutOpForSale(Van1, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            AH.PutOpForSale(Van2, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
+            AH.PutOpForSale(Camper2, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
+            AH.PutOpForSale(Car1, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
+
+            Console.WriteLine("\n_______________Vehicles for sale_______________");
 
             if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
             {
                 AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
             }
 
-            foreach (Vehicle v in AH.VehiclesForSale)
-            {
-                //Console.WriteLine(v.ToString());
-            }
-
             double i = 8000;
-            SearchBigWeight(AH.VehiclesForSale, i);
-
-
-
+            SearchHeavierThan(AH.VehiclesForSale, i);
 
             Console.ReadKey();
         }
@@ -275,7 +266,7 @@ namespace OOP_Eksamen
             return ReturnList;
        }
 
-        static List<Vehicle> SearchBigWeight(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
+        static List<Vehicle> SearchHeavierThan(List<Vehicle> vehicleList, double maxWeigth)//Opgave 3
         {
 
             List<Vehicle> ReturnList = new List<Vehicle>();

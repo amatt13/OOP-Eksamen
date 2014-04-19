@@ -48,6 +48,17 @@ namespace OOP_Eksamen
         {
             Console.WriteLine("I received a notification SMS on vehicle" + K.ToString());
         }
+
+        public static void Email(Vehicle K) {
+            Console.WriteLine("I received a notification Email on vehicle" + K.ToString());
+        }
+
+        public Seller(int ZipCode, decimal balance)
+        {
+            _balance = balance;
+            _zipCode = ZipCode;
+        }
+
     }
 
     class BusinessSeller : Seller
@@ -67,12 +78,15 @@ namespace OOP_Eksamen
             }
         }
 
-        public BusinessSeller(long CVR, int ZipCode)
+        public BusinessSeller(long CVR, int ZipCode, decimal balance): base(ZipCode,balance)
         {
-            _balance = 0;
             _cvr = CVR;
-            _zipCode = ZipCode;
         }
+
+        public override string ToString() {
+            return "BusinessSeller with CVR: " + _cvr + "\n a balance of:´" + _balance + "\n and ZipCode: " + _zipCode;
+        }
+
     }
 
     class PrivateSeller : Seller
@@ -92,11 +106,13 @@ namespace OOP_Eksamen
             }
         }
 
-        public PrivateSeller(long CPR, int ZipCode)
+        public PrivateSeller(long CPR, int ZipCode, decimal balance) : base(ZipCode,balance)
         {
-            _balance = 0;
             _cpr = CPR;
-            _zipCode = ZipCode;
+        }
+
+        public override string ToString() {
+            return "PrivateSeller with CPR: " + _cpr + "\n a balance of:´" + _balance + "\n and ZipCode: " + _zipCode;
         }
     }
 

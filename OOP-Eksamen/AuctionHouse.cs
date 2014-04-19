@@ -25,7 +25,7 @@ namespace OOP_Eksamen {
         public delegate void NotificationMethod(Vehicle k);
 
         public int PutOpForSale(Vehicle v, Seller s, decimal MinPrice, NotificationMethod Method) {
-            //Method(v);
+            v.handler += Method;
             VehiclesForSale.Add(v);
             s.Vehicles.Add(v);
             v.MinPrice = MinPrice;
@@ -41,6 +41,8 @@ namespace OOP_Eksamen {
             }
 
             IEnumerable<Vehicle> Vehicle = VehiclesForSale.Where(v => v.AuctionNumber == AuctionNumber).Take(1);
+
+            Vehicle.First().handler(Vehicle.First());
 
             if (Buyer.Balance >= Offer && Vehicle.First().MinPrice <= Offer) {
                 AuctionHouseStruct.VehicleBids Bid = new AuctionHouseStruct.VehicleBids();
