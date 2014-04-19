@@ -213,7 +213,7 @@ namespace OOP_Eksamen
             
             foreach (Vehicle v in AH.VehiclesForSale)
             {
-                //Console.WriteLine("@@@@@@@@@@@" + v.ToString());
+                Console.WriteLine(v.ToString());
             }
 
             if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
