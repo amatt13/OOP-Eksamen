@@ -85,6 +85,7 @@ class AuctionHouse {
 
         VehiclesSold.Add(vehicle.First());
         VehiclesForSale.Remove(vehicle.First());
+		seller.Vehicles.Remove (vehicle.First ());
         return true;
 
     }
