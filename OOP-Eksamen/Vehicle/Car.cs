@@ -16,7 +16,8 @@ namespace OOP_Eksamen
             set { _isofix = value; }
         }
 
-        public override string ToString() {
+        public override string ToString()
+        {
             return
                 string.Format("\n---Name: {0} \n---Type: Car \n---Kilometers: {1} \n---Registration: {2} \n---Year: {3} \n---New Price: {4:#,0} DKK \n---Tow Hook: {5} \n---Engine Size: {6:0.0}L \n---Kilometers Per Liter: {7:0.0} Km/L \n---Fuel Type: {8} \n---Energyclass: {9} \n---Required Drivers License: {10} \n---Minimum Price: {11:#,0} DKK \n---Isofix: {12}",
                     Name,

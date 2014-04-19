@@ -117,6 +117,26 @@ namespace OOP_Eksamen
             }
         }
 
+        public override double EngineSize
+        {
+            get
+            {
+                return _engineSize;
+            }
+
+            set
+            {
+                if (value >= 4.2 && value <= 15)
+                {
+                    _engineSize = value;
+                }
+                else
+                {
+                    throw new ArgumentException("Engine size not within engine size range", "NotInEngineSizeRange");
+                }
+            }
+        }
+
         public Bus(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, uint beds, bool toilet, Size sizeOfBus, double weight)
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
