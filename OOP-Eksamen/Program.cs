@@ -215,9 +215,32 @@ namespace OOP_Eksamen{
 
             Console.WriteLine("\n_______________Vehicles for sale_______________");
 
-            if (AH.ReciveOffer(AH.Buyers[0], Van1.AuctionNumber, 22000))
-            {
+            foreach(Vehicle v in AH.VehiclesForSale) {
+                Console.WriteLine(v.ToString());
+            }
+
+            Console.WriteLine("\n\n\n");
+
+            AH.ReciveOffer(PBuyer1, Van1.AuctionNumber, 22000);
+            AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 21000);
+
+            Console.WriteLine("\n The bids:");
+            IEnumerable<VehicleBids> bids = AH.Bids.Where(t => t.AuctionNumber == Van1.AuctionNumber);
+
+            bids.OrderBy(t => t.Bid);
+
+            foreach(VehicleBids bid in bids){
+                Console.WriteLine("Bid: " + bid.Bid + "Placed" + bid.BidPlaced);
+            }
+
+            Console.WriteLine("\n Sell: y/n? ");
+            ConsoleKeyInfo choice = Console.ReadKey();
+
+            if( choice.KeyChar.Equals('y'))
                 AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
+
+            foreach (Vehicle v in AH.VehiclesSold) {
+                Console.WriteLine(v.ToString());
             }
 
             double i = 8000;

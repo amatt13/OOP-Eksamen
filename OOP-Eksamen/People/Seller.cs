@@ -46,11 +46,11 @@ namespace OOP_Eksamen
 
         public static void SMS(Vehicle K)
         {
-            Console.WriteLine("I received a notification SMS on vehicle" + K.ToString());
+            Console.WriteLine("I received a notification SMS");
         }
 
         public static void Email(Vehicle K) {
-            Console.WriteLine("I received a notification Email on vehicle" + K.ToString());
+            Console.WriteLine("I received a notification Email");
         }
 
         public Seller(int ZipCode, decimal balance)

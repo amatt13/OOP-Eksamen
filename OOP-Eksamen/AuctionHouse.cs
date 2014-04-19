@@ -5,6 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 
 namespace OOP_Eksamen {
+    struct VehicleBids {
+        public Buyer PlacedBy;
+        public decimal Bid;
+        public int AuctionNumber;
+        public DateTime BidPlaced;
+    }
+
     class AuctionHouse {
         //Liste hvor alle køretøjer er tilsalg
 
@@ -13,7 +20,7 @@ namespace OOP_Eksamen {
 
         public List<Vehicle> VehiclesSold = new List<Vehicle>();
         public List<Vehicle> VehiclesForSale = new List<Vehicle>();
-        public List<AuctionHouseStruct.VehicleBids> Bids = new List<AuctionHouseStruct.VehicleBids>();
+        public List<VehicleBids> Bids = new List<VehicleBids>();
 
         CalculateFees FeeCalculater = new CalculateFees();
 
@@ -45,9 +52,9 @@ namespace OOP_Eksamen {
             Vehicle.First().handler(Vehicle.First());
 
             if (Buyer.Balance >= Offer && Vehicle.First().MinPrice <= Offer) {
-                AuctionHouseStruct.VehicleBids Bid = new AuctionHouseStruct.VehicleBids();
+                VehicleBids Bid = new VehicleBids();
                 Bid.Bid = Offer;
-                Bid.Buyer = Buyer;
+                Bid.PlacedBy = Buyer;
                 Bid.AuctionNumber = AuctionNumber;
                 Bid.BidPlaced = DateTime.Now;
 
@@ -71,11 +78,11 @@ namespace OOP_Eksamen {
                 return false;
             }
 
-            IEnumerable<AuctionHouseStruct.VehicleBids> vehicleBids = Bids.Where(b => b.AuctionNumber == auctionNumber).OrderByDescending( b => b.BidPlaced ).Take(1);
+            IEnumerable<VehicleBids> vehicleBids = Bids.Where(b => b.AuctionNumber == auctionNumber).OrderByDescending( b => b.BidPlaced ).Take(1);
 
-            foreach (AuctionHouseStruct.VehicleBids b in vehicleBids)
+            foreach (VehicleBids b in vehicleBids)
             {
-                b.Buyer.RemoveBalance(tmpPrice);
+                b.PlacedBy.RemoveBalance(tmpPrice);
             }
 
             tmpPrice -= FeeCalculater.Fees(tmpPrice);
