@@ -35,7 +35,7 @@ namespace OOP_Eksamen
 
 		public override string ToString(){
             return
-                string.Format("------------ \nName: {0} \nType: Van \nKilometers: {1} \nRegistration: {2} \nYear: {3} \nNew Price: {4:#,0} DKK \nTow Hook: {5} \nEngine Size: {6:0.0}L \nKilometers Per Liter: {7:0.0} Km/L \nFuel Type: {8} \nEnergyclass: {9} \nRequired Drivers License: {10} \nMinimum Price: {11:#,0} DKK \nSafetybrace: {12} \nFreightcapacity: {13}", 
+                string.Format("\n---Name: {0} \n---Type: Van \n---Kilometers: {1} \n---Registration: {2} \n---Year: {3} \n---New Price: {4:#,0} DKK \n---Tow Hook: {5} \n---Engine Size: {6:0.0}L \n---Kilometers Per Liter: {7:0.0} Km/L \n---Fuel Type: {8} \n---Energyclass: {9} \n---Required Drivers License: {10} \n---Minimum Price: {11:#,0} DKK \n---Safetybrace: {12} \n---Freightcapacity: {13}", 
                     Name,
                     Km,
                     Registration,

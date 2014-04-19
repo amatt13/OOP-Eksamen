@@ -42,7 +42,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AuctionHouse.cs" />
-    <Compile Include="AuctionHouseStruct.cs" />
     <Compile Include="CalculateFees.cs" />
     <Compile Include="People\Buyer.cs" />
     <Compile Include="People\Seller.cs" />

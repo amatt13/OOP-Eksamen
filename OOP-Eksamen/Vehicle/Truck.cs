@@ -87,7 +87,7 @@ namespace OOP_Eksamen
 
         public override string ToString() {
             return
-                string.Format("------------ \nName: {0} \nType: Truck \nKilometers: {1} \nRegistration: {2} \nYear: {3} \nNew Price: {4:#,0} DKK \nTow Hook: {5} \nEngine Size: {6:0.0}L \nKilometers Per Liter: {7:0.0} Km/L \nFuel Type: {8} \nEnergyclass: {9} \nRequired Drivers License: {10} \nMinimum Price: {11:#,0} DKK \nLoadCapacity: {12} \nHeight: {13}\nLength: {14}\nWeight: {15}",
+                string.Format("\n---Name: {0} \n---Type: Truck \n---Kilometers: {1} \n---Registration: {2} \n---Year: {3} \n---New Price: {4:#,0} DKK \n---Tow Hook: {5} \n---Engine Size: {6:0.0}L \n---Kilometers Per Liter: {7:0.0} Km/L \n---Fuel Type: {8} \n---Energyclass: {9} \n---Required Drivers License: {10} \n---Minimum Price: {11:#,0} DKK \n---LoadCapacity: {12} \n---Height: {13}\n---Length: {14}\n---Weight: {15}",
                     Name,
                     Km,
                     Registration,

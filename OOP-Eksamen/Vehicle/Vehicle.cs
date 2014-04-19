@@ -12,20 +12,7 @@ namespace OOP_Eksamen
     {
 		private string _name;
         //////////////////////////////////////////////////////////////////////////
-
-        private bool _sellerNotif;
-        public bool SellerNotif
-        {
-            get
-            {
-                return _sellerNotif;
-            }
-
-            set
-            {
-                _sellerNotif = value;
-            }
-        }
+        public AuctionHouse.NotificationMethod handler;
 
         private Seller _seller;
         public Seller Seller

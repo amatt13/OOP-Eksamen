@@ -4,94 +4,104 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Eksamen
-{
-    class Buyer
-    {
+namespace OOP_Eksamen {
+    class Buyer {
         protected decimal _balance;
-        protected decimal _credits;
 
         //The Balance has been made read-only
-        public decimal Balance
-        {
-            get
-            {
-                return _credits + _balance;
+        public decimal Balance {
+            get {
+                return _balance;
             }
         }
 
-        public bool RemoveBalance(decimal Price)
-        {
-            if (Price < (_balance + _credits))
-            {
-                if (_balance < Price)
-                {
+        public bool RemoveBalance(decimal Price) {
+            if (Price < _balance) {
+                if (_balance < Price) {
                     Price -= _balance;
-                    _credits -= Price;
                     _balance = 0;
-                }
-                else
-                {
+                } else {
                     _balance -= Price;
                 }
 
                 return true;
-            }
-            else
-            {
+            } else {
                 return false;
             }
         }
 
+        public Buyer(decimal balance) {
+            _balance = balance;
+        }
     }
 
-    class BusinessBuyer : Buyer
-    {
+    class BusinessBuyer : Buyer {
         private int _cvr;
+        private decimal _credits;
 
-        public int CVR
-        {
-            get
-            {
+        public int CVR {
+            get {
                 return _cvr;
             }
 
-            set
-            {
+            set {
                 _cvr = value;
             }
         }
 
-        public BusinessBuyer(decimal Balance, decimal Credit, int CVR)
-        {
-            _balance = Balance;
-            _credits = Credit;
+        public decimal Balance {
+            get {
+                return _credits + _balance;
+            }
+        }
+
+        public bool RemoveBalance(decimal Price) {
+            if (Price < (_balance + _credits)) {
+                if (_balance < Price) {
+                    Price -= _balance;
+                    _credits -= Price;
+                    _balance = 0;
+                } else {
+                    _balance -= Price;
+                }
+
+                return true;
+            } else {
+                return false;
+            }
+        }
+
+        public override string ToString(){
+            return "BusinessBuyer with CVR: " + _cvr + "\n a balance of:´" + _balance + "\n and credits: " + _credits + "availible";
+        }
+
+        public BusinessBuyer(decimal balance, decimal credit, int CVR)
+            : base(balance) {
+            _credits = credit;
             _cvr = CVR;
         }
     }
 
-    class PrivateBuyer : Buyer
-    {
+    class PrivateBuyer : Buyer {
         private int _cpr;
 
-        public int CPR
-        {
-            get
-            {
+        public int CPR {
+            get {
                 return _cpr;
             }
 
-            set
-            {
+            set {
                 _cpr = value;
             }
         }
 
-        public PrivateBuyer(decimal Balance, decimal Credit, int CPR)
-        {
-            _balance = Balance;
-            _credits = 0;
+        public PrivateBuyer(decimal balance, int CPR)
+            : base(balance) {
             _cpr = CPR;
+        }
+
+        public override string ToString() {
+            return "PrivateBuyer with CPR: " + _cpr + "\n and a balance of: " + _balance;
         }
     }
 }
