@@ -238,10 +238,10 @@ namespace OOP_Eksamen
             AH.ReciveOffer(PBuyer1, Van1.AuctionNumber, 22000);
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 21000);
 
-            Console.WriteLine("\n The bids:");
+            Console.WriteLine("\n The bid:");
             IEnumerable<VehicleBids> bids = AH.Bids.Where(t => t.AuctionNumber == Van1.AuctionNumber);
 
-            bids.OrderBy(t => t.Bid);
+            bids.OrderBy(t => t.Bid); // ligegyldig
 
             foreach (VehicleBids bid in bids)
             {
@@ -252,7 +252,7 @@ namespace OOP_Eksamen
             ConsoleKeyInfo choice = Console.ReadKey();
 
             if (choice.KeyChar.Equals('y'))
-                AH.AcceptBid(AH.Sellers[0], Van1.AuctionNumber);
+                AH.AcceptBid(BSeller1, Van1.AuctionNumber);
 
             foreach (Vehicle v in AH.VehiclesSold)
             {
