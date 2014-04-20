@@ -259,8 +259,12 @@ namespace OOP_Eksamen
                 Console.WriteLine(v.ToString());
             }
 
-            double i = 8000;
-            SearchHeavierThan(AH.VehiclesForSale, i);
+            Console.WriteLine("\n_________Vehicles heavier than 8000_________");
+            List<Vehicle> result = SearchHeavierThan(AH.VehiclesForSale, 8000);
+
+            foreach (Vehicle v in result) {
+                Console.WriteLine(v.ToString());
+            }
 
             Console.ReadKey();
         }
