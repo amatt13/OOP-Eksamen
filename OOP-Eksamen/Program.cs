@@ -274,8 +274,61 @@ namespace OOP_Eksamen
             foreach (Vehicle v in result) {
                 Console.WriteLine(v.ToString());
             }
-
+            //Her starter præsentationen
+            Presentation(AH.VehiclesForSale, AH);
             Console.ReadKey();
+        }
+
+        static void Presentation(List<Vehicle> allVehicles, AuctionHouse AH) {
+
+            Console.WriteLine("\nOpgave 1\nSøgestreng \"Scania\"");
+            string searchstring = "Scania";
+            List<Vehicle> searchVehicles;
+            int i;
+            searchVehicles = SearchName(allVehicles, searchstring);
+            for (i = 0; i < searchVehicles.Count; i++) {
+                Console.WriteLine(searchVehicles[i].ToString());
+            }
+
+            Console.WriteLine("\nOpgave 2\nSeats = 3, Toilet = True");
+            uint seats = 3;
+            bool haveToilet = true;
+            List<Vehicle> seatsToiletlist;
+            seatsToiletlist = SearchSeatsToilet(allVehicles, seats, haveToilet);
+            for (i = 0; i < seatsToiletlist.Count; i++) {
+                Console.WriteLine(seatsToiletlist[i].ToString());
+            }
+
+            Console.WriteLine("\nOpgave 3\nKorttype = C,CE,D & DE og max vægt = 10.000");
+            List<Vehicle> busTruckList;
+            double weight = 10000;
+            busTruckList = SearchHeavierThan(allVehicles, weight);
+            for (i = 0; i < busTruckList.Count; i++) {
+                Console.WriteLine(busTruckList[i].ToString());
+            }
+
+            Console.WriteLine("\nOpgave 4\nkm = 309999, price = 520.000");
+            int km = 309999, price = 2000;
+            List<Vehicle> minPriceKmList;
+            minPriceKmList = FindCars(allVehicles, km, price);
+            for (i = 0; i < minPriceKmList.Count; i++) {
+                Console.WriteLine(minPriceKmList[i].ToString());
+            }
+
+            Console.WriteLine("\nOpgave 5\nZip = 5000, radius = 3001");
+            List<Seller> zipSellerList = AH.Sellers;
+            int zip = 5000, 
+                radius = 3001;
+            zipSellerList = SearchRadius(zipSellerList, zip, radius);
+            for (i = 0; i < zipSellerList.Count; i++) {
+                Console.WriteLine(zipSellerList[i].ToString());
+            }
+
+            Console.WriteLine("\nOpgave 6");
+            double average;
+            List<Vehicle> energyVehicle = allVehicles;
+            average = AVGEnergyClass(energyVehicle);
+            Console.WriteLine("Gennemsnittet er = {0}",average);
         }
 
         static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString)
