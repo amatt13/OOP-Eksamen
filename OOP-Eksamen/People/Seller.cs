@@ -61,13 +61,13 @@ namespace OOP_Eksamen
         //Contact method to send detailed sms
         public static void SMSDetailed(Vehicle v)
         {
-            Console.WriteLine("I received a notification SMS on vehicle" + v.ToString());
+            Console.WriteLine("I received a notification SMS on the vehicle " + v.Name);
         }
 
         //Contact method to send detailed mail
         public static void EmailDetailed(Vehicle v)
         {
-            Console.WriteLine("I received a notification Email" + v.ToString());
+            Console.WriteLine("I received a notification Email" + v.Name);
         }
 
         //base constructor

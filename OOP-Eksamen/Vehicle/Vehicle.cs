@@ -19,7 +19,6 @@ namespace OOP_Eksamen
     abstract class Vehicle
     {
         private string _name;
-        //////////////////////////////////////////////////////////////////////////
         public AuctionHouse.NotificationMethod handler;
 
         private Seller _seller;
@@ -269,15 +268,6 @@ namespace OOP_Eksamen
             }
             return energyClass;
         }
-
-        //public Vehicle() : this(0){} // if not year supplied set to 0
-
-        /*public Vehicle(string name, double km, string reg, int year){
-            Name = name;
-            Km = km;
-            Registration = reg;
-            Year = year;
-        }*/
 
         public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice)
         {

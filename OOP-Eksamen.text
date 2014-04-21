@@ -1,58 +1,67 @@
 ﻿Mini-gruppe:
-============
+=============
 
-    A418b
+A418b
 
 Gruppemedlemmer og underskrifter:
 =================================
 
-    Kasper Østergaard Helsted
+Kasper Østergaard Helsted
 
-    Josias Overgaard Laugesen
+Josias Overgaard Laugesen
 
-    Anders Lykke Matthiassen
+Anders Lykke Matthiassen
 
-    Christian Heider Nielsen
+Christian Heider Nielsen
 
 Beskrivelse af programmet:
 ==========================
 
-        Dette er et auktionsystem fokuseret på biler, udarbejdet af gruppen A418b i forbindelse med eksamen i Objekt Orienteret Programmering. Hovedsagligt har opgaven være at designe klasserne, hvor der gøres brug af polymorfisme, nedarvening og kodegenbrug. Nogle beslutninger der er taget i løbet af udarbejdelse af programmet, er blevet taget med en udviselse af flest mulige teori fra pensum. Vi har valgt at lave 2 af hvert køretøj, for alt i alt at have 10 køretøjer. 
+Dette er et auktionsystem fokuseret på biler, udarbejdet af gruppen A418b i
+forbindelse med eksamen i Objekt Orienteret Programmering. Hovedsagligt har
+opgaven være at designe klasserne, hvor der gøres brug af polymorfisme,
+nedarvening og kodegenbrug. Nogle beslutninger der er taget i løbet af
+udarbejdelse af programmet, er blevet taget med en udviselse af flest mulige
+teori fra pensum. Vi har valgt at lave 2 af hvert køretøj, for alt i alt at have
+10 køretøjer.
 
 Antagelser:
 -----------
 
-        AktionsNummer og Minimums pris tilæggelse direkte på det oprettet
-        køretøj.
+AktionsNummer og Minimums pris tilæggelse direkte på det oprettet køretøj.
 
-        I den "SætTilSalg" metode hvor der ikke defineres en notifikationsMetode antages det at sælgeren gerne vil have en notifikation ved bud på køretøj
+I den "SætTilSalg" metode hvor der ikke defineres en notifikationsMetode antages
+det at sælgeren gerne vil have en notifikation ved bud på køretøj.
 
-	I opgave 3 har vi observeret at de eneste køretøjer der opfylder kræver stort køretøj busser og lastbiler, og derfor har vi ikke søgt i alle vehicles, men bare brugt alle busser og lastbiler
+I opgave 3 har vi observeret at de eneste køretøjer der opfylder kræver stort
+køretøj busser og lastbiler, og derfor har vi ikke søgt i alle vehicles, men
+bare brugt alle busser og lastbiler.
 
 Begrænsninger:
 --------------
 
-        Der er ikke muligt at vælge en specifikt bud af at acceptere. Det er muligt for at byde på flere køretøjer, fordi at pengene ikke bliver reseveret når et bud bliver placeret.
+Der er ikke muligt at vælge en specifikt bud af at acceptere. Det er muligt for
+at byde på flere køretøjer, fordi at pengene ikke bliver reseveret når et bud
+bliver placeret.
 
-	Hvis en køber bydder på flere forskellige biler kan det lade sig gøre at han kommer til at købe flere biler, på trods af at han kun har råd til en. Dette skyldes at han har råd til flere biler hver for sig, men ikke mere end en. Sker dette returneres en exception og programmet crasher.
+Hvis en køber bydder på flere forskellige biler kan det lade sig gøre at han
+kommer til at købe flere biler, på trods af at han kun har råd til en. Dette
+skyldes at han har råd til flere biler hver for sig, men ikke mere end en. Sker
+dette returneres en exception og programmet crasher.
 
-Udvidelser:
------------
-        
-        Det er muligt at bestemme hvordan man vil notifikeres, hvor detaljeret og hvilket media, om det skal være via SMS eller Email.
+Udvidelser: Det er muligt at bestemme hvordan man vil notifikeres, hvor
+detaljeret og hvilket media, om det skal være via SMS eller Email.
 
 Variationer:
 ------------
 
-        Autocamper kunne godt nedarve fra Bus men det ville medfører unødvendig
-        propeties.
+Autocamper kunne godt nedarve fra Bus men det ville medfører unødvendig
+propeties.
 
-        Størrelse af baggagerum og lastbil er indeholdt i en Size struct, som beskriver dimensionerne højde, brede og dybde. Breden af lastbil er ikke nødvendig.
+Størrelse af baggagerum og lastbil er indeholdt i en Size struct, som beskriver
+dimensionerne højde, brede og dybde. Breden af lastbil er ikke nødvendig.
 
-Kilder:
-=======
-
-=======
-        
+Kilder: 
+========
 
     

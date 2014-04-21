@@ -230,46 +230,42 @@ namespace OOP_Eksamen
                 Console.WriteLine(s.ToString());
             }
 
-            AH.PutOpForSale(Van1, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Van2, BSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
-            AH.PutOpForSale(Truck1, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Truck2, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Camper1, BSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Camper2, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
-            AH.PutOpForSale(Car1, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
-            AH.PutOpForSale(Car2, PSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-            AH.PutOpForSale(Bus1, PSeller2, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.Email));
-            AH.PutOpForSale(Bus2, BSeller1, 1500, new AuctionHouse.NotificationMethod(PrivateSeller.SMS));
-
+            AH.PutOpForSale(Van1, BSeller1, 1500, new AuctionHouse.NotificationMethod(Seller.SMSDetailed));
+            AH.PutOpForSale(Van2, BSeller2, 1500, new AuctionHouse.NotificationMethod(Seller.Email));
+            AH.PutOpForSale(Truck1, PSeller2, 1500, new AuctionHouse.NotificationMethod(Seller.SMS));
+            AH.PutOpForSale(Truck2, BSeller1, 1500, new AuctionHouse.NotificationMethod(Seller.SMS));
+            AH.PutOpForSale(Camper1, BSeller2, 1500, new AuctionHouse.NotificationMethod(Seller.SMS));
+            AH.PutOpForSale(Camper2, PSeller2, 1500, new AuctionHouse.NotificationMethod(Seller.Email));
+            AH.PutOpForSale(Car1, PSeller1, 1500, new AuctionHouse.NotificationMethod(Seller.Email));
+            AH.PutOpForSale(Car2, PSeller1, 1500, new AuctionHouse.NotificationMethod(Seller.SMS));
+            AH.PutOpForSale(Bus1, PSeller2, 1500, new AuctionHouse.NotificationMethod(Seller.Email));
+            AH.PutOpForSale(Bus2, BSeller1, 1500, new AuctionHouse.NotificationMethod(Seller.SMS));
             Console.WriteLine("\n_______________Vehicles for sale_______________");
 
             foreach (Vehicle v in AH.VehiclesForSale)
             {
-                Console.WriteLine(v.ToString());
+                Console.WriteLine(v.Name);
             }
-
-            Console.WriteLine("\n\n\n");
 
             AH.ReciveOffer(PBuyer1, Van1.AuctionNumber, 22000);
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 21000);
+            Van1.handler += PrivateSeller.Email;//This is added in order to activatee a different delegate.
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 31000);
 
-            Console.WriteLine("\n The bid:");
+            Console.WriteLine("\nThe bids:");
             IEnumerable<VehicleBids> bids = AH.Bids.Where(t => t.AuctionNumber == Van1.AuctionNumber);
 
-            bids.OrderBy(t => t.Bid); // ligegyldig
+            bids.OrderBy(t => t.Bid);
 
             foreach (VehicleBids bid in bids)
             {
                 Console.WriteLine("Bid: " + bid.Bid + " Placed: " + bid.BidPlaced);
             }
 
-            Console.WriteLine("\nSell: y/n? ");
-            ConsoleKeyInfo choice = Console.ReadKey();
-
-            if (choice.KeyChar.Equals('y'))
-                AH.AcceptBid(BSeller1, Van1.AuctionNumber);
-
+            Console.WriteLine("\nSeller's current balance: {0}",BSeller1.Balance);
+            AH.AcceptBid(BSeller1, Van1.AuctionNumber);
+            Console.WriteLine("Seller's updated balance: {0}", BSeller1.Balance);
+            Console.WriteLine("\n_________Vehicles sold_________");
             foreach (Vehicle v in AH.VehiclesSold)
             {
                 Console.WriteLine(v.ToString());

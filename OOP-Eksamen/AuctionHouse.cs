@@ -96,7 +96,7 @@ namespace OOP_Eksamen
 
         //method used to accept a bid a on a car
         public bool AcceptBid(Seller seller, int auctionNumber)
-        {
+        {   
             //select the vehicle with the selected auction number
             IEnumerable<Vehicle> vehicle = seller.Vehicles.Where(v => v.AuctionNumber == auctionNumber).Take(1);
 
@@ -105,7 +105,7 @@ namespace OOP_Eksamen
             {
                 return false;
             }
-
+            Console.WriteLine("Bid on {0} has been accepted.\n", vehicle.First().Name);
             //make a tempoary price based in the vehicle minimum price
             decimal tmpPrice = vehicle.First().MinPrice;
 
@@ -131,7 +131,6 @@ namespace OOP_Eksamen
             //remove the vehicle from the seller
             seller.Vehicles.Remove(vehicle.First());
             return true;
-
         }
     }
 }
