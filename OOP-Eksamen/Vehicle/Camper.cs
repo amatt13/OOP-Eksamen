@@ -64,24 +64,24 @@ namespace OOP_Eksamen
         //Det her skal udregnes fr at energiklassen bliver beregent!
 		private double EnergyClassModifier()
         {
-			double energyClassModifier;
+			double energyClassMod = 0;
             if (UsedHeatsource == Heatsource.Electricity)
                 {
                     KmPerLiter = KmPerLiter * 0.8;
-                    energyClassModifier = 0.8;
+                    energyClassMod = 0.8;
                 }
             else if (UsedHeatsource == Heatsource.Gas)
                 {
                     KmPerLiter = KmPerLiter * 0.9;
-                    energyClassModifier = 0.9;
+                    energyClassMod = 0.9;
                 }
             else if (UsedHeatsource == Heatsource.Oil)
                 {
                     KmPerLiter = KmPerLiter * 0.7;
-                    energyClassModifier = 0.7;
+                    energyClassMod = 0.7;
                 }
             
-			return energyClassModifier;
+			return energyClassMod;
         }
 
         public override double EngineSize
@@ -133,7 +133,7 @@ namespace OOP_Eksamen
             Beds = beds;
             Toilet = toilet;
 			double enm = EnergyClassModifier ();
-			_energyClass = ((EnergyClass)((double) CalcEnergyClass (fuelType, kmPerLiter, year))*enm);
+			_energyClass = ((EnergyClass)(((double) CalcEnergyClass (fuelType, kmPerLiter, year)) * enm));
             _licenseType = LicenseType.B;
         }
 
