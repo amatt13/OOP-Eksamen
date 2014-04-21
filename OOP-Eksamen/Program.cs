@@ -29,8 +29,8 @@ namespace OOP_Eksamen
                                     47,                     //Chairs
                                     false,                  //Toilet
                                     sizeBus1,               //Size of bus(depth, height, width)
-				 					7,                      //Weight in tonnes
-				                    8.2);                   //Engine Size 
+                                    7,                      //Weight in tonnes
+                                    8.2);                   //Engine Size 
 
             Vehicle.Size sizeBus2 = new Vehicle.Size();
             sizeBus2.Depth = 2;
@@ -50,10 +50,10 @@ namespace OOP_Eksamen
                                     49,                     //Chairs
                                     true,                   //Toilet
                                     sizeBus2,               //Size of bus(depth, height, width)
-				                    900,                    //Weigth in kg
-				                    4.4);                   //Engine Size
-                                                            
-                                                            
+                                    900,                    //Weigth in kg
+                                    4.4);                   //Engine Size
+
+
             Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
                                     417000,                  //Km driven
                                     "QW89746",              //License number
@@ -66,8 +66,8 @@ namespace OOP_Eksamen
                                     6000,                   //load capacity
                                     3.5,                    //height in metres
                                     7000,                   //Weight of vehicle
-				                    9,                      //Length in metres
-				                    10.6);                   //Engine size
+                                    9,                      //Length in metres
+                                    10.6);                   //Engine size
 
             Truck Truck2 = new Truck("Volvo FM9 260",       //Name of vehicle
                                     213000,                 //Km driven
@@ -81,8 +81,8 @@ namespace OOP_Eksamen
                                     8000,                   //load capacity
                                     4,                      //height in metres
                                     18000,                  //Weight of vehicle
-				                    12,                     //Length in metres
-				                    7.7);                   //Engine size
+                                    12,                     //Length in metres
+                                    7.7);                   //Engine size
 
             Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P", //name
                                     417000,                 //Km driven
@@ -95,8 +95,8 @@ namespace OOP_Eksamen
                                     0,                      //Minimum price
                                     2,                      //seats
                                     4,                      //beds
-				                    false,                  //Toilet
-				                    3.6);		            //Enginesize
+                                    false,                  //Toilet
+                                    3.6);		            //Enginesize
 
             Camper Camper2 = new Camper("Hymer 544 classic",//Name
                                     213000,                 //Km driven
@@ -109,8 +109,8 @@ namespace OOP_Eksamen
                                     18000,                  //Minimum price
                                     4,                      //Seats
                                     8,                      //Beds
-				                    true,                   //Toilet
-				                    3.9);                   //Engine size
+                                    true,                   //Toilet
+                                    3.9);                   //Engine size
 
 
 
@@ -134,8 +134,8 @@ namespace OOP_Eksamen
                                     360000,                 //Minimum price
                                     5,                      //Seats
                                     sizePv1,                //Size fo trunk
-				                    true,                   //Isofix
-				                    4.6);                   //Engine size
+                                    true,                   //Isofix
+                                    4.6);                   //Engine size
 
             Vehicle.Size sizePv2 = new Vehicle.Size();
             sizePv2.Depth = 2;
@@ -153,8 +153,8 @@ namespace OOP_Eksamen
                                     70000,                  //Minimum price
                                     5,                      //Seats
                                     sizePv2,                //Size of trunk
-				                    false,                  //Isofix
-				                    8.2);                   //Engine size
+                                    false,                  //Isofix
+                                    8.2);                   //Engine size
 
             Vehicle.Size sizeWv1 = new Vehicle.Size(); //Wv1 = Work vehicle 1
             sizeWv1.Depth = 2;
@@ -173,8 +173,8 @@ namespace OOP_Eksamen
                                     2,                      //Seats 2
                                     sizeWv1,                //Size of trunk
                                     true,                   //Safetybrace
-				                    350,                    //Freightcapacity
-				                    9.9);                   //Engine size
+                                    350,                    //Freightcapacity
+                                    9.9);                   //Engine size
 
             Vehicle.Size sizeWv2 = new Vehicle.Size();
             sizeWv2.Depth = 2;
@@ -193,8 +193,8 @@ namespace OOP_Eksamen
                                     2,                      //Seats
                                     sizeWv2,                //Size of trunk
                                     false,                  //Safetybrace
-			                        400,                    //FreightCapacity
-			                        0.8);                   //Engine size
+                                    400,                    //FreightCapacity
+                                    0.8);                   //Engine size
 
             AuctionHouse AH = new AuctionHouse();
 
@@ -278,7 +278,8 @@ namespace OOP_Eksamen
             Console.WriteLine("\n_________Vehicles heavier than 8000_________");
             List<Vehicle> result = SearchHeavierThan(AH.VehiclesForSale, 8000);
 
-            foreach (Vehicle v in result) {
+            foreach (Vehicle v in result)
+            {
                 Console.WriteLine(v.ToString());
             }
             //Her starter præsentationen
@@ -286,14 +287,16 @@ namespace OOP_Eksamen
             Console.ReadKey();
         }
 
-        static void Presentation(List<Vehicle> allVehicles, AuctionHouse AH) {
+        static void Presentation(List<Vehicle> allVehicles, AuctionHouse AH)
+        {
 
             Console.WriteLine("\nOpgave 1\nSøgestreng \"Scania\"");
             string searchstring = "Scania";
             List<Vehicle> searchVehicles;
             int i;
             searchVehicles = SearchName(allVehicles, searchstring);
-            for (i = 0; i < searchVehicles.Count; i++) {
+            for (i = 0; i < searchVehicles.Count; i++)
+            {
                 Console.WriteLine(searchVehicles[i].ToString());
             }
 
@@ -302,7 +305,8 @@ namespace OOP_Eksamen
             bool haveToilet = true;
             List<Vehicle> seatsToiletlist;
             seatsToiletlist = SearchSeatsToilet(allVehicles, seats, haveToilet);
-            for (i = 0; i < seatsToiletlist.Count; i++) {
+            for (i = 0; i < seatsToiletlist.Count; i++)
+            {
                 Console.WriteLine(seatsToiletlist[i].ToString());
             }
 
@@ -310,7 +314,8 @@ namespace OOP_Eksamen
             List<Vehicle> busTruckList;
             double weight = 10000;
             busTruckList = SearchHeavierThan(allVehicles, weight);
-            for (i = 0; i < busTruckList.Count; i++) {
+            for (i = 0; i < busTruckList.Count; i++)
+            {
                 Console.WriteLine(busTruckList[i].ToString());
             }
 
@@ -318,16 +323,18 @@ namespace OOP_Eksamen
             int km = 309999, price = 2000;
             List<Vehicle> minPriceKmList;
             minPriceKmList = FindCars(allVehicles, km, price);
-            for (i = 0; i < minPriceKmList.Count; i++) {
+            for (i = 0; i < minPriceKmList.Count; i++)
+            {
                 Console.WriteLine(minPriceKmList[i].ToString());
             }
 
             Console.WriteLine("\nOpgave 5\nZip = 5000, radius = 3001");
             List<Seller> zipSellerList = AH.Sellers;
-            int zip = 5000, 
+            int zip = 5000,
                 radius = 3001;
             zipSellerList = SearchRadius(zipSellerList, zip, radius);
-            for (i = 0; i < zipSellerList.Count; i++) {
+            for (i = 0; i < zipSellerList.Count; i++)
+            {
                 Console.WriteLine(zipSellerList[i].ToString());
             }
 
