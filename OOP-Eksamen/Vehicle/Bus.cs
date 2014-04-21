@@ -1,4 +1,4 @@
-﻿﻿using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -108,11 +108,11 @@ namespace OOP_Eksamen
             {
                 if (_towHook == true)
                 {
-                    value = LicenseType.DE;
+					_licenseType = LicenseType.DE;
                 }
                 else
                 {
-                    value = LicenseType.D;
+					_licenseType = LicenseType.D;
                 }
             }
         }

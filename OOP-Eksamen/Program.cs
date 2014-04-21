@@ -90,8 +90,7 @@ namespace OOP_Eksamen
                 0,
                 2,                                  //seats
                 4,                                  //beds
-                false,                              //toilet
-                0.7);                               //EnergyclassModifier 
+				false);				                //toilet
 
             Camper Camper2 = new Camper("Hymer 544 classic",
                     213000,
@@ -104,8 +103,7 @@ namespace OOP_Eksamen
                     18000,
                     4,
                     8,
-                    true,
-                    0.8);
+                    true);
 
             Vehicle.Size sizePv1 = new Vehicle.Size();
             sizePv1.Depth = 2;

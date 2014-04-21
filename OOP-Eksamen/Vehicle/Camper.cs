@@ -12,7 +12,6 @@ namespace OOP_Eksamen
 
         private bool _toilet;
         private Heatsource _usedheatsource;
-        private double _energyClassModifier;
         private uint _seat;
         private uint _beds;
 
@@ -63,30 +62,26 @@ namespace OOP_Eksamen
             }
         }
         //Det her skal udregnes fr at energiklassen bliver beregent!
-        private double EnergyClassModifier
+		private double EnergyClassModifier()
         {
-            get
-            {
-                return _energyClassModifier;
-            }
-            set
-            {
-                if (UsedHeatsource == Heatsource.Electricity)
+			double energyClassModifier;
+            if (UsedHeatsource == Heatsource.Electricity)
                 {
                     KmPerLiter = KmPerLiter * 0.8;
-                    _energyClassModifier = 0.8;
+                    energyClassModifier = 0.8;
                 }
-                else if (UsedHeatsource == Heatsource.Gas)
+            else if (UsedHeatsource == Heatsource.Gas)
                 {
                     KmPerLiter = KmPerLiter * 0.9;
-                    _energyClassModifier = 0.9;
+                    energyClassModifier = 0.9;
                 }
-                else if (UsedHeatsource == Heatsource.Oil)
+            else if (UsedHeatsource == Heatsource.Oil)
                 {
                     KmPerLiter = KmPerLiter * 0.7;
-                    _energyClassModifier = 0.7;
+                    energyClassModifier = 0.7;
                 }
-            }
+            
+			return energyClassModifier;
         }
 
         public override double EngineSize
@@ -131,13 +126,14 @@ namespace OOP_Eksamen
                     Beds);
         }
 
-        public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet, double energyClassModifier)
+        public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet)
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
             Seats = seat;
             Beds = beds;
             Toilet = toilet;
-            EnergyClassModifier = energyClassModifier;
+			double enm = EnergyClassModifier ();
+			_energyClass = ((EnergyClass)((double) CalcEnergyClass (fuelType, kmPerLiter, year))*enm);
             _licenseType = LicenseType.B;
         }
 

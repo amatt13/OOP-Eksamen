@@ -39,6 +39,7 @@ namespace OOP_Eksamen
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seats, sizeOfPv)
         {
             Isofix = isofix;
+			_licenseType = LicenseType.B;
         }
     }
 }
