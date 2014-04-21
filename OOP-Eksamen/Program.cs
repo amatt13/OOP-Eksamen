@@ -15,21 +15,21 @@ namespace OOP_Eksamen
             sizeBus1.Height = 5;
             sizeBus1.Width = 3;
 
-            Bus Bus1 = new Bus("Volvo B10M Carrus 302",
-                                    2967165,
-                                    "QE25987",
-                                    1998,
-                                    10000,
-                                    false,
-                                    0,
-                                    Vehicle.FuelType.Diesel,
-                                    12000,
-                                    47,
-                                    47,
-                                    false,
-                                    sizeBus1,
-									7,
-				3.6
+            Bus Bus1 = new Bus("Volvo B10M Carrus 302",     //Name
+                                    2967165,                //km driven
+                                    "QE25987",              //Licence number
+                                    1998,                   //Year of production
+                                    10000,                  //New Price
+                                    false,                  //Tow Hook (D licence required)
+                                    0,                      //km per liter
+                                    Vehicle.FuelType.Diesel,//fuel type
+                                    12000,                  //Lowest price
+                                    47,                     //Seats
+                                    47,                     //Chairs
+                                    false,                  //Toilet
+                                    sizeBus1,               //Size of bus(depth, height, width)
+									7,                      //Weight in tonnes
+				3.6                                         //Engine Size
 			);
 
             Vehicle.Size sizeBus2 = new Vehicle.Size();
@@ -37,80 +37,80 @@ namespace OOP_Eksamen
             sizeBus2.Height = 5;
             sizeBus2.Width = 3;
 
-            Bus Bus2 = new Bus("Scania Irizar",
-                982505,
-                "KS12387",
-                1997,
-                21000,
-                true,
-                0,
-                Vehicle.FuelType.Diesel,
-                12000,
-                49,
-                49,
-                true,
-                sizeBus2,
-				900,
-				3.6);
-
-
+            Bus Bus2 = new Bus("Scania Irizar",             //Name 
+                                    982505,                 //Km driven                    
+                                    "KS12387",              //Licence number
+                                    1997,                   //Year of production
+                                    21000,                  //New price
+                                    true,                   //Tow Hook (DE licence required)
+                                    0,                      //Km per liter
+                                    Vehicle.FuelType.Diesel,//Fuel type
+                                    12000,                  //Lowest price
+                                    49,                     //Seats
+                                    49,                     //Chairs
+                                    true,                   //Toilet
+                                    sizeBus2,               //Size of bus(depth, height, width)
+				                    900,                    //Weigth in kg
+				                    3.6);                   //Engine Size
+                                                            
+                                                            
             Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
-                417000,                                         //Km driven
-                "QW89746",                                      //License number
-                2005,                                           //Year the car was build
-                108000,                                         //Price of the car
-                true,                                           //Has the truck got a tow hook
-                0,                                              //KM per liter
-                Vehicle.FuelType.Diesel,                        //The fuel the truck uses
-                0,                                              //minimum price
-                6000,                                           //load capacity
-                3.5,                                            //height in metres
-                7000,                                           //Weight of vehicle
-				9,
-				3.6);                                             //Length in metres
+                                    417000,                  //Km driven
+                                    "QW89746",              //License number
+                                    2005,                   //Year the car was build
+                                    108000,                 //Price of the car
+                                    true,                   //Has the truck got a tow hook
+                                    0,                      //KM per liter
+                                    Vehicle.FuelType.Diesel,//The fuel the truck uses
+                                    0,                      //minimum price
+                                    6000,                   //load capacity
+                                    3.5,                    //height in metres
+                                    7000,                   //Weight of vehicle
+				                    9,                      //Length in metres
+				                    3.6);                   //Engine size
 
-            Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
-                213000,                               //Km driven
-                "GH65986",                            //License number
-                2006,                                 //Year the car was build
-                102000,                               //Price of the car
-                false,                                //Has the truck got a tow hook
-                0,                                    //KM per liter
-                Vehicle.FuelType.Gasoline,            //The fuel the truck uses
-                0,                                    //minimum price
-                8000,                                 //load capacity
-                4,                                    //height in metres
-                18000,                                //Weight of vehicle
-				12,
-				3.6);                                  //Length in metres
+            Truck Truck2 = new Truck("Volvo FM9 260",       //Name of vehicle
+                                    213000,                 //Km driven
+                                    "GH65986",              //License number
+                                    2006,                   //Year the car was build
+                                    102000,                 //Price of the car
+                                    false,                  //Has the truck got a tow hook
+                                    0,                      //KM per liter
+                                    Vehicle.FuelType.Gasoline,//The fuel the truck uses
+                                    0,                      //minimum price
+                                    8000,                   //load capacity
+                                    4,                      //height in metres
+                                    18000,                  //Weight of vehicle
+				                    12,                     //Length in metres
+				                    3.6);                   //Engine size
 
-            Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P",
-                417000,
-                "QW89746",
-                2005,
-                108000,
-                true,
-                0,
-                Vehicle.FuelType.Diesel,
-                0,
-                2,                                  //seats
-                4,                                  //beds
-				false,
-				3.6);				                //toilet
+            Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P", //name
+                                    417000,                 //Km driven
+                                    "QW89746",              //Licence type                    
+                                    2005,                   //Year the car was build
+                                    108000,                 //Price of the car(new)
+                                    true,                   //Tow hook
+                                    0,                      //Km per liter
+                                    Vehicle.FuelType.Diesel,//Fuel used
+                                    0,                      //Minimum price
+                                    2,                      //seats
+                                    4,                      //beds
+				                    false,                  //Toilet
+				                    3.6);		            //Enginesize
 
-            Camper Camper2 = new Camper("Hymer 544 classic",
-                    213000,
-                    "GH65986",
-                    2006,
-                    102000,
-                    false,
-                    0,
-                    Vehicle.FuelType.Diesel,
-                    18000,
-                    4,
-                    8,
-				true,
-				3.6);
+            Camper Camper2 = new Camper("Hymer 544 classic",//Name
+                                    213000,                 //Km drive
+                                    "GH65986",              //Licence type
+                                    2006,                   //Year the car was build
+                                    102000,                 //Price of the car(new)
+                                    false,                  //Tow hook
+                                    0,                      //Km per liter
+                                    Vehicle.FuelType.Diesel,//Fuel used
+                                    18000,                  //Minimum price
+                                    4,                      //Seats
+                                    8,                      //Beds
+				                    true,                   //Toilet
+				                    3.6);                   //Engine size
 
             Vehicle.Size sizePv1 = new Vehicle.Size();
             sizePv1.Depth = 2;
@@ -118,18 +118,18 @@ namespace OOP_Eksamen
             sizePv1.Width = 3;
 
             Car Car1 = new Car("Audi A6A vant",
-                309000,
-                "PH48689",
-                2008,
-                420000,
-                true,
-                0,
-                Vehicle.FuelType.Gasoline,
-                360000,
-                5,
-                sizePv1,
-				true,
-				3.6);
+                                    309000,
+                                    "PH48689",
+                                    2008,
+                                    420000,
+                                    true,
+                                    0,
+                                    Vehicle.FuelType.Gasoline,
+                                    360000,
+                                    5,
+                                    sizePv1,
+				                    true,
+				                    3.6);
 
             Vehicle.Size sizePv2 = new Vehicle.Size();
             sizePv2.Depth = 2;
@@ -137,18 +137,18 @@ namespace OOP_Eksamen
             sizePv2.Width = 3;
 
             Car Car2 = new Car("Ford Scorpio",
-            902120,
-            "EF46898",
-            1999,
-            180000,
-            true,
-            0,
-            Vehicle.FuelType.Gasoline,
-            70000,
-            5,
-            sizePv2,
-				false,
-				3.6);
+                                    902120,
+                                    "EF46898",
+                                    1999,
+                                    180000,
+                                    true,
+                                    0,
+                                    Vehicle.FuelType.Gasoline,
+                                    70000,
+                                    5,
+                                    sizePv2,
+				                    false,
+				                    3.6);
 
             Vehicle.Size sizeWv1 = new Vehicle.Size(); //Wv1 = Work vehicle 1
             sizeWv1.Depth = 2;
@@ -156,19 +156,19 @@ namespace OOP_Eksamen
             sizeWv1.Width = 3;
 
             Van Van1 = new Van("Peugeot Boxer",
-            310000,
-            "JK45963",
-            2003,
-            70000,
-            false,
-            0,
-            Vehicle.FuelType.Diesel,
-            50000,
-            2,
-            sizeWv1,
-            true,
-				350,
-				3.6);
+                                    310000,
+                                    "JK45963",
+                                    2003,
+                                    70000,
+                                    false,
+                                    0,
+                                    Vehicle.FuelType.Diesel,
+                                    50000,
+                                    2,
+                                    sizeWv1,
+                                    true,
+				                    350,
+				                    3.6);
 
             Vehicle.Size sizeWv2 = new Vehicle.Size();
             sizeWv2.Depth = 2;
@@ -176,19 +176,19 @@ namespace OOP_Eksamen
             sizeWv2.Width = 3;
 
             Van Van2 = new Van("Doblò Cargo",
-            20000,
-            "IY49635",
-            2008,
-            98000,
-            true,
-            0,
-            Vehicle.FuelType.Gasoline,
-            68000,
-            2,
-            sizeWv2,
-            false,
-				400,
-				3.6);
+                                    20000,
+                                    "IY49635",
+                                    2008,
+                                    98000,
+                                    true,
+                                    0,
+                                    Vehicle.FuelType.Gasoline,
+                                    68000,
+                                    2,
+                                    sizeWv2,
+                                    false,
+			                        400,
+			                        3.6);
 
             AuctionHouse AH = new AuctionHouse();
 
