@@ -17,6 +17,8 @@ Gruppemedlemmer og underskrifter:
 Beskrivelse af programmet:
 ==========================
 
+        Dette er et auktionsystem fokuseret på biler, udarbejdet af gruppen A418b i forbindelse med eksamen i Objekt Orienteret Programmering. Hovedsagligt har opgaven være at designe klasserne, hvor der gøres brug af polymorfisme, nedarvening og kodegenbrug. Nogle beslutninger der er taget i løbet af udarbejdelse af programmet, er blevet taget med en udviselse af flest mulige teori fra pensum. 
+
 Antagelser:
 -----------
 
@@ -28,8 +30,12 @@ Antagelser:
 Begrænsninger:
 --------------
 
+        Der er ikke muligt at vælge en specifikt bud af at acceptere. Det er muligt for at byde på flere køretøjer, fordi at pengene ikke bliver reseveret når et bud bliver placeret.
+
 Udvidelser:
 -----------
+        
+        Det er muligt at bestemme hvordan man vil notifikeres, hvor detaljeret og hvilket media, om det skal være via SMS eller Email.
 
 Variationer:
 ------------
@@ -37,7 +43,7 @@ Variationer:
         Autocamper kunne godt nedarve fra Bus men det ville medfører unødvendig
         propeties.
 
-        Sell funktionen kald Sell funktion med null delegate
+        Størrelse af baggagerum og lastbil er indeholdt i en Size struct, som beskriver dimensionerne højde, brede og dybde. Breden af lastbil er ikke nødvendig.
 
 Kilder:
 =======
