@@ -28,7 +28,9 @@ namespace OOP_Eksamen
                                     47,
                                     false,
                                     sizeBus1,
-                                    7);
+									7,
+				3.6
+			);
 
             Vehicle.Size sizeBus2 = new Vehicle.Size();
             sizeBus2.Depth = 2;
@@ -48,7 +50,8 @@ namespace OOP_Eksamen
                 49,
                 true,
                 sizeBus2,
-                900);
+				900,
+				3.6);
 
 
             Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
@@ -63,7 +66,8 @@ namespace OOP_Eksamen
                 6000,                                           //load capacity
                 3.5,                                            //height in metres
                 7000,                                           //Weight of vehicle
-                9);                                             //Length in metres
+				9,
+				3.6);                                             //Length in metres
 
             Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
                 213000,                               //Km driven
@@ -77,7 +81,8 @@ namespace OOP_Eksamen
                 8000,                                 //load capacity
                 4,                                    //height in metres
                 18000,                                //Weight of vehicle
-                12);                                  //Length in metres
+				12,
+				3.6);                                  //Length in metres
 
             Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P",
                 417000,
@@ -90,7 +95,8 @@ namespace OOP_Eksamen
                 0,
                 2,                                  //seats
                 4,                                  //beds
-				false);				                //toilet
+				false,
+				3.6);				                //toilet
 
             Camper Camper2 = new Camper("Hymer 544 classic",
                     213000,
@@ -103,7 +109,8 @@ namespace OOP_Eksamen
                     18000,
                     4,
                     8,
-                    true);
+				true,
+				3.6);
 
             Vehicle.Size sizePv1 = new Vehicle.Size();
             sizePv1.Depth = 2;
@@ -121,7 +128,8 @@ namespace OOP_Eksamen
                 360000,
                 5,
                 sizePv1,
-                true);
+				true,
+				3.6);
 
             Vehicle.Size sizePv2 = new Vehicle.Size();
             sizePv2.Depth = 2;
@@ -139,7 +147,8 @@ namespace OOP_Eksamen
             70000,
             5,
             sizePv2,
-            false);
+				false,
+				3.6);
 
             Vehicle.Size sizeWv1 = new Vehicle.Size(); //Wv1 = Work vehicle 1
             sizeWv1.Depth = 2;
@@ -158,7 +167,8 @@ namespace OOP_Eksamen
             2,
             sizeWv1,
             true,
-            350);
+				350,
+				3.6);
 
             Vehicle.Size sizeWv2 = new Vehicle.Size();
             sizeWv2.Depth = 2;
@@ -177,7 +187,8 @@ namespace OOP_Eksamen
             2,
             sizeWv2,
             false,
-            400);
+				400,
+				3.6);
 
             AuctionHouse AH = new AuctionHouse();
 

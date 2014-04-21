@@ -152,7 +152,7 @@ namespace OOP_Eksamen
         public override string ToString()
         {
             return
-                string.Format("\n---Name: {0} \n---Type: Bus \n---Kilometers: {1} \n---Registration: {2} \n---Year: {3} \n---New Price: {4:#,0} DKK \n---Tow Hook: {5} \n---Engine Size: {6:0.0}L \n---Kilometers Per Liter: {7:0.0} Km/L \n---Fuel Type: {8} \n---Energyclass: {9} \n---Required Drivers License: {10} \n---Minimum Price: {11:#,0} DKK \n---Seats: {12}\n---Beds: {13}\n---Toilet: {14}\n---Weight: {15}",
+				string.Format("\n---Name: {0} \n---Type: Bus \n---Kilometers: {1} \n---Registration: {2} \n---Year: {3} \n---New Price: {4:#,0} DKK \n---Tow Hook: {5} \n---Engine Size: {6:0.0}L \n---Kilometers Per Liter: {7:0.0} Km/L \n---Fuel Type: {8} \n---Energyclass: {9} \n---Required Drivers License: {10} \n---Minimum Price: {11:#,0} DKK \n---Seats: {12}\n---Beds: {13}\n---Toilet: {14}\n---Weight: {15}\n",
                     Name,
                     Km,
                     Registration,
