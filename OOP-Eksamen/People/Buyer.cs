@@ -72,7 +72,7 @@ namespace OOP_Eksamen {
         }
 
         public override string ToString(){
-            return "BusinessBuyer with CVR: " + _cvr + "\n a balance of:´" + _balance + "\n and credits: " + _credits + "availible";
+            return "BusinessBuyer with CVR: " + _cvr + "\n a balance of: " + _balance + "\n and credits: " + _credits + " availible";
         }
 
         public BusinessBuyer(decimal balance, decimal credit, int CVR)

@@ -244,7 +244,6 @@ namespace OOP_Eksamen
 
             Console.WriteLine("\n\n\n");
 
-            Console.WriteLine("To bud bliver oprettet. Et på ");
             AH.ReciveOffer(PBuyer1, Van1.AuctionNumber, 22000);
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 21000);
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 31000);

@@ -76,7 +76,7 @@ class BusinessSeller : Seller {
     }
 
     public override string ToString() {
-        return "BusinessSeller with CVR: " + _cvr + "\n a balance of:´" + _balance + "\n and ZipCode: " + _zipCode;
+        return "BusinessSeller with CVR: " + _cvr + "\n a balance of: " + _balance + "\n and ZipCode: " + _zipCode;
     }
 
 }
@@ -99,7 +99,7 @@ class PrivateSeller : Seller {
     }
 
     public override string ToString() {
-        return "PrivateSeller with CPR: " + _cpr + "\n a balance of:´" + _balance + "\n and ZipCode: " + _zipCode;
+        return "PrivateSeller with CPR: " + _cpr + "\n a balance of: " + _balance + "\n and ZipCode: " + _zipCode;
     }
 }
 
