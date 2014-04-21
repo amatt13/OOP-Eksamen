@@ -244,8 +244,10 @@ namespace OOP_Eksamen
 
             Console.WriteLine("\n\n\n");
 
+            Console.WriteLine("To bud bliver oprettet. Et på ");
             AH.ReciveOffer(PBuyer1, Van1.AuctionNumber, 22000);
             AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 21000);
+            AH.ReciveOffer(BBuyer1, Van1.AuctionNumber, 31000);
 
             Console.WriteLine("\n The bid:");
             IEnumerable<VehicleBids> bids = AH.Bids.Where(t => t.AuctionNumber == Van1.AuctionNumber);
@@ -254,10 +256,10 @@ namespace OOP_Eksamen
 
             foreach (VehicleBids bid in bids)
             {
-                Console.WriteLine("Bid: " + bid.Bid + "Placed" + bid.BidPlaced);
+                Console.WriteLine("Bid: " + bid.Bid + " Placed: " + bid.BidPlaced);
             }
 
-            Console.WriteLine("\n Sell: y/n? ");
+            Console.WriteLine("\nSell: y/n? ");
             ConsoleKeyInfo choice = Console.ReadKey();
 
             if (choice.KeyChar.Equals('y'))
