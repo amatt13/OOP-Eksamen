@@ -214,7 +214,7 @@ namespace OOP_Eksamen
             }
         }
 
-		protected static EnergyClass CalcEnergyClass(FuelType fuelType, double kmPerLiter, int year)
+        protected static EnergyClass CalcEnergyClass(FuelType fuelType, double kmPerLiter, int year)
         {
             EnergyClass energyClass;
             if (year < 2010)
@@ -279,7 +279,7 @@ namespace OOP_Eksamen
             Year = year;
         }*/
 
-		public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice)
+        public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice)
         {
             Name = name;
             Km = km;
@@ -290,7 +290,7 @@ namespace OOP_Eksamen
             KmPerLiter = kmPerLiter;
             Fuel = fuelType;
             MinPrice = minPrice;
-			_energyClass = CalcEnergyClass (fuelType, kmPerLiter, year);
+            _energyClass = CalcEnergyClass(fuelType, kmPerLiter, year);
         }
 
         public override abstract string ToString(); // Subject to override
