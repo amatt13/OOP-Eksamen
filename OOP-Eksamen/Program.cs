@@ -29,7 +29,7 @@ namespace OOP_Eksamen
                                     false,
                                     sizeBus1,
 									7,
-				3.6
+				                    8.2
 			);
 
             Vehicle.Size sizeBus2 = new Vehicle.Size();
@@ -51,7 +51,7 @@ namespace OOP_Eksamen
                 true,
                 sizeBus2,
 				900,
-				3.6);
+				4.4);
 
 
             Truck Truck1 = new Truck("Scania 114 380 stetter",  //Name of vehicle
@@ -67,7 +67,7 @@ namespace OOP_Eksamen
                 3.5,                                            //height in metres
                 7000,                                           //Weight of vehicle
 				9,
-				3.6);                                             //Length in metres
+				10.6);                                             //Length in metres
 
             Truck Truck2 = new Truck("Volvo FM9 260", //Name of vehicle
                 213000,                               //Km driven
@@ -82,7 +82,7 @@ namespace OOP_Eksamen
                 4,                                    //height in metres
                 18000,                                //Weight of vehicle
 				12,
-				3.6);                                  //Length in metres
+				7.7);                                  //Length in metres
 
             Camper Camper1 = new Camper("Fiat CI Fiat Ducato Riviera 55 Special P",
                 417000,
@@ -110,7 +110,7 @@ namespace OOP_Eksamen
                     4,
                     8,
 				true,
-				3.6);
+				3.9);
 
             Vehicle.Size sizePv1 = new Vehicle.Size();
             sizePv1.Depth = 2;
@@ -129,7 +129,7 @@ namespace OOP_Eksamen
                 5,
                 sizePv1,
 				true,
-				3.6);
+				4.6);
 
             Vehicle.Size sizePv2 = new Vehicle.Size();
             sizePv2.Depth = 2;
@@ -148,7 +148,7 @@ namespace OOP_Eksamen
             5,
             sizePv2,
 				false,
-				3.6);
+				8.2);
 
             Vehicle.Size sizeWv1 = new Vehicle.Size(); //Wv1 = Work vehicle 1
             sizeWv1.Depth = 2;
@@ -168,7 +168,7 @@ namespace OOP_Eksamen
             sizeWv1,
             true,
 				350,
-				3.6);
+				9.9);
 
             Vehicle.Size sizeWv2 = new Vehicle.Size();
             sizeWv2.Depth = 2;
@@ -188,7 +188,7 @@ namespace OOP_Eksamen
             sizeWv2,
             false,
 				400,
-				3.6);
+				0.8);
 
             AuctionHouse AH = new AuctionHouse();
 
@@ -328,7 +328,7 @@ namespace OOP_Eksamen
             double average;
             List<Vehicle> energyVehicle = allVehicles;
             average = AVGEnergyClass(energyVehicle);
-            Console.WriteLine("Gennemsnittet er = {0}",average);
+            Console.WriteLine("Gennemsnittet er = {0}", (Vehicle.EnergyClass)average);
         }
 
         static List<Vehicle> SearchName(List<Vehicle> vehicleList, string searchString)
