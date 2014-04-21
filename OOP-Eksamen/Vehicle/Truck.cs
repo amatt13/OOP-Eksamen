@@ -117,14 +117,15 @@ namespace OOP_Eksamen
             Length = 1;
         }
 
-        public Truck(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint loadcapacity, double height, double weight, double length)
-            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
+		public Truck(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint loadcapacity, double height, double weight, double length, double engineSize)
+			: base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
             LoadCapacity = loadcapacity;
             Height = height;
             Weight = weight;
             Length = length;
             License = _license;
+			EngineSize = engineSize;
         }
 
         public override string ToString()

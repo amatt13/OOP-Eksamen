@@ -137,7 +137,7 @@ namespace OOP_Eksamen
             }
         }
 
-        public Bus(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, uint beds, bool toilet, Size sizeOfBus, double weight)
+		public Bus(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, uint beds, bool toilet, Size sizeOfBus, double weight, double engineSize)
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
             Seats = seats;
@@ -145,6 +145,7 @@ namespace OOP_Eksamen
             Toilet = toilet;
             SizeOfBus = sizeOfBus;
             Weight = weight;
+			EngineSize = engineSize;
         }
 
 

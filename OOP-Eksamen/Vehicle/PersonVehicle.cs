@@ -71,11 +71,12 @@ namespace OOP_Eksamen
         }
 
 
-        public PersonVehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size size)
-            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
+		public PersonVehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size size, double engineSize)
+			: base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
             Seat = seats;
             Trunk = size;
+			EngineSize = engineSize;
         }
     }
 }

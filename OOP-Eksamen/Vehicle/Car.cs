@@ -35,8 +35,8 @@ namespace OOP_Eksamen
                     Isofix);
         }
 
-        public Car(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size sizeOfPv, bool isofix)
-            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seats, sizeOfPv)
+		public Car(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seats, Size sizeOfPv, bool isofix, double engineSize) double engineSize)
+			: base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seats, sizeOfPv, engineSize)
         {
             Isofix = isofix;
 			_licenseType = LicenseType.B;

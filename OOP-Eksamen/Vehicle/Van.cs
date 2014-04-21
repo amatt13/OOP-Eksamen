@@ -60,8 +60,8 @@ namespace OOP_Eksamen
                     Freightcapacity);
         }
 
-        public Van(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, Size size, bool safetybrace, int freightcapacity)
-            : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seat, size)
+		public Van(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, Size size, bool safetybrace, int freightcapacity, double engineSize)
+			: base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice, seat, size,engineSize)
         {
             Safetybrace = safetybrace;
             Freightcapacity = freightcapacity;

@@ -126,7 +126,7 @@ namespace OOP_Eksamen
                     Beds);
         }
 
-        public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet)
+		public Camper(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice, uint seat, uint beds, bool toilet, double engineSize)
             : base(name, km, reg, year, newPrice, towHook, kmPerLiter, fuelType, minPrice)
         {
             Seats = seat;
@@ -135,6 +135,7 @@ namespace OOP_Eksamen
 			double enm = EnergyClassModifier ();
 			_energyClass = ((EnergyClass)(((double) CalcEnergyClass (fuelType, kmPerLiter, year)) * enm));
             _licenseType = LicenseType.B;
+			EngineSize = engineSize;
         }
 
     }

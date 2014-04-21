@@ -279,7 +279,7 @@ namespace OOP_Eksamen
             Year = year;
         }*/
 
-        public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice)
+		public Vehicle(string name, double km, string reg, int year, decimal newPrice, bool towHook, double kmPerLiter, FuelType fuelType, decimal minPrice)
         {
             Name = name;
             Km = km;
