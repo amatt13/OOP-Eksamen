@@ -4,103 +4,126 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace OOP_Eksamen {
-    class Buyer {
+namespace OOP_Eksamen
+{
+    class Buyer
+    {
+        //variable initialization
         protected decimal _balance;
+        protected decimal _credits = 0;
 
         //The Balance has been made read-only
-        public decimal Balance {
-            get {
+        public decimal Balance
+        {
+            get
+            {
                 return _balance;
             }
         }
 
-		public bool RemoveBalance(decimal Price) {
-            if (Price < _balance) {
-                if (_balance < Price) {
+        //This method remove balance from the buyer, if he has the balance needed
+        public bool RemoveBalance(decimal Price)
+        {
+            if (Price < (_balance + _credits))
+            {
+                if (_balance < Price)
+                {
                     Price -= _balance;
+                    _credits -= Price;
                     _balance = 0;
-                } else {
+                }
+                else
+                {
                     _balance -= Price;
                 }
 
                 return true;
-            } else {
+            }
+            else
+            {
                 return false;
             }
         }
 
-		public Buyer(decimal balance) {
+        //base constructer, that sets the balance of the buyer
+        public Buyer(decimal balance)
+        {
             _balance = balance;
         }
     }
 
-    class BusinessBuyer : Buyer {
+    //class BusinessBuyer that inherit from Buyer
+    class BusinessBuyer : Buyer
+    {
+        //variable initialization
         private int _cvr;
-        private decimal _credits;
 
-        public int CVR {
-            get {
+        public int CVR
+        {
+            get
+            {
                 return _cvr;
             }
 
-            set {
+            set
+            {
                 _cvr = value;
             }
         }
 
-		new public decimal Balance {
-            get {
+        //returns the maximal amount of money the buyer have
+        new public decimal Balance
+        {
+            get
+            {
                 return _credits + _balance;
             }
         }
 
-		new public bool RemoveBalance(decimal Price) {
-            if (Price < (_balance + _credits)) {
-                if (_balance < Price) {
-                    Price -= _balance;
-                    _credits -= Price;
-                    _balance = 0;
-                } else {
-                    _balance -= Price;
-                }
-
-                return true;
-            } else {
-                return false;
-            }
-        }
-
-        public override string ToString(){
+        //ToString method
+        public override string ToString()
+        {
             return "BusinessBuyer with CVR: " + _cvr + "\n a balance of: " + _balance + "\n and credits: " + _credits + " availible";
         }
 
+        //extendeding the constructor from the base
         public BusinessBuyer(decimal balance, decimal credit, int CVR)
-            : base(balance) {
+            : base(balance)
+        {
             _credits = credit;
             _cvr = CVR;
         }
     }
 
-    class PrivateBuyer : Buyer {
+    //class PrivateBuyer that inherit from Buyer
+    class PrivateBuyer : Buyer
+    {
+        //variable initialization
         private int _cpr;
 
-        public int CPR {
-            get {
+        public int CPR
+        {
+            get
+            {
                 return _cpr;
             }
 
-            set {
+            set
+            {
                 _cpr = value;
             }
         }
 
+        //extendeding the constructor from the base
         public PrivateBuyer(decimal balance, int CPR)
-            : base(balance) {
+            : base(balance)
+        {
             _cpr = CPR;
         }
 
-        public override string ToString() {
+        //ToString method
+        public override string ToString()
+        {
             return "PrivateBuyer with CPR: " + _cpr + "\n and a balance of: " + _balance;
         }
     }
